@@ -4,6 +4,10 @@ export interface NailDesign {
   price: number;
   description: string;
   image: string;
+  category?: string;
+  rating?: number;
+  tag?: string;
+  styleSubtitle?: string;
 }
 
 export interface Booking {

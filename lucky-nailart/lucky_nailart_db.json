@@ -8,6 +8,19 @@
   ],
   "bookings": [
     {
+      "name": "andi",
+      "email": "andi.wijaya@smpcendekiabangsa.sch.id",
+      "phone": "0812 4891 7617",
+      "services": [
+        "Nude_Gel"
+      ],
+      "date": "2026-08-27",
+      "time": "16:30",
+      "id": "bk-2n47b9z22",
+      "status": "pending",
+      "createdAt": "2026-08-26T14:38:20.904Z"
+    },
+    {
       "id": "bk-1",
       "name": "Siti Rahma",
       "email": "siti@gmail.com",
@@ -37,6 +50,15 @@
     }
   ],
   "transactions": [
+    [
+      "pink",
+      "frusia",
+      "putih",
+      "cat_eye",
+      "bunga",
+      "french_crop",
+      "pita"
+    ],
     [
       "pink",
       "frusia",
@@ -308,971 +330,1061 @@
       "bunga",
       "pita",
       "abstrak"
-    ],
-    [
-      "pink",
-      "frusia",
-      "putih",
-      "cat_eye",
-      "bunga",
-      "french_crop",
-      "pita"
-    ],
-    [
-      "putih",
-      "chrome",
-      "abstrak",
-      "mutiara"
-    ],
-    [
-      "merah_maron",
-      "cat_eye",
-      "3D_bunga",
-      "pita",
-      "abstrak"
-    ],
-    [
-      "hitam",
-      "miror",
-      "chrome",
-      "bintang",
-      "french_crop"
-    ],
-    [
-      "pink",
-      "gradasi_pink",
-      "mutiara",
-      "manik-manik",
-      "3D_bunga",
-      "chrome"
-    ],
-    [
-      "biru_muda",
-      "putih",
-      "cat_eye",
-      "kupu-kupu",
-      "abstrak"
-    ],
-    [
-      "putih",
-      "french_crop",
-      "chrome",
-      "pita",
-      "love_3D"
-    ],
-    [
-      "merah",
-      "hitam",
-      "gradasi_merah",
-      "ular",
-      "abstrak"
-    ],
-    [
-      "cokelat_gel",
-      "cokelat",
-      "gradasi_cokelat",
-      "cat_eye",
-      "chrome"
-    ],
-    [
-      "pink_pastel",
-      "putih",
-      "pita",
-      "3D_bunga",
-      "french_crop",
-      "mutiara"
-    ],
-    [
-      "abu-abu",
-      "hitam",
-      "chrome",
-      "miror",
-      "bintang",
-      "abstrak"
-    ],
-    [
-      "putih",
-      "peach",
-      "gradasi_peach",
-      "cat_eye",
-      "bunga"
-    ],
-    [
-      "hijau_muda",
-      "kuning",
-      "daun",
-      "painting_flower",
-      "chrome"
-    ],
-    [
-      "pink_frusia",
-      "putih",
-      "cat_eye",
-      "chrome",
-      "abstrak",
-      "kupu-kupu"
-    ],
-    [
-      "merah_maron",
-      "manik-manik",
-      "3D_bunga",
-      "chrome",
-      "french_crop"
-    ],
-    [
-      "biru_muda",
-      "cat_eye_biru",
-      "mutiara",
-      "pita",
-      "abstrak"
-    ],
-    [
-      "hitam",
-      "putih",
-      "chrome",
-      "abstrak",
-      "french_crop"
-    ],
-    [
-      "putih",
-      "pink",
-      "gradasi_pink",
-      "3D_kerang",
-      "mutiara",
-      "bintang"
-    ],
-    [
-      "cokelat_mahogani",
-      "cat_eye_mahogani",
-      "chrome",
-      "pita"
-    ],
-    [
-      "merah_maron",
-      "putih",
-      "love",
-      "chrome",
-      "abstrak"
-    ],
-    [
-      "hijau_toska",
-      "putih",
-      "cat_eye_hijau",
-      "3D_bunga",
-      "miror"
-    ],
-    [
-      "pink",
-      "pink_frusia",
-      "cat_eye",
-      "mutiara",
-      "manik-manik",
-      "chrome"
-    ],
-    [
-      "hitam",
-      "chrome",
-      "abstrak",
-      "sarang_laba-laba"
-    ],
-    [
-      "putih",
-      "kuning",
-      "orange",
-      "bunga",
-      "matahari",
-      "chrome"
-    ],
-    [
-      "biru_muda",
-      "abu-abu",
-      "miror",
-      "cat_eye",
-      "abstrak"
-    ],
-    [
-      "merah",
-      "cat_eye_merah",
-      "pita",
-      "mutiara",
-      "3D_bunga"
-    ],
-    [
-      "pink_pastel",
-      "putih",
-      "bunga",
-      "french_crop",
-      "chrome"
-    ],
-    [
-      "cokelat_gel",
-      "putih",
-      "french_crop",
-      "abstrak"
-    ],
-    [
-      "hitam",
-      "gradasi_abu-abu",
-      "cat_eye",
-      "bintang",
-      "miror"
-    ],
-    [
-      "putih",
-      "merah_maron",
-      "manik-manik",
-      "3D_bunga",
-      "chrome",
-      "abstrak"
-    ],
-    [
-      "pink",
-      "putih",
-      "pita",
-      "kupu-kupu",
-      "chrome"
-    ],
-    [
-      "hijau",
-      "hijau_muda",
-      "cat_eye",
-      "daun",
-      "abstrak"
-    ],
-    [
-      "putih",
-      "cat_eye_putih",
-      "mutiara",
-      "3D_pita",
-      "french_crop"
-    ],
-    [
-      "cokelat_mahogani",
-      "gradasi_cokelat",
-      "chrome",
-      "abstrak"
-    ],
-    [
-      "biru_muda",
-      "putih",
-      "cat_eye",
-      "miror",
-      "bintang"
-    ],
-    [
-      "merah_maron",
-      "cat_eye",
-      "chrome",
-      "abstrak"
-    ],
-    [
-      "pink",
-      "putih",
-      "cat_eye",
-      "3D_bunga",
-      "manik-manik",
-      "mutiara"
-    ],
-    [
-      "hitam",
-      "chrome",
-      "miror",
-      "abstrak"
-    ],
-    [
-      "putih",
-      "pink_frusia",
-      "bunga",
-      "pita",
-      "french_crop"
-    ],
-    [
-      "merah",
-      "gradasi_merah",
-      "cat_eye",
-      "love",
-      "chrome"
-    ],
-    [
-      "cokelat",
-      "cokelat_gel",
-      "gradasi_cokelat",
-      "abstrak"
-    ],
-    [
-      "putih",
-      "biru_muda",
-      "kupu-kupu",
-      "mutiara",
-      "chrome"
-    ],
-    [
-      "pink_pastel",
-      "peach",
-      "gradasi_peach",
-      "bunga",
-      "3D_bunga"
-    ],
-    [
-      "hijau_toska",
-      "hijau",
-      "cat_eye_hijau",
-      "chrome",
-      "miror"
-    ],
-    [
-      "hitam",
-      "putih",
-      "french_crop",
-      "chrome",
-      "abstrak"
-    ],
-    [
-      "merah_maron",
-      "putih",
-      "manik-manik",
-      "3D_bunga",
-      "pita"
-    ],
-    [
-      "pink",
-      "cat_eye",
-      "chrome",
-      "bintang",
-      "abstrak"
-    ],
-    [
-      "putih",
-      "cokelat_mahogani",
-      "french_crop",
-      "mutiara"
-    ],
-    [
-      "abu-abu",
-      "gradasi_abu-abu",
-      "chrome",
-      "miror",
-      "ular"
-    ],
-    [
-      "pink_frusia",
-      "pink",
-      "cat_eye",
-      "kupu-kupu",
-      "abstrak"
-    ],
-    [
-      "putih",
-      "kuning",
-      "painting_flower",
-      "daun",
-      "chrome"
-    ],
-    [
-      "biru_muda",
-      "cat_eye_biru",
-      "miror",
-      "abstrak"
-    ],
-    [
-      "merah_maron",
-      "hitam",
-      "cat_eye",
-      "chrome",
-      "bintang"
-    ],
-    [
-      "putih",
-      "pink_pastel",
-      "mutiara",
-      "3D_bunga",
-      "french_crop"
-    ],
-    [
-      "cokelat_gel",
-      "cat_eye",
-      "chrome",
-      "abstrak"
-    ],
-    [
-      "hitam",
-      "chrome",
-      "sarang_laba-laba",
-      "miror",
-      "abstrak"
-    ],
-    [
-      "putih",
-      "peach",
-      "orange",
-      "bunga",
-      "matahari"
-    ],
-    [
-      "hijau_muda",
-      "putih",
-      "cat_eye",
-      "daun",
-      "chrome"
-    ],
-    [
-      "pink",
-      "merah_maron",
-      "gradasi_pink",
-      "mutiara",
-      "3D_bunga"
-    ],
-    [
-      "putih",
-      "biru_muda",
-      "cat_eye",
-      "kupu-kupu",
-      "pita",
-      "chrome"
-    ],
-    [
-      "hitam",
-      "putih",
-      "abstrak",
-      "chrome",
-      "miror"
-    ],
-    [
-      "merah",
-      "putih",
-      "cat_eye_merah",
-      "love",
-      "french_crop"
-    ],
-    [
-      "pink_frusia",
-      "putih",
-      "pita",
-      "3D_pita",
-      "mutiara"
-    ],
-    [
-      "cokelat_mahogani",
-      "cokelat",
-      "cat_eye_mahogani",
-      "chrome",
-      "abstrak"
-    ],
-    [
-      "putih",
-      "abu-abu",
-      "cat_eye",
-      "bintang",
-      "miror"
-    ],
-    [
-      "merah_maron",
-      "putih",
-      "manik-manik",
-      "3D_bunga",
-      "chrome",
-      "abstrak"
-    ],
-    [
-      "pink",
-      "putih",
-      "french_crop",
-      "chrome",
-      "kupu-kupu"
-    ],
-    [
-      "hitam",
-      "gradasi_abu-abu",
-      "miror",
-      "abstrak"
-    ],
-    [
-      "putih",
-      "biru_muda",
-      "cat_eye_biru",
-      "pita",
-      "mutiara"
-    ],
-    [
-      "cokelat_gel",
-      "gradasi_cokelat",
-      "chrome",
-      "french_crop"
     ]
   ],
   "frequent_itemsets": [
     {
-      "id": 0.47644243151268706,
+      "id": 0.27240076054066553,
       "items": [
         "pink"
       ],
-      "support": 0.18,
-      "count": 18,
+      "support": 0.2903225806451613,
+      "count": 9,
       "k": 1
     },
     {
-      "id": 0.9077064464543257,
+      "id": 0.18187499225790316,
       "items": [
         "putih"
       ],
-      "support": 0.5,
-      "count": 50,
-      "k": 1
-    },
-    {
-      "id": 0.2125895804699608,
-      "items": [
-        "bunga"
-      ],
-      "support": 0.15,
+      "support": 0.4838709677419355,
       "count": 15,
       "k": 1
     },
     {
-      "id": 0.6100424835911422,
-      "items": [
-        "french_crop"
-      ],
-      "support": 0.28,
-      "count": 28,
-      "k": 1
-    },
-    {
-      "id": 0.7374812469574641,
-      "items": [
-        "chrome"
-      ],
-      "support": 0.62,
-      "count": 62,
-      "k": 1
-    },
-    {
-      "id": 0.16258097137111982,
-      "items": [
-        "abstrak"
-      ],
-      "support": 0.45,
-      "count": 45,
-      "k": 1
-    },
-    {
-      "id": 0.7343503454091174,
-      "items": [
-        "merah_maron"
-      ],
-      "support": 0.16,
-      "count": 16,
-      "k": 1
-    },
-    {
-      "id": 0.16727623003383574,
+      "id": 0.4282388717737716,
       "items": [
         "cat_eye"
       ],
-      "support": 0.33,
-      "count": 33,
+      "support": 0.41935483870967744,
+      "count": 13,
       "k": 1
     },
     {
-      "id": 0.956878947957559,
+      "id": 0.6459011912659938,
       "items": [
-        "hitam"
+        "bunga"
       ],
-      "support": 0.16,
-      "count": 16,
+      "support": 0.2903225806451613,
+      "count": 9,
       "k": 1
     },
     {
-      "id": 0.7779997703874574,
+      "id": 0.24002384652431263,
       "items": [
-        "mutiara"
+        "french_crop"
       ],
-      "support": 0.24,
+      "support": 0.41935483870967744,
+      "count": 13,
+      "k": 1
+    },
+    {
+      "id": 0.052854250033100514,
+      "items": [
+        "pita"
+      ],
+      "support": 0.3548387096774194,
+      "count": 11,
+      "k": 1
+    },
+    {
+      "id": 0.3158916682800059,
+      "items": [
+        "chrome"
+      ],
+      "support": 0.7741935483870968,
       "count": 24,
       "k": 1
     },
     {
-      "id": 0.43674938197760305,
+      "id": 0.32542384326968443,
       "items": [
-        "pita"
+        "abstrak"
       ],
-      "support": 0.23,
-      "count": 23,
+      "support": 0.5483870967741935,
+      "count": 17,
       "k": 1
     },
     {
-      "id": 0.818197306975009,
+      "id": 0.6546343136699326,
+      "items": [
+        "merah_maron"
+      ],
+      "support": 0.22580645161290322,
+      "count": 7,
+      "k": 1
+    },
+    {
+      "id": 0.1020042816024812,
+      "items": [
+        "hitam"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 1
+    },
+    {
+      "id": 0.13407833866998975,
+      "items": [
+        "mutiara"
+      ],
+      "support": 0.2903225806451613,
+      "count": 9,
+      "k": 1
+    },
+    {
+      "id": 0.4204309377515074,
       "items": [
         "bintang"
       ],
-      "support": 0.13,
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 1
+    },
+    {
+      "id": 0.8436467191399278,
+      "items": [
+        "3D_bunga"
+      ],
+      "support": 0.41935483870967744,
       "count": 13,
       "k": 1
     },
     {
-      "id": 0.7026021542957126,
-      "items": [
-        "3D_bunga"
-      ],
-      "support": 0.26,
-      "count": 26,
-      "k": 1
-    },
-    {
-      "id": 0.8205484974452797,
-      "items": [
-        "kupu-kupu"
-      ],
-      "support": 0.1,
-      "count": 10,
-      "k": 1
-    },
-    {
-      "id": 0.9352328249834778,
+      "id": 0.6140946305485482,
       "items": [
         "manik-manik"
       ],
-      "support": 0.16,
-      "count": 16,
+      "support": 0.2903225806451613,
+      "count": 9,
       "k": 1
     },
     {
-      "id": 0.4340987588604599,
+      "id": 0.5302500489381688,
       "items": [
         "miror"
       ],
-      "support": 0.18,
-      "count": 18,
+      "support": 0.12903225806451613,
+      "count": 4,
       "k": 1
     },
     {
-      "id": 0.3504254640998298,
-      "items": [
-        "biru_muda"
-      ],
-      "support": 0.1,
-      "count": 10,
-      "k": 1
-    },
-    {
-      "id": 0.9936423044622404,
+      "id": 0.5261538756188991,
       "items": [
         "pink",
         "putih"
       ],
-      "support": 0.1,
-      "count": 10,
+      "support": 0.1935483870967742,
+      "count": 6,
       "k": 2
     },
     {
-      "id": 0.7724042396698051,
+      "id": 0.8780006029571138,
+      "items": [
+        "cat_eye",
+        "pink"
+      ],
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 2
+    },
+    {
+      "id": 0.9539279426718171,
+      "items": [
+        "bunga",
+        "pink"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 2
+    },
+    {
+      "id": 0.48008065581712234,
+      "items": [
+        "french_crop",
+        "pink"
+      ],
+      "support": 0.22580645161290322,
+      "count": 7,
+      "k": 2
+    },
+    {
+      "id": 0.4492925395436306,
       "items": [
         "chrome",
         "pink"
       ],
-      "support": 0.1,
-      "count": 10,
+      "support": 0.16129032258064516,
+      "count": 5,
       "k": 2
     },
     {
-      "id": 0.23683870176765676,
+      "id": 0.4766705575845348,
+      "items": [
+        "3D_bunga",
+        "pink"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 2
+    },
+    {
+      "id": 0.7928285319158733,
+      "items": [
+        "cat_eye",
+        "putih"
+      ],
+      "support": 0.1935483870967742,
+      "count": 6,
+      "k": 2
+    },
+    {
+      "id": 0.010018312548796593,
       "items": [
         "bunga",
         "putih"
       ],
-      "support": 0.1,
-      "count": 10,
+      "support": 0.16129032258064516,
+      "count": 5,
       "k": 2
     },
     {
-      "id": 0.07623659567888985,
+      "id": 0.3772854399647052,
       "items": [
         "french_crop",
         "putih"
       ],
-      "support": 0.18,
-      "count": 18,
+      "support": 0.1935483870967742,
+      "count": 6,
       "k": 2
     },
     {
-      "id": 0.9113275736629003,
-      "items": [
-        "chrome",
-        "putih"
-      ],
-      "support": 0.28,
-      "count": 28,
-      "k": 2
-    },
-    {
-      "id": 0.5637051363127754,
-      "items": [
-        "abstrak",
-        "putih"
-      ],
-      "support": 0.18,
-      "count": 18,
-      "k": 2
-    },
-    {
-      "id": 0.7267877771751505,
-      "items": [
-        "cat_eye",
-        "putih"
-      ],
-      "support": 0.14,
-      "count": 14,
-      "k": 2
-    },
-    {
-      "id": 0.3473146495701991,
-      "items": [
-        "mutiara",
-        "putih"
-      ],
-      "support": 0.16,
-      "count": 16,
-      "k": 2
-    },
-    {
-      "id": 0.57108562478519,
+      "id": 0.565210693844824,
       "items": [
         "pita",
         "putih"
       ],
-      "support": 0.13,
-      "count": 13,
+      "support": 0.16129032258064516,
+      "count": 5,
       "k": 2
     },
     {
-      "id": 0.33710296293283515,
+      "id": 0.12148963624698694,
+      "items": [
+        "chrome",
+        "putih"
+      ],
+      "support": 0.3548387096774194,
+      "count": 11,
+      "k": 2
+    },
+    {
+      "id": 0.7133350638709117,
+      "items": [
+        "abstrak",
+        "putih"
+      ],
+      "support": 0.25806451612903225,
+      "count": 8,
+      "k": 2
+    },
+    {
+      "id": 0.073771087172959,
+      "items": [
+        "mutiara",
+        "putih"
+      ],
+      "support": 0.1935483870967742,
+      "count": 6,
+      "k": 2
+    },
+    {
+      "id": 0.5206927215690874,
       "items": [
         "3D_bunga",
         "putih"
       ],
-      "support": 0.13,
-      "count": 13,
+      "support": 0.1935483870967742,
+      "count": 6,
       "k": 2
     },
     {
-      "id": 0.18462275492088154,
+      "id": 0.8995842271940129,
       "items": [
         "manik-manik",
         "putih"
       ],
-      "support": 0.1,
-      "count": 10,
+      "support": 0.1935483870967742,
+      "count": 6,
       "k": 2
     },
     {
-      "id": 0.9922477635786991,
+      "id": 0.35066535824851586,
       "items": [
-        "chrome",
+        "cat_eye",
         "french_crop"
       ],
-      "support": 0.17,
-      "count": 17,
+      "support": 0.22580645161290322,
+      "count": 7,
       "k": 2
     },
     {
-      "id": 0.585592063452458,
-      "items": [
-        "3D_bunga",
-        "french_crop"
-      ],
-      "support": 0.1,
-      "count": 10,
-      "k": 2
-    },
-    {
-      "id": 0.7131889897738682,
-      "items": [
-        "abstrak",
-        "chrome"
-      ],
-      "support": 0.32,
-      "count": 32,
-      "k": 2
-    },
-    {
-      "id": 0.3300270396401167,
-      "items": [
-        "chrome",
-        "merah_maron"
-      ],
-      "support": 0.11,
-      "count": 11,
-      "k": 2
-    },
-    {
-      "id": 0.5576278475053366,
+      "id": 0.12462790329630036,
       "items": [
         "cat_eye",
         "chrome"
       ],
-      "support": 0.19,
-      "count": 19,
+      "support": 0.2903225806451613,
+      "count": 9,
       "k": 2
     },
     {
-      "id": 0.4710990945560102,
-      "items": [
-        "chrome",
-        "hitam"
-      ],
-      "support": 0.13,
-      "count": 13,
-      "k": 2
-    },
-    {
-      "id": 0.18927464176788877,
-      "items": [
-        "chrome",
-        "mutiara"
-      ],
-      "support": 0.11,
-      "count": 11,
-      "k": 2
-    },
-    {
-      "id": 0.030487216608152123,
-      "items": [
-        "chrome",
-        "pita"
-      ],
-      "support": 0.13,
-      "count": 13,
-      "k": 2
-    },
-    {
-      "id": 0.15043307152630037,
-      "items": [
-        "3D_bunga",
-        "chrome"
-      ],
-      "support": 0.15,
-      "count": 15,
-      "k": 2
-    },
-    {
-      "id": 0.7108385063281248,
-      "items": [
-        "chrome",
-        "manik-manik"
-      ],
-      "support": 0.14,
-      "count": 14,
-      "k": 2
-    },
-    {
-      "id": 0.48280440684552617,
-      "items": [
-        "chrome",
-        "miror"
-      ],
-      "support": 0.11,
-      "count": 11,
-      "k": 2
-    },
-    {
-      "id": 0.7753014602255758,
+      "id": 0.2901208458494453,
       "items": [
         "abstrak",
         "cat_eye"
       ],
-      "support": 0.15,
+      "support": 0.1935483870967742,
+      "count": 6,
+      "k": 2
+    },
+    {
+      "id": 0.22154431654379358,
+      "items": [
+        "cat_eye",
+        "merah_maron"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 2
+    },
+    {
+      "id": 0.6473933268750052,
+      "items": [
+        "3D_bunga",
+        "cat_eye"
+      ],
+      "support": 0.1935483870967742,
+      "count": 6,
+      "k": 2
+    },
+    {
+      "id": 0.6963255625716692,
+      "items": [
+        "cat_eye",
+        "manik-manik"
+      ],
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 2
+    },
+    {
+      "id": 0.5044587361004108,
+      "items": [
+        "bunga",
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 2
+    },
+    {
+      "id": 0.3616470619793847,
+      "items": [
+        "bunga",
+        "pita"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 2
+    },
+    {
+      "id": 0.07537529570156654,
+      "items": [
+        "bunga",
+        "chrome"
+      ],
+      "support": 0.22580645161290322,
+      "count": 7,
+      "k": 2
+    },
+    {
+      "id": 0.7719422030514503,
+      "items": [
+        "french_crop",
+        "pita"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 2
+    },
+    {
+      "id": 0.9688248852349485,
+      "items": [
+        "chrome",
+        "french_crop"
+      ],
+      "support": 0.2903225806451613,
+      "count": 9,
+      "k": 2
+    },
+    {
+      "id": 0.21658361466132925,
+      "items": [
+        "abstrak",
+        "french_crop"
+      ],
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 2
+    },
+    {
+      "id": 0.6105126530092615,
+      "items": [
+        "french_crop",
+        "merah_maron"
+      ],
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 2
+    },
+    {
+      "id": 0.6406359743421396,
+      "items": [
+        "french_crop",
+        "mutiara"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 2
+    },
+    {
+      "id": 0.2775718566351222,
+      "items": [
+        "3D_bunga",
+        "french_crop"
+      ],
+      "support": 0.22580645161290322,
+      "count": 7,
+      "k": 2
+    },
+    {
+      "id": 0.11331212429694326,
+      "items": [
+        "chrome",
+        "pita"
+      ],
+      "support": 0.2903225806451613,
+      "count": 9,
+      "k": 2
+    },
+    {
+      "id": 0.07738474466105005,
+      "items": [
+        "abstrak",
+        "pita"
+      ],
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 2
+    },
+    {
+      "id": 0.46246021645257673,
+      "items": [
+        "mutiara",
+        "pita"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 2
+    },
+    {
+      "id": 0.5330127393226678,
+      "items": [
+        "abstrak",
+        "chrome"
+      ],
+      "support": 0.4838709677419355,
       "count": 15,
       "k": 2
     },
     {
-      "id": 0.7560909373792979,
+      "id": 0.4695046572619862,
       "items": [
-        "abstrak",
-        "hitam"
+        "chrome",
+        "merah_maron"
       ],
-      "support": 0.12,
-      "count": 12,
+      "support": 0.16129032258064516,
+      "count": 5,
       "k": 2
     },
     {
-      "id": 0.028583288491483394,
+      "id": 0.9893355430241466,
+      "items": [
+        "chrome",
+        "hitam"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 2
+    },
+    {
+      "id": 0.3251150652332785,
+      "items": [
+        "chrome",
+        "mutiara"
+      ],
+      "support": 0.22580645161290322,
+      "count": 7,
+      "k": 2
+    },
+    {
+      "id": 0.9074478476276373,
+      "items": [
+        "bintang",
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 2
+    },
+    {
+      "id": 0.9353480730325716,
       "items": [
         "3D_bunga",
-        "merah_maron"
+        "chrome"
       ],
-      "support": 0.11,
+      "support": 0.3548387096774194,
       "count": 11,
       "k": 2
     },
     {
-      "id": 0.3123818082498425,
+      "id": 0.4380750018641878,
+      "items": [
+        "chrome",
+        "manik-manik"
+      ],
+      "support": 0.2903225806451613,
+      "count": 9,
+      "k": 2
+    },
+    {
+      "id": 0.05368978665777624,
+      "items": [
+        "chrome",
+        "miror"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 2
+    },
+    {
+      "id": 0.3187340702925451,
+      "items": [
+        "abstrak",
+        "mutiara"
+      ],
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 2
+    },
+    {
+      "id": 0.5852273451005836,
+      "items": [
+        "3D_bunga",
+        "abstrak"
+      ],
+      "support": 0.1935483870967742,
+      "count": 6,
+      "k": 2
+    },
+    {
+      "id": 0.5090323369672759,
+      "items": [
+        "abstrak",
+        "manik-manik"
+      ],
+      "support": 0.1935483870967742,
+      "count": 6,
+      "k": 2
+    },
+    {
+      "id": 0.810196725798636,
+      "items": [
+        "3D_bunga",
+        "merah_maron"
+      ],
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 2
+    },
+    {
+      "id": 0.7108919587260044,
       "items": [
         "3D_bunga",
         "mutiara"
       ],
-      "support": 0.13,
-      "count": 13,
+      "support": 0.22580645161290322,
+      "count": 7,
       "k": 2
     },
     {
-      "id": 0.6651886565970568,
+      "id": 0.9015829099117868,
       "items": [
         "3D_bunga",
         "manik-manik"
       ],
-      "support": 0.13,
-      "count": 13,
+      "support": 0.22580645161290322,
+      "count": 7,
       "k": 2
     },
     {
-      "id": 0.6144280997011068,
+      "id": 0.21468918294493466,
+      "items": [
+        "french_crop",
+        "pink",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 3
+    },
+    {
+      "id": 0.12053785420724583,
+      "items": [
+        "cat_eye",
+        "french_crop",
+        "pink"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 3
+    },
+    {
+      "id": 0.6498820252908242,
+      "items": [
+        "cat_eye",
+        "chrome",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 3
+    },
+    {
+      "id": 0.18243009886438533,
       "items": [
         "abstrak",
         "chrome",
         "putih"
       ],
-      "support": 0.15,
-      "count": 15,
+      "support": 0.22580645161290322,
+      "count": 7,
       "k": 3
     },
     {
-      "id": 0.5661772079511412,
+      "id": 0.015432184151104478,
+      "items": [
+        "chrome",
+        "mutiara",
+        "putih"
+      ],
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 3
+    },
+    {
+      "id": 0.6460103430437807,
+      "items": [
+        "3D_bunga",
+        "chrome",
+        "putih"
+      ],
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 3
+    },
+    {
+      "id": 0.339736215965008,
+      "items": [
+        "chrome",
+        "manik-manik",
+        "putih"
+      ],
+      "support": 0.1935483870967742,
+      "count": 6,
+      "k": 3
+    },
+    {
+      "id": 0.9844662023781382,
+      "items": [
+        "abstrak",
+        "manik-manik",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 3
+    },
+    {
+      "id": 0.26747142454471895,
+      "items": [
+        "3D_bunga",
+        "mutiara",
+        "putih"
+      ],
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 3
+    },
+    {
+      "id": 0.83741753460408,
+      "items": [
+        "3D_bunga",
+        "manik-manik",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 3
+    },
+    {
+      "id": 0.26759169558014817,
+      "items": [
+        "cat_eye",
+        "chrome",
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 3
+    },
+    {
+      "id": 0.9461327050040951,
+      "items": [
+        "3D_bunga",
+        "cat_eye",
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 3
+    },
+    {
+      "id": 0.2834475031804399,
+      "items": [
+        "abstrak",
+        "cat_eye",
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 3
+    },
+    {
+      "id": 0.5355977060852417,
+      "items": [
+        "3D_bunga",
+        "cat_eye",
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 3
+    },
+    {
+      "id": 0.5355227331538822,
+      "items": [
+        "cat_eye",
+        "chrome",
+        "manik-manik"
+      ],
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 3
+    },
+    {
+      "id": 0.08211363340078737,
+      "items": [
+        "3D_bunga",
+        "cat_eye",
+        "manik-manik"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 3
+    },
+    {
+      "id": 0.18895586405828557,
       "items": [
         "abstrak",
         "chrome",
-        "hitam"
+        "french_crop"
       ],
-      "support": 0.1,
-      "count": 10,
+      "support": 0.12903225806451613,
+      "count": 4,
       "k": 3
     },
     {
-      "id": 0.026688104231392007,
+      "id": 0.6279304649689326,
+      "items": [
+        "chrome",
+        "french_crop",
+        "merah_maron"
+      ],
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 3
+    },
+    {
+      "id": 0.25233397634265187,
+      "items": [
+        "3D_bunga",
+        "chrome",
+        "french_crop"
+      ],
+      "support": 0.1935483870967742,
+      "count": 6,
+      "k": 3
+    },
+    {
+      "id": 0.7366024687825229,
+      "items": [
+        "3D_bunga",
+        "french_crop",
+        "merah_maron"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 3
+    },
+    {
+      "id": 0.3273874147686827,
+      "items": [
+        "3D_bunga",
+        "french_crop",
+        "mutiara"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 3
+    },
+    {
+      "id": 0.7896754916110359,
+      "items": [
+        "abstrak",
+        "chrome",
+        "pita"
+      ],
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 3
+    },
+    {
+      "id": 0.046537944141398224,
+      "items": [
+        "abstrak",
+        "chrome",
+        "mutiara"
+      ],
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 3
+    },
+    {
+      "id": 0.49001046861115294,
+      "items": [
+        "3D_bunga",
+        "abstrak",
+        "chrome"
+      ],
+      "support": 0.1935483870967742,
+      "count": 6,
+      "k": 3
+    },
+    {
+      "id": 0.034255921077601226,
+      "items": [
+        "abstrak",
+        "chrome",
+        "manik-manik"
+      ],
+      "support": 0.1935483870967742,
+      "count": 6,
+      "k": 3
+    },
+    {
+      "id": 0.07494871625796096,
+      "items": [
+        "3D_bunga",
+        "chrome",
+        "merah_maron"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 3
+    },
+    {
+      "id": 0.7367029969822493,
+      "items": [
+        "3D_bunga",
+        "chrome",
+        "mutiara"
+      ],
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 3
+    },
+    {
+      "id": 0.8761545792162544,
       "items": [
         "3D_bunga",
         "chrome",
         "manik-manik"
       ],
-      "support": 0.11,
-      "count": 11,
+      "support": 0.22580645161290322,
+      "count": 7,
       "k": 3
+    },
+    {
+      "id": 0.08963099593730617,
+      "items": [
+        "3D_bunga",
+        "abstrak",
+        "manik-manik"
+      ],
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 3
+    },
+    {
+      "id": 0.08454392995455307,
+      "items": [
+        "abstrak",
+        "chrome",
+        "manik-manik",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 4
+    },
+    {
+      "id": 0.5368481326009225,
+      "items": [
+        "3D_bunga",
+        "chrome",
+        "mutiara",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 4
+    },
+    {
+      "id": 0.855561051423195,
+      "items": [
+        "3D_bunga",
+        "chrome",
+        "manik-manik",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 4
+    },
+    {
+      "id": 0.02347079870180968,
+      "items": [
+        "3D_bunga",
+        "cat_eye",
+        "chrome",
+        "manik-manik"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 4
+    },
+    {
+      "id": 0.9261094555582671,
+      "items": [
+        "3D_bunga",
+        "chrome",
+        "french_crop",
+        "merah_maron"
+      ],
+      "support": 0.12903225806451613,
+      "count": 4,
+      "k": 4
+    },
+    {
+      "id": 0.0015194320372605707,
+      "items": [
+        "3D_bunga",
+        "abstrak",
+        "chrome",
+        "manik-manik"
+      ],
+      "support": 0.16129032258064516,
+      "count": 5,
+      "k": 4
     }
   ],
   "association_rules": [
     {
-      "id": 0.008885266455856189,
+      "id": 0.7957081434870529,
+      "antecedent": [
+        "chrome",
+        "merah_maron"
+      ],
+      "consequent": [
+        "french_crop"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 1,
+      "lift": 2.3846153846153846
+    },
+    {
+      "id": 0.9945146622736539,
+      "antecedent": [
+        "french_crop",
+        "mutiara"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 1,
+      "lift": 2.3846153846153846
+    },
+    {
+      "id": 0.17857082470686603,
+      "antecedent": [
+        "3D_bunga",
+        "chrome",
+        "merah_maron"
+      ],
+      "consequent": [
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 1,
+      "lift": 2.3846153846153846
+    },
+    {
+      "id": 0.547015021746331,
       "antecedent": [
         "manik-manik"
       ],
       "consequent": [
         "chrome"
       ],
-      "support": 0.14,
-      "confidence": 0.8750000000000001,
-      "lift": 1.4112903225806452
+      "support": 0.2903225806451613,
+      "confidence": 1,
+      "lift": 1.2916666666666667
     },
     {
-      "id": 0.11306186588571243,
+      "id": 0.988857852223744,
       "antecedent": [
         "3D_bunga",
         "manik-manik"
@@ -1280,12 +1392,209 @@
       "consequent": [
         "chrome"
       ],
-      "support": 0.11,
-      "confidence": 0.8461538461538461,
-      "lift": 1.3647642679900744
+      "support": 0.22580645161290322,
+      "confidence": 1,
+      "lift": 1.2916666666666667
     },
     {
-      "id": 0.23277904403118566,
+      "id": 0.27050944919189746,
+      "antecedent": [
+        "manik-manik",
+        "putih"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 1,
+      "lift": 1.2916666666666667
+    },
+    {
+      "id": 0.12996737586455287,
+      "antecedent": [
+        "3D_bunga",
+        "abstrak"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 1,
+      "lift": 1.2916666666666667
+    },
+    {
+      "id": 0.03163055337401244,
+      "antecedent": [
+        "abstrak",
+        "manik-manik"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 1,
+      "lift": 1.2916666666666667
+    },
+    {
+      "id": 0.7129342894862298,
+      "antecedent": [
+        "cat_eye",
+        "manik-manik"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 1,
+      "lift": 1.2916666666666667
+    },
+    {
+      "id": 0.8598999276792215,
+      "antecedent": [
+        "french_crop",
+        "merah_maron"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 1,
+      "lift": 1.2916666666666667
+    },
+    {
+      "id": 0.1999993607968572,
+      "antecedent": [
+        "abstrak",
+        "pita"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 1,
+      "lift": 1.2916666666666667
+    },
+    {
+      "id": 0.9329560725170287,
+      "antecedent": [
+        "abstrak",
+        "mutiara"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 1,
+      "lift": 1.2916666666666667
+    },
+    {
+      "id": 0.8238992140508734,
+      "antecedent": [
+        "3D_bunga",
+        "abstrak",
+        "manik-manik"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 1,
+      "lift": 1.2916666666666667
+    },
+    {
+      "id": 0.04787416597696936,
+      "antecedent": [
+        "hitam"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 1,
+      "lift": 1.2916666666666667
+    },
+    {
+      "id": 0.727678479360168,
+      "antecedent": [
+        "miror"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 1,
+      "lift": 1.2916666666666667
+    },
+    {
+      "id": 0.2802280373342291,
+      "antecedent": [
+        "abstrak",
+        "manik-manik",
+        "putih"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 1,
+      "lift": 1.2916666666666667
+    },
+    {
+      "id": 0.8801734768909428,
+      "antecedent": [
+        "3D_bunga",
+        "manik-manik",
+        "putih"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 1,
+      "lift": 1.2916666666666667
+    },
+    {
+      "id": 0.7118407882054725,
+      "antecedent": [
+        "3D_bunga",
+        "cat_eye",
+        "manik-manik"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 1,
+      "lift": 1.2916666666666667
+    },
+    {
+      "id": 0.5379118744709712,
+      "antecedent": [
+        "3D_bunga",
+        "french_crop",
+        "merah_maron"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 1,
+      "lift": 1.2916666666666667
+    },
+    {
+      "id": 0.4753133423024579,
+      "antecedent": [
+        "abstrak"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.4838709677419355,
+      "confidence": 0.8823529411764707,
+      "lift": 1.1397058823529413
+    },
+    {
+      "id": 0.1914439144543737,
       "antecedent": [
         "abstrak",
         "putih"
@@ -1293,391 +1602,1917 @@
       "consequent": [
         "chrome"
       ],
-      "support": 0.15,
-      "confidence": 0.8333333333333334,
-      "lift": 1.3440860215053765
+      "support": 0.22580645161290322,
+      "confidence": 0.875,
+      "lift": 1.1302083333333333
     },
     {
-      "id": 0.7706901909389625,
+      "id": 0.8119104940318415,
+      "antecedent": [
+        "3D_bunga",
+        "french_crop"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.8571428571428571,
+      "lift": 1.1071428571428572
+    },
+    {
+      "id": 0.43196619441982276,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.3548387096774194,
+      "confidence": 0.8461538461538461,
+      "lift": 1.092948717948718
+    },
+    {
+      "id": 0.4122844675237535,
+      "antecedent": [
+        "3D_bunga",
+        "putih"
+      ],
+      "consequent": [
+        "mutiara"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.8333333333333334,
+      "lift": 2.8703703703703702
+    },
+    {
+      "id": 0.6196172723800074,
+      "antecedent": [
+        "3D_bunga",
+        "abstrak"
+      ],
+      "consequent": [
+        "manik-manik"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.8333333333333334,
+      "lift": 2.8703703703703702
+    },
+    {
+      "id": 0.27815467427094265,
+      "antecedent": [
+        "3D_bunga",
+        "abstrak"
+      ],
+      "consequent": [
+        "chrome",
+        "manik-manik"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.8333333333333334,
+      "lift": 2.8703703703703702
+    },
+    {
+      "id": 0.16525522975864315,
+      "antecedent": [
+        "3D_bunga",
+        "abstrak",
+        "chrome"
+      ],
+      "consequent": [
+        "manik-manik"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.8333333333333334,
+      "lift": 2.8703703703703702
+    },
+    {
+      "id": 0.21685635147621718,
       "antecedent": [
         "abstrak",
-        "hitam"
+        "manik-manik"
       ],
       "consequent": [
+        "3D_bunga",
         "chrome"
       ],
-      "support": 0.1,
+      "support": 0.16129032258064516,
       "confidence": 0.8333333333333334,
-      "lift": 1.3440860215053765
+      "lift": 2.3484848484848486
     },
     {
-      "id": 0.21395471418516565,
+      "id": 0.8626843569593371,
       "antecedent": [
+        "mutiara",
+        "putih"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.8333333333333334,
+      "lift": 1.9871794871794872
+    },
+    {
+      "id": 0.8397681054405833,
+      "antecedent": [
+        "abstrak",
         "manik-manik"
       ],
       "consequent": [
         "3D_bunga"
       ],
-      "support": 0.13,
-      "confidence": 0.8125,
-      "lift": 3.125
+      "support": 0.16129032258064516,
+      "confidence": 0.8333333333333334,
+      "lift": 1.9871794871794872
     },
     {
-      "id": 0.7281632356564008,
+      "id": 0.17325505447591105,
       "antecedent": [
-        "hitam"
+        "abstrak",
+        "chrome",
+        "manik-manik"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.8333333333333334,
+      "lift": 1.9871794871794872
+    },
+    {
+      "id": 0.018567335566264553,
+      "antecedent": [
+        "mutiara",
+        "putih"
       ],
       "consequent": [
         "chrome"
       ],
-      "support": 0.13,
-      "confidence": 0.8125,
-      "lift": 1.310483870967742
+      "support": 0.16129032258064516,
+      "confidence": 0.8333333333333334,
+      "lift": 1.076388888888889
     },
     {
-      "id": 0.4157606086360861,
+      "id": 0.16895375059405637,
+      "antecedent": [
+        "3D_bunga",
+        "putih"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.8333333333333334,
+      "lift": 1.076388888888889
+    },
+    {
+      "id": 0.1700019318792546,
+      "antecedent": [
+        "abstrak",
+        "cat_eye"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.8333333333333334,
+      "lift": 1.076388888888889
+    },
+    {
+      "id": 0.3306098082193605,
+      "antecedent": [
+        "3D_bunga",
+        "cat_eye"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.8333333333333334,
+      "lift": 1.076388888888889
+    },
+    {
+      "id": 0.854565102531765,
+      "antecedent": [
+        "pita"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.2903225806451613,
+      "confidence": 0.8181818181818182,
+      "lift": 1.0568181818181819
+    },
+    {
+      "id": 0.6861424081830031,
       "antecedent": [
         "chrome",
+        "merah_maron"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 3.542857142857143
+    },
+    {
+      "id": 0.8887899438470794,
+      "antecedent": [
+        "3D_bunga",
+        "chrome",
+        "putih"
+      ],
+      "consequent": [
+        "mutiara"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 2.7555555555555555
+    },
+    {
+      "id": 0.10874948379835025,
+      "antecedent": [
+        "3D_bunga",
+        "chrome",
+        "putih"
+      ],
+      "consequent": [
+        "manik-manik"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 2.7555555555555555
+    },
+    {
+      "id": 0.40305339852201594,
+      "antecedent": [
+        "3D_bunga",
+        "cat_eye",
+        "chrome"
+      ],
+      "consequent": [
+        "manik-manik"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 2.7555555555555555
+    },
+    {
+      "id": 0.14063717148233212,
+      "antecedent": [
+        "3D_bunga",
+        "merah_maron"
+      ],
+      "consequent": [
+        "chrome",
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 2.7555555555555555
+    },
+    {
+      "id": 0.04737965121762733,
+      "antecedent": [
+        "cat_eye",
         "manik-manik"
       ],
       "consequent": [
-        "3D_bunga"
-      ],
-      "support": 0.11,
-      "confidence": 0.7857142857142857,
-      "lift": 3.021978021978022
-    },
-    {
-      "id": 0.21428372523217576,
-      "antecedent": [
-        "chrome",
-        "hitam"
-      ],
-      "consequent": [
-        "abstrak"
-      ],
-      "support": 0.1,
-      "confidence": 0.7692307692307693,
-      "lift": 1.7094017094017095
-    },
-    {
-      "id": 0.9771821544205671,
-      "antecedent": [
-        "hitam"
-      ],
-      "consequent": [
-        "abstrak"
-      ],
-      "support": 0.12,
-      "confidence": 0.75,
-      "lift": 1.6666666666666665
-    },
-    {
-      "id": 0.01116525651085265,
-      "antecedent": [
         "3D_bunga",
         "chrome"
       ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 2.2545454545454544
+    },
+    {
+      "id": 0.4941350205012244,
+      "antecedent": [
+        "french_crop",
+        "merah_maron"
+      ],
       "consequent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 2.2545454545454544
+    },
+    {
+      "id": 0.49503302428991613,
+      "antecedent": [
+        "cat_eye",
+        "pink"
+      ],
+      "consequent": [
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 1.9076923076923078
+    },
+    {
+      "id": 0.19079977659238456,
+      "antecedent": [
+        "cat_eye",
         "manik-manik"
       ],
-      "support": 0.11,
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 1.9076923076923078
+    },
+    {
+      "id": 0.08914878242631419,
+      "antecedent": [
+        "3D_bunga",
+        "merah_maron"
+      ],
+      "consequent": [
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 1.9076923076923078
+    },
+    {
+      "id": 0.5769979752806981,
+      "antecedent": [
+        "french_crop",
+        "merah_maron"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 1.9076923076923078
+    },
+    {
+      "id": 0.5558380469627805,
+      "antecedent": [
+        "chrome",
+        "merah_maron"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 1.9076923076923078
+    },
+    {
+      "id": 0.6565704970581917,
+      "antecedent": [
+        "chrome",
+        "mutiara",
+        "putih"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 1.9076923076923078
+    },
+    {
+      "id": 0.17913971428881603,
+      "antecedent": [
+        "cat_eye",
+        "chrome",
+        "manik-manik"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 1.9076923076923078
+    },
+    {
+      "id": 0.13674960508302636,
+      "antecedent": [
+        "chrome",
+        "french_crop",
+        "merah_maron"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 1.9076923076923078
+    },
+    {
+      "id": 0.044938293401113216,
+      "antecedent": [
+        "3D_bunga",
+        "chrome",
+        "mutiara"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 1.6533333333333333
+    },
+    {
+      "id": 0.2969058090044572,
+      "antecedent": [
+        "bintang"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 1.0333333333333334
+    },
+    {
+      "id": 0.3127634609244059,
+      "antecedent": [
+        "abstrak",
+        "french_crop"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 1.0333333333333334
+    },
+    {
+      "id": 0.21460543605474758,
+      "antecedent": [
+        "3D_bunga",
+        "merah_maron"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 1.0333333333333334
+    },
+    {
+      "id": 0.45102462807681254,
+      "antecedent": [
+        "3D_bunga",
+        "mutiara",
+        "putih"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.8,
+      "lift": 1.0333333333333334
+    },
+    {
+      "id": 0.1251777658804547,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "support": 0.22580645161290322,
+      "confidence": 0.7777777777777777,
+      "lift": 2.1919191919191916
+    },
+    {
+      "id": 0.6232609214877239,
+      "antecedent": [
+        "pink"
+      ],
+      "consequent": [
+        "french_crop"
+      ],
+      "support": 0.22580645161290322,
+      "confidence": 0.7777777777777777,
+      "lift": 1.8547008547008543
+    },
+    {
+      "id": 0.22288144221284611,
+      "antecedent": [
+        "mutiara"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.22580645161290322,
+      "confidence": 0.7777777777777777,
+      "lift": 1.8547008547008543
+    },
+    {
+      "id": 0.23793306642901835,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.22580645161290322,
+      "confidence": 0.7777777777777777,
+      "lift": 1.8547008547008543
+    },
+    {
+      "id": 0.7490691407238028,
+      "antecedent": [
+        "chrome",
+        "manik-manik"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.22580645161290322,
+      "confidence": 0.7777777777777777,
+      "lift": 1.8547008547008543
+    },
+    {
+      "id": 0.1522171644173853,
+      "antecedent": [
+        "bunga"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.22580645161290322,
+      "confidence": 0.7777777777777777,
+      "lift": 1.0046296296296295
+    },
+    {
+      "id": 0.19369812075784698,
+      "antecedent": [
+        "mutiara"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.22580645161290322,
+      "confidence": 0.7777777777777777,
+      "lift": 1.0046296296296295
+    },
+    {
+      "id": 0.7672949261990822,
+      "antecedent": [
+        "putih"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.3548387096774194,
       "confidence": 0.7333333333333334,
-      "lift": 4.583333333333334
+      "lift": 0.9472222222222223
     },
     {
-      "id": 0.10033023599567314,
+      "id": 0.49234381633911717,
       "antecedent": [
-        "abstrak"
+        "merah_maron"
       ],
       "consequent": [
-        "chrome"
+        "chrome",
+        "french_crop"
       ],
-      "support": 0.32,
-      "confidence": 0.7111111111111111,
-      "lift": 1.146953405017921
+      "support": 0.16129032258064516,
+      "confidence": 0.7142857142857143,
+      "lift": 2.46031746031746
     },
     {
-      "id": 0.6957061817138231,
+      "id": 0.1486995044477265,
       "antecedent": [
-        "manik-manik"
+        "merah_maron"
       ],
       "consequent": [
-        "3D_bunga",
-        "chrome"
+        "french_crop"
       ],
-      "support": 0.11,
-      "confidence": 0.6875,
-      "lift": 4.583333333333334
+      "support": 0.16129032258064516,
+      "confidence": 0.7142857142857143,
+      "lift": 1.7032967032967032
     },
     {
-      "id": 0.4723809010132377,
+      "id": 0.8640910364376412,
       "antecedent": [
         "merah_maron"
       ],
       "consequent": [
         "3D_bunga"
       ],
-      "support": 0.11,
-      "confidence": 0.6875,
-      "lift": 2.644230769230769
+      "support": 0.16129032258064516,
+      "confidence": 0.7142857142857143,
+      "lift": 1.7032967032967032
     },
     {
-      "id": 0.6412838549328208,
+      "id": 0.5711334741995876,
+      "antecedent": [
+        "chrome",
+        "mutiara"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.7142857142857143,
+      "lift": 1.7032967032967032
+    },
+    {
+      "id": 0.9933274998540378,
+      "antecedent": [
+        "chrome",
+        "mutiara"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.7142857142857143,
+      "lift": 1.4761904761904763
+    },
+    {
+      "id": 0.9432513241670184,
+      "antecedent": [
+        "3D_bunga",
+        "mutiara"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.7142857142857143,
+      "lift": 1.4761904761904763
+    },
+    {
+      "id": 0.42454528112917855,
+      "antecedent": [
+        "3D_bunga",
+        "manik-manik"
+      ],
+      "consequent": [
+        "abstrak",
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.7142857142857143,
+      "lift": 1.4761904761904763
+    },
+    {
+      "id": 0.6922003529800899,
+      "antecedent": [
+        "chrome",
+        "mutiara"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.7142857142857143,
+      "lift": 1.3025210084033614
+    },
+    {
+      "id": 0.7675904310011737,
+      "antecedent": [
+        "3D_bunga",
+        "manik-manik"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.7142857142857143,
+      "lift": 1.3025210084033614
+    },
+    {
+      "id": 0.13678935303070694,
+      "antecedent": [
+        "3D_bunga",
+        "chrome",
+        "manik-manik"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.7142857142857143,
+      "lift": 1.3025210084033614
+    },
+    {
+      "id": 0.6530582799893382,
       "antecedent": [
         "merah_maron"
       ],
       "consequent": [
         "chrome"
       ],
-      "support": 0.11,
-      "confidence": 0.6875,
-      "lift": 1.1088709677419355
+      "support": 0.16129032258064516,
+      "confidence": 0.7142857142857143,
+      "lift": 0.9226190476190477
     },
     {
-      "id": 0.40569171008156746,
+      "id": 0.1112828847853854,
+      "antecedent": [
+        "3D_bunga",
+        "mutiara"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.7142857142857143,
+      "lift": 0.9226190476190477
+    },
+    {
+      "id": 0.6722148222150109,
+      "antecedent": [
+        "cat_eye"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.2903225806451613,
+      "confidence": 0.6923076923076923,
+      "lift": 0.8942307692307693
+    },
+    {
+      "id": 0.4051565839480129,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.2903225806451613,
+      "confidence": 0.6923076923076923,
+      "lift": 0.8942307692307693
+    },
+    {
+      "id": 0.41383276238880073,
+      "antecedent": [
+        "3D_bunga",
+        "putih"
+      ],
+      "consequent": [
+        "chrome",
+        "mutiara"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 2.952380952380952
+    },
+    {
+      "id": 0.7163708219425236,
+      "antecedent": [
+        "3D_bunga",
+        "chrome",
+        "french_crop"
+      ],
+      "consequent": [
+        "merah_maron"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 2.952380952380952
+    },
+    {
+      "id": 0.7843205434040661,
+      "antecedent": [
+        "french_crop",
+        "putih"
+      ],
+      "consequent": [
+        "pink"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 2.296296296296296
+    },
+    {
+      "id": 0.5067684165332691,
+      "antecedent": [
+        "3D_bunga",
+        "putih"
+      ],
+      "consequent": [
+        "manik-manik"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 2.296296296296296
+    },
+    {
+      "id": 0.08345613188258227,
+      "antecedent": [
+        "3D_bunga",
+        "cat_eye"
+      ],
+      "consequent": [
+        "manik-manik"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 2.296296296296296
+    },
+    {
+      "id": 0.15626706886387665,
+      "antecedent": [
+        "3D_bunga",
+        "putih"
+      ],
+      "consequent": [
+        "chrome",
+        "manik-manik"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 2.296296296296296
+    },
+    {
+      "id": 0.5773252003300421,
+      "antecedent": [
+        "3D_bunga",
+        "cat_eye"
+      ],
+      "consequent": [
+        "chrome",
+        "manik-manik"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 2.296296296296296
+    },
+    {
+      "id": 0.18794446865508307,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "chrome",
+        "putih"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.6666666666666666,
+      "lift": 1.8787878787878787
+    },
+    {
+      "id": 0.18586207299845736,
+      "antecedent": [
+        "abstrak",
+        "manik-manik"
+      ],
+      "consequent": [
+        "chrome",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 1.8787878787878787
+    },
+    {
+      "id": 0.36453799637450013,
+      "antecedent": [
+        "mutiara",
+        "putih"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 1.8787878787878787
+    },
+    {
+      "id": 0.7480860192679405,
+      "antecedent": [
+        "manik-manik",
+        "putih"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 1.8787878787878787
+    },
+    {
+      "id": 0.678831769832961,
+      "antecedent": [
+        "chrome",
+        "french_crop"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.6666666666666666,
+      "lift": 1.5897435897435896
+    },
+    {
+      "id": 0.9432082086921815,
+      "antecedent": [
+        "pink",
+        "putih"
+      ],
+      "consequent": [
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 1.5897435897435896
+    },
+    {
+      "id": 0.7689058773104022,
+      "antecedent": [
+        "manik-manik",
+        "putih"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 1.5897435897435896
+    },
+    {
+      "id": 0.5034570245337839,
+      "antecedent": [
+        "3D_bunga",
+        "cat_eye"
+      ],
+      "consequent": [
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 1.5897435897435896
+    },
+    {
+      "id": 0.46553637552431715,
+      "antecedent": [
+        "chrome",
+        "manik-manik",
+        "putih"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 1.5897435897435896
+    },
+    {
+      "id": 0.8744250771928066,
+      "antecedent": [
+        "pink"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.6666666666666666,
+      "lift": 1.3777777777777778
+    },
+    {
+      "id": 0.2233842195791671,
       "antecedent": [
         "mutiara"
       ],
       "consequent": [
         "putih"
       ],
-      "support": 0.16,
-      "confidence": 0.6666666666666667,
-      "lift": 1.3333333333333335
+      "support": 0.1935483870967742,
+      "confidence": 0.6666666666666666,
+      "lift": 1.3777777777777778
     },
     {
-      "id": 0.3362151757136398,
+      "id": 0.842246775205832,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.6666666666666666,
+      "lift": 1.3777777777777778
+    },
+    {
+      "id": 0.9035526165471333,
+      "antecedent": [
+        "chrome",
+        "manik-manik"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.6666666666666666,
+      "lift": 1.3777777777777778
+    },
+    {
+      "id": 0.6640196659727093,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "abstrak",
+        "chrome"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.6666666666666666,
+      "lift": 1.3777777777777778
+    },
+    {
+      "id": 0.28617146404501537,
+      "antecedent": [
+        "abstrak",
+        "manik-manik"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 1.3777777777777778
+    },
+    {
+      "id": 0.6815486028463501,
+      "antecedent": [
+        "abstrak",
+        "chrome",
+        "manik-manik"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 1.3777777777777778
+    },
+    {
+      "id": 0.8556485744240124,
+      "antecedent": [
+        "manik-manik",
+        "putih"
+      ],
+      "consequent": [
+        "abstrak",
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 1.3777777777777778
+    },
+    {
+      "id": 0.06004516527779946,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.6666666666666666,
+      "lift": 1.215686274509804
+    },
+    {
+      "id": 0.23599059765627006,
+      "antecedent": [
+        "chrome",
+        "manik-manik"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.6666666666666666,
+      "lift": 1.215686274509804
+    },
+    {
+      "id": 0.7808016151420247,
+      "antecedent": [
+        "manik-manik",
+        "putih"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 1.215686274509804
+    },
+    {
+      "id": 0.6633397589432846,
+      "antecedent": [
+        "chrome",
+        "manik-manik",
+        "putih"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 1.215686274509804
+    },
+    {
+      "id": 0.6950402429868088,
+      "antecedent": [
+        "cat_eye",
+        "putih"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.6666666666666666,
+      "lift": 0.861111111111111
+    },
+    {
+      "id": 0.24595147716985266,
+      "antecedent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "consequent": [
+        "manik-manik"
+      ],
+      "support": 0.22580645161290322,
+      "confidence": 0.6363636363636364,
+      "lift": 2.1919191919191916
+    },
+    {
+      "id": 0.9572566463493924,
+      "antecedent": [
+        "chrome",
+        "putih"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.22580645161290322,
+      "confidence": 0.6363636363636364,
+      "lift": 1.160427807486631
+    },
+    {
+      "id": 0.2186126953839891,
+      "antecedent": [
+        "chrome"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.4838709677419355,
+      "confidence": 0.625,
+      "lift": 1.1397058823529413
+    },
+    {
+      "id": 0.6519819766878259,
+      "antecedent": [
+        "3D_bunga",
+        "french_crop"
+      ],
+      "consequent": [
+        "chrome",
+        "merah_maron"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 3.5428571428571427
+    },
+    {
+      "id": 0.6886775577530326,
+      "antecedent": [
+        "chrome",
+        "mutiara"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 2.952380952380952
+    },
+    {
+      "id": 0.22806527907882512,
+      "antecedent": [
+        "merah_maron"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "chrome",
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 2.952380952380952
+    },
+    {
+      "id": 0.4651164631697907,
+      "antecedent": [
+        "3D_bunga",
+        "french_crop"
+      ],
+      "consequent": [
+        "merah_maron"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 2.5306122448979593
+    },
+    {
+      "id": 0.3192805904185264,
+      "antecedent": [
+        "merah_maron"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 2.5306122448979593
+    },
+    {
+      "id": 0.7509860182002643,
+      "antecedent": [
+        "cat_eye",
+        "french_crop"
+      ],
+      "consequent": [
+        "pink"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 1.968253968253968
+    },
+    {
+      "id": 0.12014326847962697,
+      "antecedent": [
+        "3D_bunga",
+        "french_crop"
+      ],
+      "consequent": [
+        "mutiara"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 1.968253968253968
+    },
+    {
+      "id": 0.7317517324073287,
+      "antecedent": [
+        "abstrak",
+        "chrome",
+        "putih"
+      ],
+      "consequent": [
+        "manik-manik"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 1.968253968253968
+    },
+    {
+      "id": 0.9325677422806944,
+      "antecedent": [
+        "3D_bunga",
+        "manik-manik"
+      ],
+      "consequent": [
+        "cat_eye",
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 1.968253968253968
+    },
+    {
+      "id": 0.7673730187320176,
+      "antecedent": [
+        "merah_maron"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 1.6103896103896103
+    },
+    {
+      "id": 0.007615140825657507,
+      "antecedent": [
+        "3D_bunga",
+        "mutiara"
+      ],
+      "consequent": [
+        "chrome",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 1.6103896103896103
+    },
+    {
+      "id": 0.7772762832648265,
+      "antecedent": [
+        "3D_bunga",
+        "manik-manik"
+      ],
+      "consequent": [
+        "chrome",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 1.6103896103896103
+    },
+    {
+      "id": 0.2836150179757496,
+      "antecedent": [
+        "merah_maron"
+      ],
+      "consequent": [
+        "cat_eye"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 1.3626373626373625
+    },
+    {
+      "id": 0.7053822913201069,
+      "antecedent": [
+        "french_crop",
+        "pink"
+      ],
+      "consequent": [
+        "cat_eye"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 1.3626373626373625
+    },
+    {
+      "id": 0.2556212092634449,
+      "antecedent": [
+        "3D_bunga",
+        "french_crop"
+      ],
+      "consequent": [
+        "cat_eye"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 1.3626373626373625
+    },
+    {
+      "id": 0.7557553497070558,
+      "antecedent": [
+        "cat_eye",
+        "french_crop"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 1.3626373626373625
+    },
+    {
+      "id": 0.02885182842709544,
+      "antecedent": [
+        "3D_bunga",
+        "manik-manik"
+      ],
+      "consequent": [
+        "cat_eye"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 1.3626373626373625
+    },
+    {
+      "id": 0.14322451069329145,
+      "antecedent": [
+        "3D_bunga",
+        "mutiara"
+      ],
+      "consequent": [
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 1.3626373626373625
+    },
+    {
+      "id": 0.9931910395453943,
+      "antecedent": [
+        "3D_bunga",
+        "chrome",
+        "manik-manik"
+      ],
+      "consequent": [
+        "cat_eye"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 1.3626373626373625
+    },
+    {
+      "id": 0.8336837138112809,
+      "antecedent": [
+        "french_crop",
+        "pink"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 1.1809523809523808
+    },
+    {
+      "id": 0.7306598625300748,
+      "antecedent": [
+        "3D_bunga",
+        "manik-manik"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 1.1809523809523808
+    },
+    {
+      "id": 0.45333418337750797,
+      "antecedent": [
+        "3D_bunga",
+        "chrome",
+        "manik-manik"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 1.1809523809523808
+    },
+    {
+      "id": 0.8506570314670729,
+      "antecedent": [
+        "cat_eye",
+        "french_crop"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5714285714285714,
+      "lift": 0.738095238095238
+    },
+    {
+      "id": 0.8766828384254579,
+      "antecedent": [
+        "mutiara"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "putih"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.5555555555555555,
+      "lift": 2.87037037037037
+    },
+    {
+      "id": 0.3786657709979858,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "abstrak"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.5555555555555555,
+      "lift": 2.87037037037037
+    },
+    {
+      "id": 0.7185039838646468,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "abstrak",
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.5555555555555555,
+      "lift": 2.87037037037037
+    },
+    {
+      "id": 0.7000277444560431,
+      "antecedent": [
+        "chrome",
+        "manik-manik"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "abstrak"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.5555555555555555,
+      "lift": 2.87037037037037
+    },
+    {
+      "id": 0.02736745587318523,
+      "antecedent": [
+        "chrome",
+        "french_crop"
+      ],
+      "consequent": [
+        "merah_maron"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.5555555555555555,
+      "lift": 2.46031746031746
+    },
+    {
+      "id": 0.9062742165300113,
+      "antecedent": [
+        "cat_eye",
+        "chrome"
+      ],
+      "consequent": [
+        "manik-manik"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.5555555555555555,
+      "lift": 1.9135802469135799
+    },
+    {
+      "id": 0.0870075035762995,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "cat_eye",
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.5555555555555555,
+      "lift": 1.9135802469135799
+    },
+    {
+      "id": 0.03246471856854605,
+      "antecedent": [
+        "mutiara"
+      ],
+      "consequent": [
+        "chrome",
+        "putih"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.5555555555555555,
+      "lift": 1.5656565656565653
+    },
+    {
+      "id": 0.03812886277238725,
+      "antecedent": [
+        "mutiara"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.5555555555555555,
+      "lift": 1.5656565656565653
+    },
+    {
+      "id": 0.4641036176083243,
+      "antecedent": [
+        "pink"
+      ],
+      "consequent": [
+        "cat_eye"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.5555555555555555,
+      "lift": 1.3247863247863245
+    },
+    {
+      "id": 0.02897894939258272,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "cat_eye"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.5555555555555555,
+      "lift": 1.3247863247863245
+    },
+    {
+      "id": 0.8982353513640838,
+      "antecedent": [
+        "cat_eye",
+        "chrome"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.5555555555555555,
+      "lift": 1.3247863247863245
+    },
+    {
+      "id": 0.1918991291401988,
+      "antecedent": [
+        "chrome",
+        "manik-manik"
+      ],
+      "consequent": [
+        "cat_eye"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.5555555555555555,
+      "lift": 1.3247863247863245
+    },
+    {
+      "id": 0.6053583381025099,
       "antecedent": [
         "bunga"
       ],
       "consequent": [
         "putih"
       ],
-      "support": 0.1,
-      "confidence": 0.6666666666666667,
-      "lift": 1.3333333333333335
+      "support": 0.16129032258064516,
+      "confidence": 0.5555555555555555,
+      "lift": 1.148148148148148
     },
     {
-      "id": 0.7202883763238941,
+      "id": 0.20618362612844188,
       "antecedent": [
-        "french_crop"
-      ],
-      "consequent": [
-        "putih"
-      ],
-      "support": 0.18,
-      "confidence": 0.6428571428571428,
-      "lift": 1.2857142857142856
-    },
-    {
-      "id": 0.8453258638011245,
-      "antecedent": [
-        "hitam"
+        "mutiara"
       ],
       "consequent": [
         "abstrak",
         "chrome"
       ],
-      "support": 0.1,
-      "confidence": 0.625,
-      "lift": 1.953125
+      "support": 0.16129032258064516,
+      "confidence": 0.5555555555555555,
+      "lift": 1.148148148148148
     },
     {
-      "id": 0.7234516606043307,
-      "antecedent": [
-        "manik-manik"
-      ],
-      "consequent": [
-        "putih"
-      ],
-      "support": 0.1,
-      "confidence": 0.625,
-      "lift": 1.25
-    },
-    {
-      "id": 0.8377348717596775,
-      "antecedent": [
-        "miror"
-      ],
-      "consequent": [
-        "chrome"
-      ],
-      "support": 0.11,
-      "confidence": 0.6111111111111112,
-      "lift": 0.9856630824372761
-    },
-    {
-      "id": 0.047073534585351684,
-      "antecedent": [
-        "french_crop"
-      ],
-      "consequent": [
-        "chrome"
-      ],
-      "support": 0.17,
-      "confidence": 0.6071428571428571,
-      "lift": 0.9792626728110598
-    },
-    {
-      "id": 0.6494950801112551,
-      "antecedent": [
-        "3D_bunga"
-      ],
-      "consequent": [
-        "chrome"
-      ],
-      "support": 0.15,
-      "confidence": 0.5769230769230769,
-      "lift": 0.9305210918114143
-    },
-    {
-      "id": 0.26142164852754646,
-      "antecedent": [
-        "cat_eye"
-      ],
-      "consequent": [
-        "chrome"
-      ],
-      "support": 0.19,
-      "confidence": 0.5757575757575757,
-      "lift": 0.9286412512218963
-    },
-    {
-      "id": 0.010009391995648875,
-      "antecedent": [
-        "pita"
-      ],
-      "consequent": [
-        "putih"
-      ],
-      "support": 0.13,
-      "confidence": 0.5652173913043478,
-      "lift": 1.1304347826086956
-    },
-    {
-      "id": 0.6266946214372331,
-      "antecedent": [
-        "pita"
-      ],
-      "consequent": [
-        "chrome"
-      ],
-      "support": 0.13,
-      "confidence": 0.5652173913043478,
-      "lift": 0.91164095371669
-    },
-    {
-      "id": 0.25157807119004183,
-      "antecedent": [
-        "putih"
-      ],
-      "consequent": [
-        "chrome"
-      ],
-      "support": 0.28,
-      "confidence": 0.56,
-      "lift": 0.903225806451613
-    },
-    {
-      "id": 0.24379094331501316,
-      "antecedent": [
-        "pink"
-      ],
-      "consequent": [
-        "putih"
-      ],
-      "support": 0.1,
-      "confidence": 0.5555555555555556,
-      "lift": 1.1111111111111112
-    },
-    {
-      "id": 0.22056329287232102,
-      "antecedent": [
-        "pink"
-      ],
-      "consequent": [
-        "chrome"
-      ],
-      "support": 0.1,
-      "confidence": 0.5555555555555556,
-      "lift": 0.8960573476702509
-    },
-    {
-      "id": 0.34823821290638746,
+      "id": 0.8708274255889062,
       "antecedent": [
         "mutiara"
       ],
       "consequent": [
-        "3D_bunga"
+        "abstrak"
       ],
-      "support": 0.13,
-      "confidence": 0.5416666666666667,
-      "lift": 2.0833333333333335
+      "support": 0.16129032258064516,
+      "confidence": 0.5555555555555555,
+      "lift": 1.0130718954248366
     },
     {
-      "id": 0.4306963270834009,
+      "id": 0.807902465227185,
+      "antecedent": [
+        "cat_eye",
+        "chrome"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.5555555555555555,
+      "lift": 1.0130718954248366
+    },
+    {
+      "id": 0.7081099909855348,
+      "antecedent": [
+        "chrome",
+        "pita"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.5555555555555555,
+      "lift": 1.0130718954248366
+    },
+    {
+      "id": 0.7273238581066901,
+      "antecedent": [
+        "pink"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.5555555555555555,
+      "lift": 0.7175925925925924
+    },
+    {
+      "id": 0.01594783030248914,
       "antecedent": [
         "chrome",
         "putih"
       ],
       "consequent": [
-        "abstrak"
+        "manik-manik"
       ],
-      "support": 0.15,
-      "confidence": 0.5357142857142857,
-      "lift": 1.1904761904761905
+      "support": 0.1935483870967742,
+      "confidence": 0.5454545454545454,
+      "lift": 1.8787878787878785
     },
     {
-      "id": 0.36605658569318467,
+      "id": 0.9262825028992553,
       "antecedent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "consequent": [
+        "french_crop"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.5454545454545454,
+      "lift": 1.3006993006993006
+    },
+    {
+      "id": 0.9196644715051645,
+      "antecedent": [
+        "3D_bunga",
         "chrome"
       ],
       "consequent": [
         "abstrak"
       ],
-      "support": 0.32,
-      "confidence": 0.5161290322580645,
-      "lift": 1.146953405017921
+      "support": 0.1935483870967742,
+      "confidence": 0.5454545454545454,
+      "lift": 0.9946524064171123
     },
     {
-      "id": 0.3350155311586016,
+      "id": 0.600257627553616,
       "antecedent": [
-        "3D_bunga"
+        "french_crop"
       ],
       "consequent": [
-        "manik-manik"
+        "pink"
       ],
-      "support": 0.13,
-      "confidence": 0.5,
-      "lift": 3.125
+      "support": 0.22580645161290322,
+      "confidence": 0.5384615384615384,
+      "lift": 1.8547008547008546
     },
     {
-      "id": 0.976941490890843,
+      "id": 0.9087453022928451,
       "antecedent": [
         "3D_bunga"
       ],
       "consequent": [
         "mutiara"
       ],
-      "support": 0.13,
-      "confidence": 0.5,
-      "lift": 2.0833333333333335
+      "support": 0.22580645161290322,
+      "confidence": 0.5384615384615384,
+      "lift": 1.8547008547008546
     },
     {
-      "id": 0.8476503354173753,
+      "id": 0.23679184038201928,
       "antecedent": [
         "3D_bunga"
       ],
       "consequent": [
-        "putih"
+        "manik-manik"
       ],
-      "support": 0.13,
-      "confidence": 0.5,
-      "lift": 1
+      "support": 0.22580645161290322,
+      "confidence": 0.5384615384615384,
+      "lift": 1.8547008547008546
     },
     {
-      "id": 0.9348043720474027,
+      "id": 0.17064355248871388,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "chrome",
+        "manik-manik"
+      ],
+      "support": 0.22580645161290322,
+      "confidence": 0.5384615384615384,
+      "lift": 1.8547008547008546
+    },
+    {
+      "id": 0.1790308741609392,
+      "antecedent": [
+        "cat_eye"
+      ],
+      "consequent": [
+        "french_crop"
+      ],
+      "support": 0.22580645161290322,
+      "confidence": 0.5384615384615384,
+      "lift": 1.2840236686390532
+    },
+    {
+      "id": 0.13825740212401239,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "cat_eye"
+      ],
+      "support": 0.22580645161290322,
+      "confidence": 0.5384615384615384,
+      "lift": 1.2840236686390532
+    },
+    {
+      "id": 0.7735928665391174,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "french_crop"
+      ],
+      "support": 0.22580645161290322,
+      "confidence": 0.5384615384615384,
+      "lift": 1.2840236686390532
+    },
+    {
+      "id": 0.40990991954389533,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.22580645161290322,
+      "confidence": 0.5384615384615384,
+      "lift": 1.2840236686390532
+    },
+    {
+      "id": 0.7727899977594324,
+      "antecedent": [
+        "putih"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.25806451612903225,
+      "confidence": 0.5333333333333333,
+      "lift": 0.9725490196078432
+    },
+    {
+      "id": 0.13466410185869881,
+      "antecedent": [
+        "abstrak",
+        "putih"
+      ],
+      "consequent": [
+        "manik-manik"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5,
+      "lift": 1.722222222222222
+    },
+    {
+      "id": 0.8074482599295383,
+      "antecedent": [
+        "abstrak",
+        "putih"
+      ],
+      "consequent": [
+        "chrome",
+        "manik-manik"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.5,
+      "lift": 1.722222222222222
+    },
+    {
+      "id": 0.35250956879895456,
+      "antecedent": [
+        "abstrak"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.25806451612903225,
+      "confidence": 0.4705882352941177,
+      "lift": 0.9725490196078432
+    },
+    {
+      "id": 0.7665401822391318,
       "antecedent": [
         "abstrak",
         "chrome"
@@ -1685,217 +3520,1704 @@
       "consequent": [
         "putih"
       ],
-      "support": 0.15,
-      "confidence": 0.46875,
-      "lift": 0.9375
+      "support": 0.22580645161290322,
+      "confidence": 0.4666666666666666,
+      "lift": 0.9644444444444443
     },
     {
-      "id": 0.6008994777765642,
+      "id": 0.027178310604704214,
       "antecedent": [
-        "mutiara"
+        "putih"
       ],
       "consequent": [
+        "abstrak",
         "chrome"
       ],
-      "support": 0.11,
+      "support": 0.22580645161290322,
+      "confidence": 0.4666666666666666,
+      "lift": 0.9644444444444443
+    },
+    {
+      "id": 0.8804508405534338,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "chrome",
+        "french_crop"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.4615384615384615,
+      "lift": 1.5897435897435894
+    },
+    {
+      "id": 0.9977285802283808,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.4615384615384615,
+      "lift": 1.3006993006993006
+    },
+    {
+      "id": 0.8092911003172621,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "cat_eye"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.4615384615384615,
+      "lift": 1.1005917159763312
+    },
+    {
+      "id": 0.2502305245581452,
+      "antecedent": [
+        "cat_eye"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.4615384615384615,
+      "lift": 1.1005917159763312
+    },
+    {
+      "id": 0.7054132989327817,
+      "antecedent": [
+        "cat_eye"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.4615384615384615,
+      "lift": 0.9538461538461538
+    },
+    {
+      "id": 0.6426487955246396,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.4615384615384615,
+      "lift": 0.9538461538461538
+    },
+    {
+      "id": 0.5806078491400926,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.4615384615384615,
+      "lift": 0.9538461538461538
+    },
+    {
+      "id": 0.04361395015502134,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "abstrak",
+        "chrome"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.4615384615384615,
+      "lift": 0.9538461538461538
+    },
+    {
+      "id": 0.21149693210243825,
+      "antecedent": [
+        "cat_eye"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.4615384615384615,
+      "lift": 0.8416289592760181
+    },
+    {
+      "id": 0.7418837367068605,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.4615384615384615,
+      "lift": 0.8416289592760181
+    },
+    {
+      "id": 0.6847725575098774,
+      "antecedent": [
+        "chrome"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.3548387096774194,
       "confidence": 0.45833333333333337,
-      "lift": 0.739247311827957
+      "lift": 1.092948717948718
     },
     {
-      "id": 0.5517707047423933,
-      "antecedent": [
-        "cat_eye"
-      ],
-      "consequent": [
-        "abstrak"
-      ],
-      "support": 0.15,
-      "confidence": 0.45454545454545453,
-      "lift": 1.01010101010101
-    },
-    {
-      "id": 0.1805638270753135,
+      "id": 0.03346867969335943,
       "antecedent": [
         "chrome"
       ],
       "consequent": [
         "putih"
       ],
-      "support": 0.28,
-      "confidence": 0.4516129032258065,
-      "lift": 0.903225806451613
+      "support": 0.3548387096774194,
+      "confidence": 0.45833333333333337,
+      "lift": 0.9472222222222223
     },
     {
-      "id": 0.6290895994899027,
+      "id": 0.6409887082581012,
       "antecedent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "consequent": [
+        "abstrak",
+        "manik-manik"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.45454545454545453,
+      "lift": 2.3484848484848486
+    },
+    {
+      "id": 0.07776795469159659,
+      "antecedent": [
+        "chrome",
+        "putih"
+      ],
+      "consequent": [
+        "mutiara"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.45454545454545453,
+      "lift": 1.5656565656565655
+    },
+    {
+      "id": 0.41746658964946703,
+      "antecedent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "consequent": [
+        "mutiara"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.45454545454545453,
+      "lift": 1.5656565656565655
+    },
+    {
+      "id": 0.384623583857005,
+      "antecedent": [
+        "chrome",
+        "putih"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.45454545454545453,
+      "lift": 1.0839160839160837
+    },
+    {
+      "id": 0.39815819567258326,
+      "antecedent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "consequent": [
         "cat_eye"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.45454545454545453,
+      "lift": 1.0839160839160837
+    },
+    {
+      "id": 0.2383620519959132,
+      "antecedent": [
+        "pita"
       ],
       "consequent": [
         "putih"
       ],
-      "support": 0.14,
-      "confidence": 0.42424242424242425,
-      "lift": 0.8484848484848485
+      "support": 0.16129032258064516,
+      "confidence": 0.45454545454545453,
+      "lift": 0.9393939393939393
     },
     {
-      "id": 0.7569719787428271,
+      "id": 0.8209588246588129,
       "antecedent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.45454545454545453,
+      "lift": 0.9393939393939393
+    },
+    {
+      "id": 0.6438853672015247,
+      "antecedent": [
+        "pita"
+      ],
+      "consequent": [
+        "abstrak",
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.45454545454545453,
+      "lift": 0.9393939393939393
+    },
+    {
+      "id": 0.12203786523056825,
+      "antecedent": [
+        "pita"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.45454545454545453,
+      "lift": 0.8288770053475936
+    },
+    {
+      "id": 0.6395649286222425,
+      "antecedent": [
+        "mutiara"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "chrome",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 2.7555555555555555
+    },
+    {
+      "id": 0.0955698198993562,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "chrome",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 2.7555555555555555
+    },
+    {
+      "id": 0.6899585549321282,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "cat_eye",
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 2.7555555555555555
+    },
+    {
+      "id": 0.07633426276934852,
+      "antecedent": [
+        "chrome",
+        "french_crop"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "merah_maron"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 2.7555555555555555
+    },
+    {
+      "id": 0.5327978388054524,
+      "antecedent": [
+        "pink"
+      ],
+      "consequent": [
+        "french_crop",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 2.2962962962962963
+    },
+    {
+      "id": 0.6773207545572615,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 2.2962962962962963
+    },
+    {
+      "id": 0.7499538616940313,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "cat_eye"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 2.2962962962962963
+    },
+    {
+      "id": 0.44957824684973746,
+      "antecedent": [
+        "chrome",
+        "manik-manik"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 2.2962962962962963
+    },
+    {
+      "id": 0.018449991307294855,
+      "antecedent": [
+        "chrome",
+        "manik-manik"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "cat_eye"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 2.2962962962962963
+    },
+    {
+      "id": 0.25822952540771105,
+      "antecedent": [
+        "pink"
+      ],
+      "consequent": [
+        "cat_eye",
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 1.9682539682539681
+    },
+    {
+      "id": 0.48778144379394184,
+      "antecedent": [
+        "mutiara"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 1.9682539682539681
+    },
+    {
+      "id": 0.9214411944128387,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "abstrak",
+        "chrome",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 1.9682539682539681
+    },
+    {
+      "id": 0.05096578713994859,
+      "antecedent": [
+        "cat_eye",
+        "chrome"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "manik-manik"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 1.9682539682539681
+    },
+    {
+      "id": 0.21699887087776704,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "abstrak",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 1.722222222222222
+    },
+    {
+      "id": 0.5547336686656581,
+      "antecedent": [
+        "chrome",
+        "manik-manik"
+      ],
+      "consequent": [
+        "abstrak",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 1.722222222222222
+    },
+    {
+      "id": 0.9886638561007927,
+      "antecedent": [
+        "bunga"
+      ],
+      "consequent": [
+        "pink"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 1.5308641975308641
+    },
+    {
+      "id": 0.5446989539328541,
+      "antecedent": [
+        "pink"
+      ],
+      "consequent": [
+        "bunga"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 1.5308641975308641
+    },
+    {
+      "id": 0.4823257312873427,
+      "antecedent": [
+        "bunga"
+      ],
+      "consequent": [
+        "pita"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 1.2525252525252524
+    },
+    {
+      "id": 0.30138165171617726,
+      "antecedent": [
+        "mutiara"
+      ],
+      "consequent": [
+        "pita"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 1.2525252525252524
+    },
+    {
+      "id": 0.8391252356488056,
+      "antecedent": [
+        "pink"
+      ],
+      "consequent": [
         "3D_bunga"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 1.0598290598290598
+    },
+    {
+      "id": 0.39050569013470404,
+      "antecedent": [
+        "bunga"
+      ],
+      "consequent": [
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 1.0598290598290598
+    },
+    {
+      "id": 0.06143280072359414,
+      "antecedent": [
+        "mutiara"
+      ],
+      "consequent": [
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 1.0598290598290598
+    },
+    {
+      "id": 0.6798960236712058,
+      "antecedent": [
+        "cat_eye",
+        "chrome"
+      ],
+      "consequent": [
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 1.0598290598290598
+    },
+    {
+      "id": 0.7429570486388309,
+      "antecedent": [
+        "chrome",
+        "french_crop"
+      ],
+      "consequent": [
+        "cat_eye"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 1.0598290598290598
+    },
+    {
+      "id": 0.16331984194705407,
+      "antecedent": [
+        "cat_eye",
+        "chrome"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 0.9185185185185184
+    },
+    {
+      "id": 0.8876330563315827,
+      "antecedent": [
+        "chrome",
+        "french_crop"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.4444444444444444,
+      "lift": 0.8104575163398693
+    },
+    {
+      "id": 0.9505061428959164,
+      "antecedent": [
+        "abstrak"
+      ],
+      "consequent": [
+        "chrome",
+        "putih"
+      ],
+      "support": 0.22580645161290322,
+      "confidence": 0.411764705882353,
+      "lift": 1.160427807486631
+    },
+    {
+      "id": 0.14275824799986248,
+      "antecedent": [
+        "putih"
+      ],
+      "consequent": [
+        "pink"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.39999999999999997,
+      "lift": 1.3777777777777775
+    },
+    {
+      "id": 0.8147398440206772,
+      "antecedent": [
+        "putih"
+      ],
+      "consequent": [
+        "mutiara"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.39999999999999997,
+      "lift": 1.3777777777777775
+    },
+    {
+      "id": 0.16001280630346137,
+      "antecedent": [
+        "putih"
+      ],
+      "consequent": [
+        "manik-manik"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.39999999999999997,
+      "lift": 1.3777777777777775
+    },
+    {
+      "id": 0.9826916664676184,
+      "antecedent": [
+        "putih"
       ],
       "consequent": [
         "chrome",
         "manik-manik"
       ],
-      "support": 0.11,
-      "confidence": 0.4230769230769231,
-      "lift": 3.0219780219780215
+      "support": 0.1935483870967742,
+      "confidence": 0.39999999999999997,
+      "lift": 1.3777777777777775
     },
     {
-      "id": 0.712049693394166,
+      "id": 0.944339178619495,
+      "antecedent": [
+        "abstrak",
+        "chrome"
+      ],
+      "consequent": [
+        "manik-manik"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.39999999999999997,
+      "lift": 1.3777777777777775
+    },
+    {
+      "id": 0.8834906222352719,
+      "antecedent": [
+        "putih"
+      ],
+      "consequent": [
+        "cat_eye"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.39999999999999997,
+      "lift": 0.9538461538461537
+    },
+    {
+      "id": 0.2869659663511771,
+      "antecedent": [
+        "putih"
+      ],
+      "consequent": [
+        "french_crop"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.39999999999999997,
+      "lift": 0.9538461538461537
+    },
+    {
+      "id": 0.29068705213474777,
+      "antecedent": [
+        "putih"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.39999999999999997,
+      "lift": 0.9538461538461537
+    },
+    {
+      "id": 0.2152928100979571,
+      "antecedent": [
+        "abstrak",
+        "chrome"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.39999999999999997,
+      "lift": 0.9538461538461537
+    },
+    {
+      "id": 0.24907798176244755,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "chrome",
+        "merah_maron"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.3846153846153846,
+      "lift": 2.3846153846153846
+    },
+    {
+      "id": 0.5451169526631912,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "mutiara",
+        "putih"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.3846153846153846,
+      "lift": 1.987179487179487
+    },
+    {
+      "id": 0.2857959325464938,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "abstrak",
+        "manik-manik"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.3846153846153846,
+      "lift": 1.987179487179487
+    },
+    {
+      "id": 0.885434303485609,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "abstrak",
+        "chrome",
+        "manik-manik"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.3846153846153846,
+      "lift": 1.987179487179487
+    },
+    {
+      "id": 0.913959575783095,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "merah_maron"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.3846153846153846,
+      "lift": 1.7032967032967032
+    },
+    {
+      "id": 0.16125521607687787,
       "antecedent": [
         "3D_bunga"
       ],
       "consequent": [
         "merah_maron"
       ],
-      "support": 0.11,
-      "confidence": 0.4230769230769231,
-      "lift": 2.644230769230769
+      "support": 0.16129032258064516,
+      "confidence": 0.3846153846153846,
+      "lift": 1.7032967032967032
     },
     {
-      "id": 0.8216074388673157,
-      "antecedent": [
-        "abstrak"
-      ],
-      "consequent": [
-        "putih"
-      ],
-      "support": 0.18,
-      "confidence": 0.39999999999999997,
-      "lift": 0.7999999999999999
-    },
-    {
-      "id": 0.42386490444655567,
+      "id": 0.46215484242677607,
       "antecedent": [
         "3D_bunga"
       ],
       "consequent": [
-        "french_crop"
+        "chrome",
+        "mutiara"
       ],
-      "support": 0.1,
-      "confidence": 0.38461538461538464,
-      "lift": 1.3736263736263736
+      "support": 0.16129032258064516,
+      "confidence": 0.3846153846153846,
+      "lift": 1.7032967032967032
     },
     {
-      "id": 0.7355533029106932,
+      "id": 0.01388561393812715,
       "antecedent": [
-        "putih"
+        "cat_eye"
       ],
       "consequent": [
-        "french_crop"
+        "pink"
       ],
-      "support": 0.18,
-      "confidence": 0.36,
-      "lift": 1.2857142857142856
+      "support": 0.16129032258064516,
+      "confidence": 0.3846153846153846,
+      "lift": 1.3247863247863245
     },
     {
-      "id": 0.497322312271508,
+      "id": 0.2990841584726813,
       "antecedent": [
-        "putih"
+        "cat_eye"
       ],
       "consequent": [
-        "abstrak"
+        "manik-manik"
       ],
-      "support": 0.18,
-      "confidence": 0.36,
-      "lift": 0.7999999999999999
+      "support": 0.16129032258064516,
+      "confidence": 0.3846153846153846,
+      "lift": 1.3247863247863245
     },
     {
-      "id": 0.4379611634729027,
+      "id": 0.46263829277299817,
       "antecedent": [
-        "french_crop"
-      ],
-      "consequent": [
         "3D_bunga"
       ],
-      "support": 0.1,
-      "confidence": 0.35714285714285715,
-      "lift": 1.3736263736263736
+      "consequent": [
+        "cat_eye",
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.3846153846153846,
+      "lift": 1.3247863247863245
     },
     {
-      "id": 0.7129870455252084,
+      "id": 0.16176003031414865,
       "antecedent": [
-        "abstrak"
+        "cat_eye"
+      ],
+      "consequent": [
+        "chrome",
+        "manik-manik"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.3846153846153846,
+      "lift": 1.3247863247863245
+    },
+    {
+      "id": 0.08313465229018668,
+      "antecedent": [
+        "3D_bunga"
       ],
       "consequent": [
         "chrome",
         "putih"
       ],
-      "support": 0.15,
-      "confidence": 0.3333333333333333,
-      "lift": 1.1904761904761902
+      "support": 0.16129032258064516,
+      "confidence": 0.3846153846153846,
+      "lift": 1.0839160839160837
     },
     {
-      "id": 0.49542923779447945,
+      "id": 0.21791762833330985,
+      "antecedent": [
+        "cat_eye"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.3846153846153846,
+      "lift": 1.0839160839160837
+    },
+    {
+      "id": 0.4772112342244075,
+      "antecedent": [
+        "cat_eye"
+      ],
+      "consequent": [
+        "abstrak",
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.3846153846153846,
+      "lift": 0.7948717948717948
+    },
+    {
+      "id": 0.08466258061255472,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.3846153846153846,
+      "lift": 0.7013574660633484
+    },
+    {
+      "id": 0.707725340946205,
+      "antecedent": [
+        "chrome"
+      ],
+      "consequent": [
+        "manik-manik"
+      ],
+      "support": 0.2903225806451613,
+      "confidence": 0.37500000000000006,
+      "lift": 1.2916666666666667
+    },
+    {
+      "id": 0.08589955935918958,
+      "antecedent": [
+        "chrome"
+      ],
+      "consequent": [
+        "pita"
+      ],
+      "support": 0.2903225806451613,
+      "confidence": 0.37500000000000006,
+      "lift": 1.0568181818181819
+    },
+    {
+      "id": 0.06982250450022065,
+      "antecedent": [
+        "chrome"
+      ],
+      "consequent": [
+        "cat_eye"
+      ],
+      "support": 0.2903225806451613,
+      "confidence": 0.37500000000000006,
+      "lift": 0.8942307692307693
+    },
+    {
+      "id": 0.25541245294771797,
+      "antecedent": [
+        "chrome"
+      ],
+      "consequent": [
+        "french_crop"
+      ],
+      "support": 0.2903225806451613,
+      "confidence": 0.37500000000000006,
+      "lift": 0.8942307692307693
+    },
+    {
+      "id": 0.6122147244800964,
+      "antecedent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "consequent": [
+        "cat_eye",
+        "manik-manik"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.3636363636363636,
+      "lift": 2.2545454545454544
+    },
+    {
+      "id": 0.12165687079973675,
+      "antecedent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "consequent": [
+        "french_crop",
+        "merah_maron"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.3636363636363636,
+      "lift": 2.2545454545454544
+    },
+    {
+      "id": 0.10298305496733473,
+      "antecedent": [
+        "chrome",
+        "putih"
+      ],
+      "consequent": [
+        "abstrak",
+        "manik-manik"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.3636363636363636,
+      "lift": 1.8787878787878787
+    },
+    {
+      "id": 0.7976052092397435,
+      "antecedent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "consequent": [
+        "mutiara",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.3636363636363636,
+      "lift": 1.8787878787878787
+    },
+    {
+      "id": 0.8233439256939166,
+      "antecedent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "consequent": [
+        "manik-manik",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.3636363636363636,
+      "lift": 1.8787878787878787
+    },
+    {
+      "id": 0.07106906629598253,
+      "antecedent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "consequent": [
+        "merah_maron"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.3636363636363636,
+      "lift": 1.6103896103896103
+    },
+    {
+      "id": 0.8930066260177724,
+      "antecedent": [
+        "chrome",
+        "putih"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "mutiara"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.3636363636363636,
+      "lift": 1.6103896103896103
+    },
+    {
+      "id": 0.9764557657572694,
+      "antecedent": [
+        "chrome",
+        "putih"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "manik-manik"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.3636363636363636,
+      "lift": 1.6103896103896103
+    },
+    {
+      "id": 0.25790564578488673,
+      "antecedent": [
+        "pita"
+      ],
+      "consequent": [
+        "bunga"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.3636363636363636,
+      "lift": 1.2525252525252524
+    },
+    {
+      "id": 0.4796781730085512,
+      "antecedent": [
+        "pita"
+      ],
+      "consequent": [
+        "mutiara"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.3636363636363636,
+      "lift": 1.2525252525252524
+    },
+    {
+      "id": 0.8914010029512246,
+      "antecedent": [
+        "pita"
+      ],
+      "consequent": [
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.3636363636363636,
+      "lift": 0.867132867132867
+    },
+    {
+      "id": 0.17790898199428795,
+      "antecedent": [
+        "chrome",
+        "putih"
+      ],
+      "consequent": [
+        "cat_eye"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.3636363636363636,
+      "lift": 0.867132867132867
+    },
+    {
+      "id": 0.9286106713706715,
+      "antecedent": [
+        "abstrak"
+      ],
+      "consequent": [
+        "manik-manik"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.35294117647058826,
+      "lift": 1.2156862745098038
+    },
+    {
+      "id": 0.9633399448054042,
+      "antecedent": [
+        "abstrak"
+      ],
+      "consequent": [
+        "chrome",
+        "manik-manik"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.35294117647058826,
+      "lift": 1.2156862745098038
+    },
+    {
+      "id": 0.4535934692260989,
+      "antecedent": [
+        "abstrak"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.35294117647058826,
+      "lift": 0.9946524064171123
+    },
+    {
+      "id": 0.9870904988930398,
       "antecedent": [
         "abstrak"
       ],
       "consequent": [
         "cat_eye"
       ],
-      "support": 0.15,
-      "confidence": 0.3333333333333333,
-      "lift": 1.01010101010101
+      "support": 0.1935483870967742,
+      "confidence": 0.35294117647058826,
+      "lift": 0.8416289592760181
     },
     {
-      "id": 0.7225328079091958,
+      "id": 0.7205362149827754,
+      "antecedent": [
+        "abstrak"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.1935483870967742,
+      "confidence": 0.35294117647058826,
+      "lift": 0.8416289592760181
+    },
+    {
+      "id": 0.05730759756786563,
       "antecedent": [
         "putih"
       ],
       "consequent": [
+        "chrome",
         "mutiara"
       ],
-      "support": 0.16,
-      "confidence": 0.32,
-      "lift": 1.3333333333333335
+      "support": 0.16129032258064516,
+      "confidence": 0.3333333333333333,
+      "lift": 1.476190476190476
     },
     {
-      "id": 0.9828415728677461,
+      "id": 0.3150503941316056,
+      "antecedent": [
+        "putih"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "mutiara"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.3333333333333333,
+      "lift": 1.476190476190476
+    },
+    {
+      "id": 0.8515465533645763,
       "antecedent": [
         "abstrak",
         "chrome"
       ],
       "consequent": [
-        "hitam"
+        "3D_bunga",
+        "manik-manik"
       ],
-      "support": 0.1,
-      "confidence": 0.3125,
-      "lift": 1.953125
+      "support": 0.16129032258064516,
+      "confidence": 0.3333333333333333,
+      "lift": 1.476190476190476
     },
     {
-      "id": 0.035673133981661165,
+      "id": 0.9285823802403995,
       "antecedent": [
+        "putih"
+      ],
+      "consequent": [
+        "bunga"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.3333333333333333,
+      "lift": 1.148148148148148
+    },
+    {
+      "id": 0.10971136129923387,
+      "antecedent": [
+        "abstrak",
+        "chrome"
+      ],
+      "consequent": [
+        "mutiara"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.3333333333333333,
+      "lift": 1.148148148148148
+    },
+    {
+      "id": 0.5929096805539751,
+      "antecedent": [
+        "putih"
+      ],
+      "consequent": [
+        "pita"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.3333333333333333,
+      "lift": 0.9393939393939393
+    },
+    {
+      "id": 0.19436478178894778,
+      "antecedent": [
+        "putih"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.3333333333333333,
+      "lift": 0.9393939393939393
+    },
+    {
+      "id": 0.6681738427137277,
+      "antecedent": [
+        "abstrak",
+        "chrome"
+      ],
+      "consequent": [
+        "pita"
+      ],
+      "support": 0.16129032258064516,
+      "confidence": 0.3333333333333333,
+      "lift": 0.9393939393939393
+    },
+    {
+      "id": 0.9378504314106755,
+      "antecedent": [
+        "abstrak",
         "chrome"
       ],
       "consequent": [
         "cat_eye"
       ],
-      "support": 0.19,
-      "confidence": 0.3064516129032258,
-      "lift": 0.9286412512218963
+      "support": 0.16129032258064516,
+      "confidence": 0.3333333333333333,
+      "lift": 0.7948717948717948
     },
     {
-      "id": 0.9472560490075138,
+      "id": 0.9022986160582576,
       "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "french_crop",
+        "mutiara"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 2.3846153846153846
+    },
+    {
+      "id": 0.5018110727526426,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "chrome",
+        "merah_maron"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 2.3846153846153846
+    },
+    {
+      "id": 0.755457348095271,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "cat_eye",
+        "pink"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.9076923076923076
+    },
+    {
+      "id": 0.5616714993582724,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "cat_eye",
+        "manik-manik"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.9076923076923076
+    },
+    {
+      "id": 0.28764249930912866,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "french_crop",
+        "merah_maron"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.9076923076923076
+    },
+    {
+      "id": 0.5688762021104,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "merah_maron"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.9076923076923076
+    },
+    {
+      "id": 0.6558832617429042,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "chrome",
+        "merah_maron"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.9076923076923076
+    },
+    {
+      "id": 0.08437740614330946,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "chrome",
+        "mutiara",
         "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.9076923076923076
+    },
+    {
+      "id": 0.008085796812869805,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "cat_eye",
+        "chrome",
+        "manik-manik"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.9076923076923076
+    },
+    {
+      "id": 0.9933626865107545,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "chrome",
+        "french_crop",
+        "merah_maron"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.9076923076923076
+    },
+    {
+      "id": 0.5079690825606249,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "pink",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.5897435897435896
+    },
+    {
+      "id": 0.23975617075379196,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "manik-manik",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.5897435897435896
+    },
+    {
+      "id": 0.87273287864813,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "cat_eye"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.5897435897435896
+    },
+    {
+      "id": 0.04602644623689878,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "chrome",
+        "manik-manik",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.5897435897435896
+    },
+    {
+      "id": 0.29614967166945005,
+      "antecedent": [
+        "cat_eye"
+      ],
+      "consequent": [
+        "merah_maron"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.3626373626373625
+    },
+    {
+      "id": 0.31572345151757386,
+      "antecedent": [
+        "cat_eye"
+      ],
+      "consequent": [
+        "french_crop",
+        "pink"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.3626373626373625
+    },
+    {
+      "id": 0.25480999369358215,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "cat_eye",
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.3626373626373625
+    },
+    {
+      "id": 0.36891992458665235,
+      "antecedent": [
+        "cat_eye"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.3626373626373625
+    },
+    {
+      "id": 0.35985861856550816,
+      "antecedent": [
+        "cat_eye"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "manik-manik"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.3626373626373625
+    },
+    {
+      "id": 0.18858304855150343,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "mutiara"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.3626373626373625
+    },
+    {
+      "id": 0.35380830601134305,
+      "antecedent": [
+        "cat_eye"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "chrome",
+        "manik-manik"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.3626373626373625
+    },
+    {
+      "id": 0.7765982018042005,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "pink"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.0598290598290596
+    },
+    {
+      "id": 0.3923854831961512,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "bunga"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.0598290598290596
+    },
+    {
+      "id": 0.5260360582074236,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "mutiara"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.0598290598290596
+    },
+    {
+      "id": 0.3279794559835272,
+      "antecedent": [
+        "cat_eye"
+      ],
+      "consequent": [
+        "chrome",
+        "french_crop"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.0598290598290596
+    },
+    {
+      "id": 0.08949123838697914,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "cat_eye",
+        "chrome"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 1.0598290598290596
+    },
+    {
+      "id": 0.34135916250452114,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "pita"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 0.867132867132867
+    },
+    {
+      "id": 0.736894066701831,
+      "antecedent": [
+        "cat_eye"
+      ],
+      "consequent": [
+        "chrome",
+        "putih"
+      ],
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 0.867132867132867
+    },
+    {
+      "id": 0.4484830226088481,
+      "antecedent": [
+        "french_crop"
       ],
       "consequent": [
         "abstrak",
         "chrome"
       ],
-      "support": 0.15,
-      "confidence": 0.3,
-      "lift": 0.9375
+      "support": 0.12903225806451613,
+      "confidence": 0.30769230769230765,
+      "lift": 0.6358974358974357
     }
   ],
   "config": {

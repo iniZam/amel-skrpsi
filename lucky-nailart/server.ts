@@ -5,18 +5,118 @@ import bcrypt from "bcryptjs";
 import { db } from "./server/db";
 import { runApriori, generateAssociationRules } from "./server/apriori";
 
-// Static gallery designs
+// Static gallery designs with rich aesthetic properties
 export const GALLERY_DESIGNS = [
-  { id: "Glitter_Red", name: "Glitter Red", price: 120000, description: "Bold glittery crimson gel kuku, perfect for a striking elegant look.", image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=600&auto=format&fit=crop" },
-  { id: "Nude_Gel", name: "Nude Gel", price: 90000, description: "Minimalist, sleek natural nude skin shade that goes well with anything.", image: "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=600&auto=format&fit=crop" },
-  { id: "Marble_Art", name: "Marble Art", price: 150000, description: "Luxurious artistic white and gold marble-textured nail polish details.", image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=600&auto=format&fit=crop" },
-  { id: "Chrome_Finish", name: "Chrome Finish", price: 140000, description: "Futuristic, ultra-reflective metallic chrome sheen with mirror glow.", image: "https://images.unsplash.com/photo-1632345031435-8797b2d58045?q=80&w=600&auto=format&fit=crop" },
-  { id: "French_Tips", name: "French Tips", price: 110000, description: "Timeless classic style featuring crisp white tips on healthy pink gel.", image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=600&auto=format&fit=crop" },
-  { id: "Floral_Accent", name: "Floral Accent", price: 130000, description: "Delicate and sweet hand-painted daisies or rose ornaments on accent nails.", image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=600&auto=format&fit=crop" },
-  { id: "Cat_Eye", name: "Cat Eye", price: 160000, description: "Captivating deep magnetic 3D velvet effect with stellar starry streaks.", image: "https://images.unsplash.com/photo-1522337094133-f30f51db0d5b?q=80&w=600&auto=format&fit=crop" },
-  { id: "Matte_Black", name: "Matte Black", price: 100000, description: "Chic, velvety matte black finish with elegant minimalist vibes.", image: "https://images.unsplash.com/photo-1604654894560-df2db5362536?q=80&w=600&auto=format&fit=crop" },
-  { id: "Gold_Foil", name: "Gold Foil", price: 130000, description: "Glimmering design with actual textured flakes of premium gold foil details.", image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=600&auto=format&fit=crop" },
-  { id: "Pastel_Ombre", name: "Pastel Ombre", price: 125000, description: "Seamless gradient blend of soft pastel colors like lavender and baby pink.", image: "https://images.unsplash.com/photo-1632345031435-8797b2d58045?q=80&w=600&auto=format&fit=crop" }
+  { 
+    id: "Floral_Accent", 
+    name: "Daisy Nude & Floral", 
+    price: 130000, 
+    description: "Motif daisy halus nan manis dengan dasar nude pink natural yang anggun dan feminim.", 
+    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=600&auto=format&fit=crop",
+    category: "Cute",
+    rating: 4.8,
+    tag: "Populer",
+    styleSubtitle: "Natural, Feminim"
+  },
+  { 
+    id: "Nude_Gel", 
+    name: "Milky White Minimalist", 
+    price: 90000, 
+    description: "Garis lembut minimalis bernuansa putih susu dan nude bersih yang memikat.", 
+    image: "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=600&auto=format&fit=crop",
+    category: "Minimalis",
+    rating: 4.7,
+    tag: "Rekomendasi",
+    styleSubtitle: "Bersih & Minimalis"
+  },
+  { 
+    id: "Pastel_Ombre", 
+    name: "Sugar Berry Ombre", 
+    price: 125000, 
+    description: "Gradasi warna berry pink manis dengan sentuhan shimmer glitter lembut berkilau.", 
+    image: "https://images.unsplash.com/photo-1632345031435-8797b2d58045?q=80&w=600&auto=format&fit=crop",
+    category: "Korea Style",
+    rating: 4.9,
+    tag: "Best Seller",
+    styleSubtitle: "Manis & Berkilau"
+  },
+  { 
+    id: "Marble_Art", 
+    name: "Mocha Love & Checkered", 
+    price: 150000, 
+    description: "Kombinasi artistik motif hati, catur chic, dan marble hangat berkelas.", 
+    image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=600&auto=format&fit=crop",
+    category: "Korea Style",
+    rating: 4.6,
+    tag: "Populer",
+    styleSubtitle: "Hangat & Chic"
+  },
+  { 
+    id: "French_Tips", 
+    name: "French Tips Modern", 
+    price: 110000, 
+    description: "Sentuhan gaya klasik timeless dengan ujung putih presisi pada gel kuku sehat bercahaya.", 
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=600&auto=format&fit=crop",
+    category: "Classic",
+    rating: 4.9,
+    tag: "Favorit",
+    styleSubtitle: "Klasik & Abadi"
+  },
+  { 
+    id: "Glitter_Red", 
+    name: "Glitter Glam Crimson", 
+    price: 120000, 
+    description: "Kilauan butiran glitter rose crimson mewah untuk pesona glamor dan percaya diri.", 
+    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=600&auto=format&fit=crop",
+    category: "Glitter",
+    rating: 4.8,
+    tag: "Baru",
+    styleSubtitle: "Kilau Mewah"
+  },
+  { 
+    id: "Cat_Eye", 
+    name: "Cat Eye Velvet Rose", 
+    price: 160000, 
+    description: "Efek magnetik 3D velvet deep rosy mauve dengan kilau galaksi yang memukau.", 
+    image: "https://images.unsplash.com/photo-1522337094133-f30f51db0d5b?q=80&w=600&auto=format&fit=crop",
+    category: "Elegant",
+    rating: 5.0,
+    tag: "Premium",
+    styleSubtitle: "Misterius & Elegan"
+  },
+  { 
+    id: "Gold_Foil", 
+    name: "Gold Foil & Rose Quartz", 
+    price: 130000, 
+    description: "Aksen serpihan emas murni 24k di atas dasar rose quartz marmer transparan.", 
+    image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=600&auto=format&fit=crop",
+    category: "Elegant",
+    rating: 4.8,
+    tag: "Elegan",
+    styleSubtitle: "Kemewahan Emas"
+  },
+  { 
+    id: "Chrome_Finish", 
+    name: "Rose Chrome Mirror", 
+    price: 140000, 
+    description: "Finishing chrome mirror pantulan kaca futuristik bernuansa rose metallic lembut.", 
+    image: "https://images.unsplash.com/photo-1632345031435-8797b2d58045?q=80&w=600&auto=format&fit=crop",
+    category: "Colorful",
+    rating: 4.7,
+    tag: "Tren 2026",
+    styleSubtitle: "Futuristik & Berani"
+  },
+  { 
+    id: "Matte_Black", 
+    name: "Matte Velvet Plum", 
+    price: 100000, 
+    description: "Lapisan akhir matte beludru warna plum gelap yang anggun, modern, dan tahan gores.", 
+    image: "https://images.unsplash.com/photo-1604654894560-df2db5362536?q=80&w=600&auto=format&fit=crop",
+    category: "Minimalis",
+    rating: 4.6,
+    tag: "Minimalis",
+    styleSubtitle: "Tegas & Menawan"
+  }
 ];
 
 async function startServer() {
