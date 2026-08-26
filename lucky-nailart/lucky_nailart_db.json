@@ -1,0 +1,1906 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "passwordHash": "$2b$10$d1MVLwD0f8vHP1aJJ2yMNuaWSoLGqZPlgBh1eYdIejCwuSQDOyLNG"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "bk-1",
+      "name": "Siti Rahma",
+      "email": "siti@gmail.com",
+      "phone": "08123456789",
+      "services": [
+        "French_Tips",
+        "Nude_Gel"
+      ],
+      "date": "2026-08-27",
+      "time": "10:00",
+      "status": "pending",
+      "createdAt": "2026-08-26T12:27:16.901Z"
+    },
+    {
+      "id": "bk-2",
+      "name": "Agnes Monica",
+      "email": "agnes@gmail.com",
+      "phone": "08234567890",
+      "services": [
+        "Chrome_Finish",
+        "Cat_Eye"
+      ],
+      "date": "2026-08-28",
+      "time": "14:00",
+      "status": "pending",
+      "createdAt": "2026-08-26T12:27:16.901Z"
+    }
+  ],
+  "transactions": [
+    [
+      "pink",
+      "frusia",
+      "putih",
+      "bunga",
+      "french_crop"
+    ],
+    [
+      "cokelat_gel",
+      "pink",
+      "chrome",
+      "matahari",
+      "abstrak",
+      "french_crop"
+    ],
+    [
+      "merah_maron",
+      "cat_eye"
+    ],
+    [
+      "hitam",
+      "putih",
+      "chrome",
+      "mutiara",
+      "love_3D",
+      "pita",
+      "abstrak"
+    ],
+    [
+      "pink",
+      "cat_eye",
+      "bintang",
+      "french_crop",
+      "abstrak"
+    ],
+    [
+      "pink",
+      "cat_eye",
+      "putih",
+      "pita",
+      "mutiara",
+      "3D_bunga",
+      "3D_kerang",
+      "french_crop"
+    ],
+    [
+      "pink_frusia",
+      "cat_eye",
+      "chrome",
+      "kupu-kupu",
+      "daun",
+      "abstrak"
+    ],
+    [
+      "merah",
+      "pink_frusia",
+      "pink_pastel",
+      "stiker",
+      "chrome",
+      "pita",
+      "abstrak"
+    ],
+    [
+      "abu-abu",
+      "kuning",
+      "cat_eye",
+      "pink",
+      "hijau_muda",
+      "chrome",
+      "french_crop",
+      "3D_bunga",
+      "bunga"
+    ],
+    [
+      "putih",
+      "cat_eye",
+      "pink",
+      "chrome",
+      "manik-manik",
+      "stamp",
+      "painting_flower",
+      "bunga",
+      "painting_pemandangan"
+    ],
+    [
+      "putih",
+      "cat_eye",
+      "hijau_muda",
+      "peach",
+      "ungu",
+      "chrome",
+      "kuning",
+      "orange",
+      "hitam",
+      "mutiara",
+      "manik-manik",
+      "3D_bunga",
+      "daun",
+      "abstrak"
+    ],
+    [
+      "merah_maron",
+      "cat_eye",
+      "french_crop",
+      "chrome",
+      "manik-manik",
+      "3D_bunga",
+      "abstrak"
+    ],
+    [
+      "hijau_toska",
+      "cat_eye_hijau",
+      "bunga",
+      "chrome",
+      "bintang",
+      "3D_bunga",
+      "miror"
+    ],
+    [
+      "biru_muda",
+      "cat_eye_biru",
+      "chrome",
+      "pita",
+      "sarang_laba-laba",
+      "miror",
+      "abstrak"
+    ],
+    [
+      "gradasi_pink",
+      "peach",
+      "merah_maron",
+      "chrome",
+      "mutiara",
+      "3D_bunga",
+      "french_crop",
+      "abstrak"
+    ],
+    [
+      "putih",
+      "chrome",
+      "pink",
+      "pink_frusia",
+      "french_crop",
+      "3D_bunga",
+      "kupu-kupu",
+      "mutiara",
+      "pita"
+    ],
+    [
+      "merah_maron",
+      "cat_eye",
+      "french_crop",
+      "bintang",
+      "manik-manik",
+      "chrome",
+      "3D_bunga",
+      "abstrak"
+    ],
+    [
+      "biru_muda",
+      "putih",
+      "chrome",
+      "bunga",
+      "abstrak"
+    ],
+    [
+      "merah_maron",
+      "mutiara",
+      "3D_bunga"
+    ],
+    [
+      "cat_eye_putih",
+      "cat_eye_merah",
+      "chrome",
+      "kupu-kupu",
+      "cery",
+      "mutiara",
+      "pita",
+      "abstrak"
+    ],
+    [
+      "hijau",
+      "gradasi_merah",
+      "cat_eye",
+      "painting",
+      "3D_kupu-kupu",
+      "3D_kerang",
+      "3D_bunga",
+      "chrome",
+      "miror",
+      "pita",
+      "manik-manik"
+    ],
+    [
+      "gradasi_peach",
+      "3D_pita",
+      "cat_eye_mahogani",
+      "chrome",
+      "bunga",
+      "pita"
+    ],
+    [
+      "merah_maron",
+      "chrome",
+      "french_crop",
+      "putih",
+      "love",
+      "cat_eye"
+    ],
+    [
+      "hijau",
+      "chrome",
+      "putih",
+      "manik-manik",
+      "3D_bunga",
+      "abstrak"
+    ],
+    [
+      "hitam",
+      "pita",
+      "french_crop",
+      "bunga",
+      "bintang",
+      "chrome"
+    ],
+    [
+      "cokelat_mahogani",
+      "putih",
+      "gradasi_cokelat",
+      "abstrak"
+    ],
+    [
+      "hitam",
+      "putih",
+      "cat_eye",
+      "gradasi_abu-abu",
+      "chrome",
+      "bintang",
+      "ular",
+      "miror",
+      "abstrak"
+    ],
+    [
+      "putih",
+      "cokelat_gel",
+      "merah_maron",
+      "french_crop",
+      "chrome",
+      "mutiara",
+      "manik-manik",
+      "3D_bunga"
+    ],
+    [
+      "pink",
+      "putih",
+      "gradasi_pink",
+      "chrome",
+      "3D_bunga",
+      "manik-manik",
+      "mutiara",
+      "abstrak"
+    ],
+    [
+      "cokelat_mahogani",
+      "putih",
+      "cokelat",
+      "chrome",
+      "manik-manik",
+      "bunga",
+      "pita",
+      "abstrak"
+    ],
+    [
+      "pink",
+      "frusia",
+      "putih",
+      "cat_eye",
+      "bunga",
+      "french_crop",
+      "pita"
+    ],
+    [
+      "putih",
+      "chrome",
+      "abstrak",
+      "mutiara"
+    ],
+    [
+      "merah_maron",
+      "cat_eye",
+      "3D_bunga",
+      "pita",
+      "abstrak"
+    ],
+    [
+      "hitam",
+      "miror",
+      "chrome",
+      "bintang",
+      "french_crop"
+    ],
+    [
+      "pink",
+      "gradasi_pink",
+      "mutiara",
+      "manik-manik",
+      "3D_bunga",
+      "chrome"
+    ],
+    [
+      "biru_muda",
+      "putih",
+      "cat_eye",
+      "kupu-kupu",
+      "abstrak"
+    ],
+    [
+      "putih",
+      "french_crop",
+      "chrome",
+      "pita",
+      "love_3D"
+    ],
+    [
+      "merah",
+      "hitam",
+      "gradasi_merah",
+      "ular",
+      "abstrak"
+    ],
+    [
+      "cokelat_gel",
+      "cokelat",
+      "gradasi_cokelat",
+      "cat_eye",
+      "chrome"
+    ],
+    [
+      "pink_pastel",
+      "putih",
+      "pita",
+      "3D_bunga",
+      "french_crop",
+      "mutiara"
+    ],
+    [
+      "abu-abu",
+      "hitam",
+      "chrome",
+      "miror",
+      "bintang",
+      "abstrak"
+    ],
+    [
+      "putih",
+      "peach",
+      "gradasi_peach",
+      "cat_eye",
+      "bunga"
+    ],
+    [
+      "hijau_muda",
+      "kuning",
+      "daun",
+      "painting_flower",
+      "chrome"
+    ],
+    [
+      "pink_frusia",
+      "putih",
+      "cat_eye",
+      "chrome",
+      "abstrak",
+      "kupu-kupu"
+    ],
+    [
+      "merah_maron",
+      "manik-manik",
+      "3D_bunga",
+      "chrome",
+      "french_crop"
+    ],
+    [
+      "biru_muda",
+      "cat_eye_biru",
+      "mutiara",
+      "pita",
+      "abstrak"
+    ],
+    [
+      "hitam",
+      "putih",
+      "chrome",
+      "abstrak",
+      "french_crop"
+    ],
+    [
+      "putih",
+      "pink",
+      "gradasi_pink",
+      "3D_kerang",
+      "mutiara",
+      "bintang"
+    ],
+    [
+      "cokelat_mahogani",
+      "cat_eye_mahogani",
+      "chrome",
+      "pita"
+    ],
+    [
+      "merah_maron",
+      "putih",
+      "love",
+      "chrome",
+      "abstrak"
+    ],
+    [
+      "hijau_toska",
+      "putih",
+      "cat_eye_hijau",
+      "3D_bunga",
+      "miror"
+    ],
+    [
+      "pink",
+      "pink_frusia",
+      "cat_eye",
+      "mutiara",
+      "manik-manik",
+      "chrome"
+    ],
+    [
+      "hitam",
+      "chrome",
+      "abstrak",
+      "sarang_laba-laba"
+    ],
+    [
+      "putih",
+      "kuning",
+      "orange",
+      "bunga",
+      "matahari",
+      "chrome"
+    ],
+    [
+      "biru_muda",
+      "abu-abu",
+      "miror",
+      "cat_eye",
+      "abstrak"
+    ],
+    [
+      "merah",
+      "cat_eye_merah",
+      "pita",
+      "mutiara",
+      "3D_bunga"
+    ],
+    [
+      "pink_pastel",
+      "putih",
+      "bunga",
+      "french_crop",
+      "chrome"
+    ],
+    [
+      "cokelat_gel",
+      "putih",
+      "french_crop",
+      "abstrak"
+    ],
+    [
+      "hitam",
+      "gradasi_abu-abu",
+      "cat_eye",
+      "bintang",
+      "miror"
+    ],
+    [
+      "putih",
+      "merah_maron",
+      "manik-manik",
+      "3D_bunga",
+      "chrome",
+      "abstrak"
+    ],
+    [
+      "pink",
+      "putih",
+      "pita",
+      "kupu-kupu",
+      "chrome"
+    ],
+    [
+      "hijau",
+      "hijau_muda",
+      "cat_eye",
+      "daun",
+      "abstrak"
+    ],
+    [
+      "putih",
+      "cat_eye_putih",
+      "mutiara",
+      "3D_pita",
+      "french_crop"
+    ],
+    [
+      "cokelat_mahogani",
+      "gradasi_cokelat",
+      "chrome",
+      "abstrak"
+    ],
+    [
+      "biru_muda",
+      "putih",
+      "cat_eye",
+      "miror",
+      "bintang"
+    ],
+    [
+      "merah_maron",
+      "cat_eye",
+      "chrome",
+      "abstrak"
+    ],
+    [
+      "pink",
+      "putih",
+      "cat_eye",
+      "3D_bunga",
+      "manik-manik",
+      "mutiara"
+    ],
+    [
+      "hitam",
+      "chrome",
+      "miror",
+      "abstrak"
+    ],
+    [
+      "putih",
+      "pink_frusia",
+      "bunga",
+      "pita",
+      "french_crop"
+    ],
+    [
+      "merah",
+      "gradasi_merah",
+      "cat_eye",
+      "love",
+      "chrome"
+    ],
+    [
+      "cokelat",
+      "cokelat_gel",
+      "gradasi_cokelat",
+      "abstrak"
+    ],
+    [
+      "putih",
+      "biru_muda",
+      "kupu-kupu",
+      "mutiara",
+      "chrome"
+    ],
+    [
+      "pink_pastel",
+      "peach",
+      "gradasi_peach",
+      "bunga",
+      "3D_bunga"
+    ],
+    [
+      "hijau_toska",
+      "hijau",
+      "cat_eye_hijau",
+      "chrome",
+      "miror"
+    ],
+    [
+      "hitam",
+      "putih",
+      "french_crop",
+      "chrome",
+      "abstrak"
+    ],
+    [
+      "merah_maron",
+      "putih",
+      "manik-manik",
+      "3D_bunga",
+      "pita"
+    ],
+    [
+      "pink",
+      "cat_eye",
+      "chrome",
+      "bintang",
+      "abstrak"
+    ],
+    [
+      "putih",
+      "cokelat_mahogani",
+      "french_crop",
+      "mutiara"
+    ],
+    [
+      "abu-abu",
+      "gradasi_abu-abu",
+      "chrome",
+      "miror",
+      "ular"
+    ],
+    [
+      "pink_frusia",
+      "pink",
+      "cat_eye",
+      "kupu-kupu",
+      "abstrak"
+    ],
+    [
+      "putih",
+      "kuning",
+      "painting_flower",
+      "daun",
+      "chrome"
+    ],
+    [
+      "biru_muda",
+      "cat_eye_biru",
+      "miror",
+      "abstrak"
+    ],
+    [
+      "merah_maron",
+      "hitam",
+      "cat_eye",
+      "chrome",
+      "bintang"
+    ],
+    [
+      "putih",
+      "pink_pastel",
+      "mutiara",
+      "3D_bunga",
+      "french_crop"
+    ],
+    [
+      "cokelat_gel",
+      "cat_eye",
+      "chrome",
+      "abstrak"
+    ],
+    [
+      "hitam",
+      "chrome",
+      "sarang_laba-laba",
+      "miror",
+      "abstrak"
+    ],
+    [
+      "putih",
+      "peach",
+      "orange",
+      "bunga",
+      "matahari"
+    ],
+    [
+      "hijau_muda",
+      "putih",
+      "cat_eye",
+      "daun",
+      "chrome"
+    ],
+    [
+      "pink",
+      "merah_maron",
+      "gradasi_pink",
+      "mutiara",
+      "3D_bunga"
+    ],
+    [
+      "putih",
+      "biru_muda",
+      "cat_eye",
+      "kupu-kupu",
+      "pita",
+      "chrome"
+    ],
+    [
+      "hitam",
+      "putih",
+      "abstrak",
+      "chrome",
+      "miror"
+    ],
+    [
+      "merah",
+      "putih",
+      "cat_eye_merah",
+      "love",
+      "french_crop"
+    ],
+    [
+      "pink_frusia",
+      "putih",
+      "pita",
+      "3D_pita",
+      "mutiara"
+    ],
+    [
+      "cokelat_mahogani",
+      "cokelat",
+      "cat_eye_mahogani",
+      "chrome",
+      "abstrak"
+    ],
+    [
+      "putih",
+      "abu-abu",
+      "cat_eye",
+      "bintang",
+      "miror"
+    ],
+    [
+      "merah_maron",
+      "putih",
+      "manik-manik",
+      "3D_bunga",
+      "chrome",
+      "abstrak"
+    ],
+    [
+      "pink",
+      "putih",
+      "french_crop",
+      "chrome",
+      "kupu-kupu"
+    ],
+    [
+      "hitam",
+      "gradasi_abu-abu",
+      "miror",
+      "abstrak"
+    ],
+    [
+      "putih",
+      "biru_muda",
+      "cat_eye_biru",
+      "pita",
+      "mutiara"
+    ],
+    [
+      "cokelat_gel",
+      "gradasi_cokelat",
+      "chrome",
+      "french_crop"
+    ]
+  ],
+  "frequent_itemsets": [
+    {
+      "id": 0.47644243151268706,
+      "items": [
+        "pink"
+      ],
+      "support": 0.18,
+      "count": 18,
+      "k": 1
+    },
+    {
+      "id": 0.9077064464543257,
+      "items": [
+        "putih"
+      ],
+      "support": 0.5,
+      "count": 50,
+      "k": 1
+    },
+    {
+      "id": 0.2125895804699608,
+      "items": [
+        "bunga"
+      ],
+      "support": 0.15,
+      "count": 15,
+      "k": 1
+    },
+    {
+      "id": 0.6100424835911422,
+      "items": [
+        "french_crop"
+      ],
+      "support": 0.28,
+      "count": 28,
+      "k": 1
+    },
+    {
+      "id": 0.7374812469574641,
+      "items": [
+        "chrome"
+      ],
+      "support": 0.62,
+      "count": 62,
+      "k": 1
+    },
+    {
+      "id": 0.16258097137111982,
+      "items": [
+        "abstrak"
+      ],
+      "support": 0.45,
+      "count": 45,
+      "k": 1
+    },
+    {
+      "id": 0.7343503454091174,
+      "items": [
+        "merah_maron"
+      ],
+      "support": 0.16,
+      "count": 16,
+      "k": 1
+    },
+    {
+      "id": 0.16727623003383574,
+      "items": [
+        "cat_eye"
+      ],
+      "support": 0.33,
+      "count": 33,
+      "k": 1
+    },
+    {
+      "id": 0.956878947957559,
+      "items": [
+        "hitam"
+      ],
+      "support": 0.16,
+      "count": 16,
+      "k": 1
+    },
+    {
+      "id": 0.7779997703874574,
+      "items": [
+        "mutiara"
+      ],
+      "support": 0.24,
+      "count": 24,
+      "k": 1
+    },
+    {
+      "id": 0.43674938197760305,
+      "items": [
+        "pita"
+      ],
+      "support": 0.23,
+      "count": 23,
+      "k": 1
+    },
+    {
+      "id": 0.818197306975009,
+      "items": [
+        "bintang"
+      ],
+      "support": 0.13,
+      "count": 13,
+      "k": 1
+    },
+    {
+      "id": 0.7026021542957126,
+      "items": [
+        "3D_bunga"
+      ],
+      "support": 0.26,
+      "count": 26,
+      "k": 1
+    },
+    {
+      "id": 0.8205484974452797,
+      "items": [
+        "kupu-kupu"
+      ],
+      "support": 0.1,
+      "count": 10,
+      "k": 1
+    },
+    {
+      "id": 0.9352328249834778,
+      "items": [
+        "manik-manik"
+      ],
+      "support": 0.16,
+      "count": 16,
+      "k": 1
+    },
+    {
+      "id": 0.4340987588604599,
+      "items": [
+        "miror"
+      ],
+      "support": 0.18,
+      "count": 18,
+      "k": 1
+    },
+    {
+      "id": 0.3504254640998298,
+      "items": [
+        "biru_muda"
+      ],
+      "support": 0.1,
+      "count": 10,
+      "k": 1
+    },
+    {
+      "id": 0.9936423044622404,
+      "items": [
+        "pink",
+        "putih"
+      ],
+      "support": 0.1,
+      "count": 10,
+      "k": 2
+    },
+    {
+      "id": 0.7724042396698051,
+      "items": [
+        "chrome",
+        "pink"
+      ],
+      "support": 0.1,
+      "count": 10,
+      "k": 2
+    },
+    {
+      "id": 0.23683870176765676,
+      "items": [
+        "bunga",
+        "putih"
+      ],
+      "support": 0.1,
+      "count": 10,
+      "k": 2
+    },
+    {
+      "id": 0.07623659567888985,
+      "items": [
+        "french_crop",
+        "putih"
+      ],
+      "support": 0.18,
+      "count": 18,
+      "k": 2
+    },
+    {
+      "id": 0.9113275736629003,
+      "items": [
+        "chrome",
+        "putih"
+      ],
+      "support": 0.28,
+      "count": 28,
+      "k": 2
+    },
+    {
+      "id": 0.5637051363127754,
+      "items": [
+        "abstrak",
+        "putih"
+      ],
+      "support": 0.18,
+      "count": 18,
+      "k": 2
+    },
+    {
+      "id": 0.7267877771751505,
+      "items": [
+        "cat_eye",
+        "putih"
+      ],
+      "support": 0.14,
+      "count": 14,
+      "k": 2
+    },
+    {
+      "id": 0.3473146495701991,
+      "items": [
+        "mutiara",
+        "putih"
+      ],
+      "support": 0.16,
+      "count": 16,
+      "k": 2
+    },
+    {
+      "id": 0.57108562478519,
+      "items": [
+        "pita",
+        "putih"
+      ],
+      "support": 0.13,
+      "count": 13,
+      "k": 2
+    },
+    {
+      "id": 0.33710296293283515,
+      "items": [
+        "3D_bunga",
+        "putih"
+      ],
+      "support": 0.13,
+      "count": 13,
+      "k": 2
+    },
+    {
+      "id": 0.18462275492088154,
+      "items": [
+        "manik-manik",
+        "putih"
+      ],
+      "support": 0.1,
+      "count": 10,
+      "k": 2
+    },
+    {
+      "id": 0.9922477635786991,
+      "items": [
+        "chrome",
+        "french_crop"
+      ],
+      "support": 0.17,
+      "count": 17,
+      "k": 2
+    },
+    {
+      "id": 0.585592063452458,
+      "items": [
+        "3D_bunga",
+        "french_crop"
+      ],
+      "support": 0.1,
+      "count": 10,
+      "k": 2
+    },
+    {
+      "id": 0.7131889897738682,
+      "items": [
+        "abstrak",
+        "chrome"
+      ],
+      "support": 0.32,
+      "count": 32,
+      "k": 2
+    },
+    {
+      "id": 0.3300270396401167,
+      "items": [
+        "chrome",
+        "merah_maron"
+      ],
+      "support": 0.11,
+      "count": 11,
+      "k": 2
+    },
+    {
+      "id": 0.5576278475053366,
+      "items": [
+        "cat_eye",
+        "chrome"
+      ],
+      "support": 0.19,
+      "count": 19,
+      "k": 2
+    },
+    {
+      "id": 0.4710990945560102,
+      "items": [
+        "chrome",
+        "hitam"
+      ],
+      "support": 0.13,
+      "count": 13,
+      "k": 2
+    },
+    {
+      "id": 0.18927464176788877,
+      "items": [
+        "chrome",
+        "mutiara"
+      ],
+      "support": 0.11,
+      "count": 11,
+      "k": 2
+    },
+    {
+      "id": 0.030487216608152123,
+      "items": [
+        "chrome",
+        "pita"
+      ],
+      "support": 0.13,
+      "count": 13,
+      "k": 2
+    },
+    {
+      "id": 0.15043307152630037,
+      "items": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "support": 0.15,
+      "count": 15,
+      "k": 2
+    },
+    {
+      "id": 0.7108385063281248,
+      "items": [
+        "chrome",
+        "manik-manik"
+      ],
+      "support": 0.14,
+      "count": 14,
+      "k": 2
+    },
+    {
+      "id": 0.48280440684552617,
+      "items": [
+        "chrome",
+        "miror"
+      ],
+      "support": 0.11,
+      "count": 11,
+      "k": 2
+    },
+    {
+      "id": 0.7753014602255758,
+      "items": [
+        "abstrak",
+        "cat_eye"
+      ],
+      "support": 0.15,
+      "count": 15,
+      "k": 2
+    },
+    {
+      "id": 0.7560909373792979,
+      "items": [
+        "abstrak",
+        "hitam"
+      ],
+      "support": 0.12,
+      "count": 12,
+      "k": 2
+    },
+    {
+      "id": 0.028583288491483394,
+      "items": [
+        "3D_bunga",
+        "merah_maron"
+      ],
+      "support": 0.11,
+      "count": 11,
+      "k": 2
+    },
+    {
+      "id": 0.3123818082498425,
+      "items": [
+        "3D_bunga",
+        "mutiara"
+      ],
+      "support": 0.13,
+      "count": 13,
+      "k": 2
+    },
+    {
+      "id": 0.6651886565970568,
+      "items": [
+        "3D_bunga",
+        "manik-manik"
+      ],
+      "support": 0.13,
+      "count": 13,
+      "k": 2
+    },
+    {
+      "id": 0.6144280997011068,
+      "items": [
+        "abstrak",
+        "chrome",
+        "putih"
+      ],
+      "support": 0.15,
+      "count": 15,
+      "k": 3
+    },
+    {
+      "id": 0.5661772079511412,
+      "items": [
+        "abstrak",
+        "chrome",
+        "hitam"
+      ],
+      "support": 0.1,
+      "count": 10,
+      "k": 3
+    },
+    {
+      "id": 0.026688104231392007,
+      "items": [
+        "3D_bunga",
+        "chrome",
+        "manik-manik"
+      ],
+      "support": 0.11,
+      "count": 11,
+      "k": 3
+    }
+  ],
+  "association_rules": [
+    {
+      "id": 0.008885266455856189,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.14,
+      "confidence": 0.8750000000000001,
+      "lift": 1.4112903225806452
+    },
+    {
+      "id": 0.11306186588571243,
+      "antecedent": [
+        "3D_bunga",
+        "manik-manik"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.11,
+      "confidence": 0.8461538461538461,
+      "lift": 1.3647642679900744
+    },
+    {
+      "id": 0.23277904403118566,
+      "antecedent": [
+        "abstrak",
+        "putih"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.15,
+      "confidence": 0.8333333333333334,
+      "lift": 1.3440860215053765
+    },
+    {
+      "id": 0.7706901909389625,
+      "antecedent": [
+        "abstrak",
+        "hitam"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.1,
+      "confidence": 0.8333333333333334,
+      "lift": 1.3440860215053765
+    },
+    {
+      "id": 0.21395471418516565,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.13,
+      "confidence": 0.8125,
+      "lift": 3.125
+    },
+    {
+      "id": 0.7281632356564008,
+      "antecedent": [
+        "hitam"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.13,
+      "confidence": 0.8125,
+      "lift": 1.310483870967742
+    },
+    {
+      "id": 0.4157606086360861,
+      "antecedent": [
+        "chrome",
+        "manik-manik"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.11,
+      "confidence": 0.7857142857142857,
+      "lift": 3.021978021978022
+    },
+    {
+      "id": 0.21428372523217576,
+      "antecedent": [
+        "chrome",
+        "hitam"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.1,
+      "confidence": 0.7692307692307693,
+      "lift": 1.7094017094017095
+    },
+    {
+      "id": 0.9771821544205671,
+      "antecedent": [
+        "hitam"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.12,
+      "confidence": 0.75,
+      "lift": 1.6666666666666665
+    },
+    {
+      "id": 0.01116525651085265,
+      "antecedent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "consequent": [
+        "manik-manik"
+      ],
+      "support": 0.11,
+      "confidence": 0.7333333333333334,
+      "lift": 4.583333333333334
+    },
+    {
+      "id": 0.10033023599567314,
+      "antecedent": [
+        "abstrak"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.32,
+      "confidence": 0.7111111111111111,
+      "lift": 1.146953405017921
+    },
+    {
+      "id": 0.6957061817138231,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "3D_bunga",
+        "chrome"
+      ],
+      "support": 0.11,
+      "confidence": 0.6875,
+      "lift": 4.583333333333334
+    },
+    {
+      "id": 0.4723809010132377,
+      "antecedent": [
+        "merah_maron"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.11,
+      "confidence": 0.6875,
+      "lift": 2.644230769230769
+    },
+    {
+      "id": 0.6412838549328208,
+      "antecedent": [
+        "merah_maron"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.11,
+      "confidence": 0.6875,
+      "lift": 1.1088709677419355
+    },
+    {
+      "id": 0.40569171008156746,
+      "antecedent": [
+        "mutiara"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.16,
+      "confidence": 0.6666666666666667,
+      "lift": 1.3333333333333335
+    },
+    {
+      "id": 0.3362151757136398,
+      "antecedent": [
+        "bunga"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.1,
+      "confidence": 0.6666666666666667,
+      "lift": 1.3333333333333335
+    },
+    {
+      "id": 0.7202883763238941,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.18,
+      "confidence": 0.6428571428571428,
+      "lift": 1.2857142857142856
+    },
+    {
+      "id": 0.8453258638011245,
+      "antecedent": [
+        "hitam"
+      ],
+      "consequent": [
+        "abstrak",
+        "chrome"
+      ],
+      "support": 0.1,
+      "confidence": 0.625,
+      "lift": 1.953125
+    },
+    {
+      "id": 0.7234516606043307,
+      "antecedent": [
+        "manik-manik"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.1,
+      "confidence": 0.625,
+      "lift": 1.25
+    },
+    {
+      "id": 0.8377348717596775,
+      "antecedent": [
+        "miror"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.11,
+      "confidence": 0.6111111111111112,
+      "lift": 0.9856630824372761
+    },
+    {
+      "id": 0.047073534585351684,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.17,
+      "confidence": 0.6071428571428571,
+      "lift": 0.9792626728110598
+    },
+    {
+      "id": 0.6494950801112551,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.15,
+      "confidence": 0.5769230769230769,
+      "lift": 0.9305210918114143
+    },
+    {
+      "id": 0.26142164852754646,
+      "antecedent": [
+        "cat_eye"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.19,
+      "confidence": 0.5757575757575757,
+      "lift": 0.9286412512218963
+    },
+    {
+      "id": 0.010009391995648875,
+      "antecedent": [
+        "pita"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.13,
+      "confidence": 0.5652173913043478,
+      "lift": 1.1304347826086956
+    },
+    {
+      "id": 0.6266946214372331,
+      "antecedent": [
+        "pita"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.13,
+      "confidence": 0.5652173913043478,
+      "lift": 0.91164095371669
+    },
+    {
+      "id": 0.25157807119004183,
+      "antecedent": [
+        "putih"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.28,
+      "confidence": 0.56,
+      "lift": 0.903225806451613
+    },
+    {
+      "id": 0.24379094331501316,
+      "antecedent": [
+        "pink"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.1,
+      "confidence": 0.5555555555555556,
+      "lift": 1.1111111111111112
+    },
+    {
+      "id": 0.22056329287232102,
+      "antecedent": [
+        "pink"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.1,
+      "confidence": 0.5555555555555556,
+      "lift": 0.8960573476702509
+    },
+    {
+      "id": 0.34823821290638746,
+      "antecedent": [
+        "mutiara"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.13,
+      "confidence": 0.5416666666666667,
+      "lift": 2.0833333333333335
+    },
+    {
+      "id": 0.4306963270834009,
+      "antecedent": [
+        "chrome",
+        "putih"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.15,
+      "confidence": 0.5357142857142857,
+      "lift": 1.1904761904761905
+    },
+    {
+      "id": 0.36605658569318467,
+      "antecedent": [
+        "chrome"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.32,
+      "confidence": 0.5161290322580645,
+      "lift": 1.146953405017921
+    },
+    {
+      "id": 0.3350155311586016,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "manik-manik"
+      ],
+      "support": 0.13,
+      "confidence": 0.5,
+      "lift": 3.125
+    },
+    {
+      "id": 0.976941490890843,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "mutiara"
+      ],
+      "support": 0.13,
+      "confidence": 0.5,
+      "lift": 2.0833333333333335
+    },
+    {
+      "id": 0.8476503354173753,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.13,
+      "confidence": 0.5,
+      "lift": 1
+    },
+    {
+      "id": 0.9348043720474027,
+      "antecedent": [
+        "abstrak",
+        "chrome"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.15,
+      "confidence": 0.46875,
+      "lift": 0.9375
+    },
+    {
+      "id": 0.6008994777765642,
+      "antecedent": [
+        "mutiara"
+      ],
+      "consequent": [
+        "chrome"
+      ],
+      "support": 0.11,
+      "confidence": 0.45833333333333337,
+      "lift": 0.739247311827957
+    },
+    {
+      "id": 0.5517707047423933,
+      "antecedent": [
+        "cat_eye"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.15,
+      "confidence": 0.45454545454545453,
+      "lift": 1.01010101010101
+    },
+    {
+      "id": 0.1805638270753135,
+      "antecedent": [
+        "chrome"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.28,
+      "confidence": 0.4516129032258065,
+      "lift": 0.903225806451613
+    },
+    {
+      "id": 0.6290895994899027,
+      "antecedent": [
+        "cat_eye"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.14,
+      "confidence": 0.42424242424242425,
+      "lift": 0.8484848484848485
+    },
+    {
+      "id": 0.7569719787428271,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "chrome",
+        "manik-manik"
+      ],
+      "support": 0.11,
+      "confidence": 0.4230769230769231,
+      "lift": 3.0219780219780215
+    },
+    {
+      "id": 0.712049693394166,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "merah_maron"
+      ],
+      "support": 0.11,
+      "confidence": 0.4230769230769231,
+      "lift": 2.644230769230769
+    },
+    {
+      "id": 0.8216074388673157,
+      "antecedent": [
+        "abstrak"
+      ],
+      "consequent": [
+        "putih"
+      ],
+      "support": 0.18,
+      "confidence": 0.39999999999999997,
+      "lift": 0.7999999999999999
+    },
+    {
+      "id": 0.42386490444655567,
+      "antecedent": [
+        "3D_bunga"
+      ],
+      "consequent": [
+        "french_crop"
+      ],
+      "support": 0.1,
+      "confidence": 0.38461538461538464,
+      "lift": 1.3736263736263736
+    },
+    {
+      "id": 0.7355533029106932,
+      "antecedent": [
+        "putih"
+      ],
+      "consequent": [
+        "french_crop"
+      ],
+      "support": 0.18,
+      "confidence": 0.36,
+      "lift": 1.2857142857142856
+    },
+    {
+      "id": 0.497322312271508,
+      "antecedent": [
+        "putih"
+      ],
+      "consequent": [
+        "abstrak"
+      ],
+      "support": 0.18,
+      "confidence": 0.36,
+      "lift": 0.7999999999999999
+    },
+    {
+      "id": 0.4379611634729027,
+      "antecedent": [
+        "french_crop"
+      ],
+      "consequent": [
+        "3D_bunga"
+      ],
+      "support": 0.1,
+      "confidence": 0.35714285714285715,
+      "lift": 1.3736263736263736
+    },
+    {
+      "id": 0.7129870455252084,
+      "antecedent": [
+        "abstrak"
+      ],
+      "consequent": [
+        "chrome",
+        "putih"
+      ],
+      "support": 0.15,
+      "confidence": 0.3333333333333333,
+      "lift": 1.1904761904761902
+    },
+    {
+      "id": 0.49542923779447945,
+      "antecedent": [
+        "abstrak"
+      ],
+      "consequent": [
+        "cat_eye"
+      ],
+      "support": 0.15,
+      "confidence": 0.3333333333333333,
+      "lift": 1.01010101010101
+    },
+    {
+      "id": 0.7225328079091958,
+      "antecedent": [
+        "putih"
+      ],
+      "consequent": [
+        "mutiara"
+      ],
+      "support": 0.16,
+      "confidence": 0.32,
+      "lift": 1.3333333333333335
+    },
+    {
+      "id": 0.9828415728677461,
+      "antecedent": [
+        "abstrak",
+        "chrome"
+      ],
+      "consequent": [
+        "hitam"
+      ],
+      "support": 0.1,
+      "confidence": 0.3125,
+      "lift": 1.953125
+    },
+    {
+      "id": 0.035673133981661165,
+      "antecedent": [
+        "chrome"
+      ],
+      "consequent": [
+        "cat_eye"
+      ],
+      "support": 0.19,
+      "confidence": 0.3064516129032258,
+      "lift": 0.9286412512218963
+    },
+    {
+      "id": 0.9472560490075138,
+      "antecedent": [
+        "putih"
+      ],
+      "consequent": [
+        "abstrak",
+        "chrome"
+      ],
+      "support": 0.15,
+      "confidence": 0.3,
+      "lift": 0.9375
+    }
+  ],
+  "config": {
+    "minSupport": 0.1,
+    "minConfidence": 0.3,
+    "newTransactionsSinceLastTrain": 0
+  }
+}

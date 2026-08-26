@@ -1,0 +1,6 @@
+{
+  "name": "Lucky Nailart",
+  "description": "Studio kuku premium dengan galeri desain, pemesanan jadwal, dan sistem rekomendasi pintar kuku berbasis algoritma Apriori.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
