@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Heart, Star, ArrowRight, Sparkles, Check, Flame, Award, Plus } from 'lucide-react';
+import { Heart, ArrowRight, Sparkles, Check, Flame, Award, Plus } from 'lucide-react';
 import { NailDesign, RecommendationData } from '../types';
 
 interface GallerySectionProps {
@@ -11,6 +11,7 @@ interface GallerySectionProps {
   searchQuery: string;
   favorites: string[];
   onToggleFavorite: (id: string) => void;
+  onNavigateBooking?: () => void;
 }
 
 export default function GallerySection({
@@ -20,7 +21,8 @@ export default function GallerySection({
   selectedCategory,
   searchQuery,
   favorites,
-  onToggleFavorite
+  onToggleFavorite,
+  onNavigateBooking
 }: GallerySectionProps) {
   const [activeMotifStep, setActiveMotifStep] = useState<string | null>(null);
 
@@ -42,58 +44,62 @@ export default function GallerySection({
     return matchesCat && matchesQuery;
   });
 
-  // Popular Step-by-Step Motifs matching reference image
+  // Popular Step-by-Step Motifs matching reference user dataset
   const POPULAR_MOTIFS = [
     {
-      id: "floral-step",
-      name: "Floral Sederhana",
-      icon: "🌸",
-      difficulty: "Mudah • 4 Langkah",
-      relatedServiceId: "Floral_Accent",
+      id: "chrome-step",
+      name: "Chrome Mirror Magic",
+      icon: "✨",
+      difficulty: "Terpopuler • 4 Langkah",
+      relatedServiceId: "chrome",
+      frequencyBadge: "77% Transaksi (24x)",
       steps: [
-        { num: 1, label: "Base Gel Nude", desc: "Aplikasikan 2 lapis dasar nude pink dan keringkan LED." },
-        { num: 2, label: "Titik Kelopak", desc: "Buat 5 titik putih melingkar menggunakan dotting tool." },
-        { num: 3, label: "Pusat Bunga", desc: "Tambahkan titik emas/kuning di tengah kelopak." },
-        { num: 4, label: "Glossy Top Coat", desc: "Kunci motif dengan lapisan kilap tahan lama." }
+        { num: 1, label: "Base Gel", desc: "Aplikasikan warna dasar gel dan keringkan dengan lampu LED." },
+        { num: 2, label: "No-Wipe Top", desc: "Oleskan top coat non-sticky dan keringkan 30 detik." },
+        { num: 3, label: "Gosok Chrome", desc: "Dab & gosok bubuk mirror chrome hingga kilau cermin muncul merata." },
+        { num: 4, label: "Glass Top Seal", desc: "Segel kilap kaca tahan gores hingga 4 minggu." }
       ]
     },
     {
-      id: "hearts-step",
-      name: "Hearts Minimalist",
-      icon: "🤍",
-      difficulty: "Mudah • 4 Langkah",
-      relatedServiceId: "Nude_Gel",
+      id: "abstrak-step",
+      name: "Abstrak Swirl & Marble",
+      icon: "🎨",
+      difficulty: "Artistik • 4 Langkah",
+      relatedServiceId: "abstrak",
+      frequencyBadge: "55% Transaksi (17x)",
       steps: [
-        { num: 1, label: "Sheer Milky Pink", desc: "Gunakan dasar sheer milky pink lembut transparan." },
-        { num: 2, label: "2 Titik Hati", desc: "Teteskan 2 titik berdekatan pada accent nail." },
-        { num: 3, label: "Tarik Sudut Bawah", desc: "Tarik kedua titik ke bawah hingga membentuk hati mungil." },
-        { num: 4, label: "Top Coat Segel", desc: "Lapisi top coat pelindung anti gores." }
+        { num: 1, label: "Milky Base", desc: "Gunakan dasar putih susu lembut atau nude sheer." },
+        { num: 2, label: "Swirl Gel Lines", desc: "Tarik garis lengkung bebas dinamis dengan liner brush." },
+        { num: 3, label: "Blooming Effect", desc: "Baurkan tepi garis menciptakan tekstur marmer artistik." },
+        { num: 4, label: "Glossy Coat", desc: "Kunci motif dengan lapisan glossy ekstra jernih." }
       ]
     },
     {
       id: "french-step",
-      name: "French Tips Modern",
-      icon: "☕",
-      difficulty: "Mudah • 4 Langkah",
-      relatedServiceId: "French_Tips",
+      name: "French Crop Elegan",
+      icon: "🤍",
+      difficulty: "Klasik • 4 Langkah",
+      relatedServiceId: "french crop",
+      frequencyBadge: "42% Transaksi (13x)",
       steps: [
-        { num: 1, label: "Neutral Base", desc: "Aplikasikan dasar bening atau peach natural." },
-        { num: 2, label: "Garis Senyum Halus", desc: "Lukis lengkungan putih tipis di ujung kuku." },
-        { num: 3, label: "Aksen Garis Ganda", desc: "Tambahkan garis nude kontur melengkung lembut." },
-        { num: 4, label: "Mirror Top Coat", desc: "Keringkan hingga kilap kristal maksimal." }
+        { num: 1, label: "Neutral Base", desc: "Aplikasikan dasar bening atau peach natural yang sehat." },
+        { num: 2, label: "Garis Senyum", desc: "Lukis lengkungan putih tipis presisi di ujung kuku." },
+        { num: 3, label: "Crop Kontur", desc: "Rapikan lengkungan ujung kuku agar simetris sempurna." },
+        { num: 4, label: "Mirror Top Coat", desc: "Keringkan hingga kilap kristal tahan lama." }
       ]
     },
     {
-      id: "glitter-step",
-      name: "Glitter Ombre",
-      icon: "✨",
-      difficulty: "Mudah • 4 Langkah",
-      relatedServiceId: "Glitter_Red",
+      id: "bunga3d-step",
+      name: "3D Bunga Emboss Sculpture",
+      icon: "🌸",
+      difficulty: "Spesial • 4 Langkah",
+      relatedServiceId: "3d bunga",
+      frequencyBadge: "42% Transaksi (13x)",
       steps: [
-        { num: 1, label: "Warna Dasar Berry", desc: "Gunakan warna berry pink lembut sebagai transisi." },
-        { num: 2, label: "Ketukan Glitter", desc: "Dab glitter partikel halus mulai dari ujung kuku." },
-        { num: 3, label: "Baurkan ke Tengah", desc: "Ratakan secara halus ke arah kutikula." },
-        { num: 4, label: "Lapisan Gel Halus", desc: "Keringkan dan kunci tekstur glitter agar rata halus." }
+        { num: 1, label: "Warna Dasar", desc: "Gunakan dasar pink pastel lembut atau nude anggun." },
+        { num: 2, label: "Sculpt 3D Gel", desc: "Bentuk kelopak timbul 3D menggunakan kuas gel pemahat khusus." },
+        { num: 3, label: "Pusat Mutiara", desc: "Sematkan butiran mutiara atau manik kristal di tengah bunga." },
+        { num: 4, label: "Kunci UV Lamp", desc: "Keringkan hingga kokoh dan rekat sempurna." }
       ]
     }
   ];
@@ -104,10 +110,19 @@ export default function GallerySection({
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* LEFT COLUMN: Rekomendasi Nail Art Grid (7 or 8 columns on large screens) */}
         <div className="lg:col-span-7 xl:col-span-8 space-y-4" id="gallery">
-          <div className="flex items-center justify-between">
-            <h3 className="text-base sm:text-lg font-bold text-[#2D1F24] tracking-tight">
-              Rekomendasi Nail Art
-            </h3>
+          {/* Header */}
+          <div className="flex items-center justify-between flex-wrap gap-2">
+            <div>
+              <h3 className="text-base sm:text-lg font-bold text-[#2D1F24] tracking-tight flex items-center gap-2">
+                <span>Rekomendasi Nail Art</span>
+                <span className="text-[10px] font-bold px-2.5 py-0.5 bg-[#FFF0F4] text-[#FF5376] border border-[#FCD5DF] rounded-full">
+                  {filteredDesigns.length} Motif Tersedia
+                </span>
+              </h3>
+              <p className="text-[11px] text-[#8C727D]">
+                Koleksi pilihan yang disesuaikan langsung dengan dataset transaksi riil studio
+              </p>
+            </div>
             <a
               href="#booking"
               className="inline-flex items-center gap-1 text-xs font-bold text-[#FF5376] hover:text-[#E84366] transition-colors"
@@ -151,31 +166,37 @@ export default function GallerySection({
                       </button>
 
                       {/* Bottom-Left Tag Badge */}
-                      <div className="absolute bottom-3 left-3">
+                      <div className="absolute bottom-3 left-3 flex items-center gap-1.5 flex-wrap">
                         <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#FF5376] text-white shadow-xs uppercase tracking-wider">
                           {design.tag || "Populer"}
                         </span>
+                        {design.category && (
+                          <span className="px-2 py-0.5 rounded-full text-[9px] font-semibold bg-white/90 backdrop-blur-xs text-[#2D1F24] border border-[#FCE2E8]">
+                            {design.category}
+                          </span>
+                        )}
                       </div>
                     </div>
 
                     {/* Card Body */}
                     <div className="p-4 flex-1 flex flex-col justify-between">
                       <div>
-                        <div className="flex items-center justify-between gap-2 mb-1">
+                        <div className="mb-1">
                           <h4 className="font-bold text-sm text-[#2D1F24] group-hover:text-[#FF5376] transition-colors leading-tight">
                             {design.name}
                           </h4>
-                          {/* Rating */}
-                          <div className="flex items-center gap-1 text-[11px] font-bold text-[#FF5376] shrink-0">
-                            <Star className="w-3.5 h-3.5 fill-[#FFB800] text-[#FFB800]" />
-                            <span>{design.rating || 4.8}</span>
-                          </div>
                         </div>
 
-                        <div className="flex items-center justify-between text-xs text-[#8C727D] mb-3">
-                          <span>{design.styleSubtitle || "Natural, Feminim"}</span>
-                          <span className="font-bold text-[#2D1F24]">{formatRupiah(design.price)}</span>
+                        <div className="flex items-center justify-between text-xs text-[#8C727D] mb-2">
+                          <span className="font-medium">{design.styleSubtitle || "Trendy & Elegan"}</span>
+                          <span className="font-bold text-[#FF5376]">{formatRupiah(design.price)}</span>
                         </div>
+
+                        {design.description && (
+                          <p className="text-[11px] text-[#8C727D] line-clamp-2 leading-relaxed mb-3">
+                            {design.description}
+                          </p>
+                        )}
                       </div>
 
                       {/* Action Button */}
@@ -205,13 +226,24 @@ export default function GallerySection({
             <h3 className="text-base sm:text-lg font-bold text-[#2D1F24] tracking-tight">
               Motif Nail Art Populer
             </h3>
-            <a
-              href="#booking"
-              className="inline-flex items-center gap-1 text-xs font-bold text-[#FF5376] hover:text-[#E84366] transition-colors"
-            >
-              <span>Lihat semua</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </a>
+            {onNavigateBooking ? (
+              <button
+                type="button"
+                onClick={onNavigateBooking}
+                className="inline-flex items-center gap-1 text-xs font-bold text-[#FF5376] hover:text-[#E84366] transition-colors cursor-pointer"
+              >
+                <span>Halaman Booking</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            ) : (
+              <a
+                href="#booking"
+                className="inline-flex items-center gap-1 text-xs font-bold text-[#FF5376] hover:text-[#E84366] transition-colors"
+              >
+                <span>Lihat semua</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            )}
           </div>
 
           {/* 4 Step-by-Step Motif Cards */}
@@ -221,16 +253,19 @@ export default function GallerySection({
                 key={motif.id}
                 className="bg-white border border-[#FCE2E8] rounded-2xl p-4 hover:shadow-xs hover:border-[#F9BFCB] transition-all"
               >
-                <div className="flex items-center justify-between mb-2.5">
+                <div className="flex items-center justify-between mb-1.5">
                   <div className="flex items-center gap-2">
                     <span className="text-sm">{motif.icon}</span>
                     <h4 className="text-xs sm:text-sm font-bold text-[#2D1F24]">
                       {motif.name}
                     </h4>
                   </div>
-                  <span className="text-[10px] text-[#8C727D] font-medium">
-                    {motif.difficulty}
+                  <span className="text-[9px] font-bold px-2 py-0.5 bg-[#FFF0F4] text-[#FF5376] border border-[#FCD5DF] rounded-full">
+                    {motif.frequencyBadge}
                   </span>
+                </div>
+                <div className="text-[10px] text-[#8C727D] mb-2 font-medium">
+                  {motif.difficulty}
                 </div>
 
                 {/* 4 Nail Steps Visual Mockup */}

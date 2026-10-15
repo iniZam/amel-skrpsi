@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { NailDesign, RecommendationData } from './types';
+import { NailDesign, RecommendationData, Booking } from './types';
 import Header from './components/Header';
 import HeroBanner from './components/HeroBanner';
 import CategoryFilter from './components/CategoryFilter';
 import GallerySection from './components/GallerySection';
 import FeatureBar from './components/FeatureBar';
-import BookingSection from './components/BookingSection';
+import BookingPage from './components/BookingPage';
 import AdminSection from './components/AdminSection';
 import Footer from './components/Footer';
 
@@ -17,6 +17,9 @@ export default function App() {
   const [selectedCategory, setSelectedCategory] = useState<string>('Semua');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [favorites, setFavorites] = useState<string[]>([]);
+
+  // Page Routing View: 'home' | 'booking'
+  const [currentView, setCurrentView] = useState<'home' | 'booking'>('home');
 
   const [isAdmin, setIsAdmin] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -62,7 +65,46 @@ export default function App() {
         // ignore
       }
     }
+
+    // Hash change handler for dedicated booking page URL navigation
+    const handleHash = () => {
+      const hash = window.location.hash.toLowerCase();
+      if (hash === '#booking' || hash === '#reservasi') {
+        setCurrentView('booking');
+      } else if (hash === '#hero' || hash === '#home') {
+        setCurrentView('home');
+      }
+    };
+
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
   }, []);
+
+  const navigateToBooking = () => {
+    setCurrentView('booking');
+    window.location.hash = 'booking';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const navigateToHome = () => {
+    setCurrentView('home');
+    window.location.hash = 'home';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const navigateToSection = (sectionId: string) => {
+    if (currentView !== 'home') {
+      setCurrentView('home');
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const el = document.getElementById(sectionId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const handleToggleFavorite = (id: string) => {
     setFavorites(prev => {
@@ -80,11 +122,8 @@ export default function App() {
       return [...prev, id];
     });
 
-    // Scroll smoothly to booking form
-    const bookingElement = document.getElementById('booking');
-    if (bookingElement) {
-      bookingElement.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Directly open the dedicated booking page with the chosen service
+    navigateToBooking();
   };
 
   const handleRemoveService = (id: string) => {
@@ -128,7 +167,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FCF8F9] text-[#2D1F24] selection:bg-[#FF5376]/20 selection:text-[#2D1F24]">
-      {/* Top Header matching reference */}
+      {/* Top Header */}
       <Header
         isAdmin={isAdmin}
         onAdminClick={() => setShowLoginModal(true)}
@@ -136,6 +175,10 @@ export default function App() {
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
         favoritesCount={favorites.length}
+        currentView={currentView}
+        onNavigateHome={navigateToHome}
+        onNavigateBooking={navigateToBooking}
+        onNavigateSection={navigateToSection}
       />
 
       {/* Main Content Area */}
@@ -148,15 +191,46 @@ export default function App() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <AdminSection designs={designs} onLogout={handleAdminLogout} />
+            <AdminSection
+              designs={designs}
+              onLogout={handleAdminLogout}
+              onDesignsUpdated={loadPublicData}
+            />
+          </motion.div>
+        ) : currentView === 'booking' ? (
+          /* Dedicated Booking Page View */
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <BookingPage
+              designs={designs}
+              recommendations={recommendations}
+              selectedServices={selectedServices}
+              onAddService={(id) => {
+                setSelectedServices(prev => prev.includes(id) ? prev : [...prev, id]);
+              }}
+              onRemoveService={handleRemoveService}
+              onClearServices={handleClearServices}
+              onNavigateHome={navigateToHome}
+              onBookingSuccess={loadPublicData}
+            />
           </motion.div>
         ) : (
-          /* Customer View */
-          <div>
+          /* Customer Home View */
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.2 }}
+          >
             {/* 1. Hero Banner matching reference image */}
             <HeroBanner
               designs={designs}
+              recommendations={recommendations}
               onSelectService={handleSelectService}
+              onNavigateBooking={navigateToBooking}
             />
 
             {/* 2. "Pilih Sesuai Gayamu" Category Filter */}
@@ -174,27 +248,45 @@ export default function App() {
               searchQuery={searchQuery}
               favorites={favorites}
               onToggleFavorite={handleToggleFavorite}
+              onNavigateBooking={navigateToBooking}
             />
 
-            {/* 4. Bottom 4 Feature Highlight Badges */}
+            {/* 4. Feature Highlight Badges */}
             <FeatureBar />
 
-            {/* 5. Appointment Scheduler Booking Section */}
-            <BookingSection
-              designs={designs}
-              recommendations={recommendations}
-              selectedServices={selectedServices}
-              onAddService={handleSelectService}
-              onRemoveService={handleRemoveService}
-              onClearServices={handleClearServices}
-              onBookingSuccess={loadPublicData}
-            />
-          </div>
+            {/* 5. Booking CTA Banner on Home View */}
+            <section className="py-10 px-4 max-w-7xl mx-auto text-center" id="booking">
+              <div className="bg-gradient-to-r from-[#FFF0F4] via-[#FFE5EC] to-[#FFDDE6] border border-[#FCD5DF] rounded-3xl p-8 sm:p-10 shadow-xs relative overflow-hidden">
+                <div className="max-w-2xl mx-auto space-y-3 relative z-10">
+                  <span className="text-[10px] font-bold tracking-wider text-[#FF5376] bg-white px-3.5 py-1 rounded-full uppercase border border-[#FCD5DF]">
+                    RESERVASI PRAKTIS &amp; CEPAT
+                  </span>
+                  <h2 className="text-2xl sm:text-3xl font-sans font-extrabold text-[#2D1F24] tracking-tight">
+                    Siap Mempercantik Kuku Anda?
+                  </h2>
+                  <p className="text-xs sm:text-sm text-[#8C727D] leading-relaxed">
+                    Masuk ke halaman khusus booking untuk memilih tanggal, jam kunjungan, terapis favorit, dan paduan motif kuku terbaik dengan rekomendasi pintar.
+                  </p>
+                  <div className="pt-3">
+                    <button
+                      onClick={navigateToBooking}
+                      className="px-8 py-3.5 bg-[#FF5376] hover:bg-[#FF3E66] text-white font-bold text-xs uppercase tracking-wider rounded-full transition-all shadow-md shadow-pink-300 hover:scale-105 active:scale-95 cursor-pointer"
+                    >
+                      Buka Halaman Khusus Booking
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </motion.div>
         )}
       </main>
 
-      {/* Rose Pink Footer matching reference */}
-      <Footer />
+      {/* Rose Pink Footer */}
+      <Footer
+        onNavigateHome={navigateToHome}
+        onNavigateBooking={navigateToBooking}
+      />
 
       {/* Admin Login Dialog Modal */}
       <AnimatePresence>
@@ -220,7 +312,7 @@ export default function App() {
                 <span className="text-[10px] font-bold tracking-wider text-[#FF5376] bg-[#FFF0F4] px-3 py-1 rounded-full uppercase border border-[#FCD5DF]">
                   KONSOL PENGELOLA
                 </span>
-                <h3 className="text-xl font-serif font-bold text-[#2D1F24] mt-2.5">
+                <h3 className="text-xl font-sans font-bold text-[#2D1F24] mt-2.5">
                   Masuk Dashboard Admin
                 </h3>
                 <p className="text-[#8C727D] text-[11px] mt-1 leading-relaxed">

@@ -1,12 +1,35 @@
 import React from 'react';
 import { Instagram, Youtube } from 'lucide-react';
 
-export default function Footer() {
+interface FooterProps {
+  onNavigateHome?: () => void;
+  onNavigateBooking?: () => void;
+}
+
+export default function Footer({ onNavigateHome, onNavigateBooking }: FooterProps) {
   return (
-    <footer className="bg-[#FF7A97] text-white py-6 px-4 mt-12">
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-medium">
-        <div>
-          <span>© {new Date().getFullYear()} Nailove. All rights reserved.</span>
+    <footer className="bg-[#FF7A97] text-white py-8 px-4 mt-12">
+      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-xs font-medium">
+        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-center sm:text-left">
+          <span className="font-bold">© {new Date().getFullYear()} Nailove Studio. All rights reserved.</span>
+          <div className="flex items-center gap-4 text-white/90">
+            {onNavigateHome && (
+              <button
+                onClick={onNavigateHome}
+                className="hover:underline cursor-pointer"
+              >
+                Beranda
+              </button>
+            )}
+            {onNavigateBooking && (
+              <button
+                onClick={onNavigateBooking}
+                className="hover:underline cursor-pointer font-bold bg-white/20 px-2.5 py-0.5 rounded-full"
+              >
+                Halaman Khusus Booking
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Social Icons matching reference */}
@@ -47,7 +70,7 @@ export default function Footer() {
             className="w-8 h-8 rounded-full bg-white/20 hover:bg-white text-white hover:text-[#FF7A97] transition-all flex items-center justify-center font-bold text-xs"
             title="Pinterest"
           >
-            <span className="font-serif font-black italic text-sm leading-none">P</span>
+            <span className="font-sans font-black text-xs leading-none">P</span>
           </a>
         </div>
       </div>

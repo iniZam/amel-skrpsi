@@ -8,6 +8,10 @@ interface HeaderProps {
   searchQuery: string;
   onSearchChange: (query: string) => void;
   favoritesCount: number;
+  currentView: 'home' | 'booking';
+  onNavigateHome: () => void;
+  onNavigateBooking: () => void;
+  onNavigateSection: (sectionId: string) => void;
 }
 
 export default function Header({
@@ -16,7 +20,11 @@ export default function Header({
   onAdminLogout,
   searchQuery,
   onSearchChange,
-  favoritesCount
+  favoritesCount,
+  currentView,
+  onNavigateHome,
+  onNavigateBooking,
+  onNavigateSection
 }: HeaderProps) {
   return (
     <header className="sticky top-0 z-40 bg-[#FCF8F9]/95 backdrop-blur-md border-b border-[#FCE2E8] py-3.5 px-4">
@@ -24,33 +32,65 @@ export default function Header({
         {/* Left: Brand Logo & Navigation */}
         <div className="flex items-center gap-8">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-1.5 group">
+          <button
+            onClick={onNavigateHome}
+            className="flex items-center gap-1.5 group cursor-pointer text-left"
+          >
             <span className="font-script text-3xl md:text-4xl text-[#FF5376] font-bold tracking-tight">
               Nailove
             </span>
             <span className="inline-block w-2 h-2 rounded-full bg-[#FF5376] animate-pulse -mt-2" />
-          </a>
+          </button>
 
           {/* Nav Links */}
           <nav className="hidden lg:flex items-center gap-6 text-xs font-semibold text-[#8C727D]">
-            <a href="#hero" className="text-[#FF5376] border-b-2 border-[#FF5376] pb-1 font-bold">
+            <button
+              onClick={onNavigateHome}
+              className={`pb-1 transition-all cursor-pointer ${
+                currentView === 'home'
+                  ? 'text-[#FF5376] border-b-2 border-[#FF5376] font-bold'
+                  : 'hover:text-[#FF5376]'
+              }`}
+            >
               Beranda
-            </a>
-            <a href="#rekomendasi" className="hover:text-[#FF5376] transition-colors pb-1">
+            </button>
+            <button
+              onClick={() => onNavigateSection('rekomendasi')}
+              className="hover:text-[#FF5376] transition-colors pb-1 cursor-pointer"
+            >
               Rekomendasi
-            </a>
-            <a href="#motif" className="hover:text-[#FF5376] transition-colors pb-1">
+            </button>
+            <button
+              onClick={() => onNavigateSection('motif')}
+              className="hover:text-[#FF5376] transition-colors pb-1 cursor-pointer"
+            >
               Motif
-            </a>
-            <a href="#gallery" className="hover:text-[#FF5376] transition-colors pb-1">
+            </button>
+            <button
+              onClick={() => onNavigateSection('gallery')}
+              className="hover:text-[#FF5376] transition-colors pb-1 cursor-pointer"
+            >
               Galeri
-            </a>
-            <a href="#booking" className="hover:text-[#FF5376] transition-colors pb-1">
-              Booking
-            </a>
-            <a href="#features" className="hover:text-[#FF5376] transition-colors pb-1">
+            </button>
+            <button
+              onClick={onNavigateBooking}
+              className={`pb-1 transition-all cursor-pointer flex items-center gap-1 ${
+                currentView === 'booking'
+                  ? 'text-[#FF5376] border-b-2 border-[#FF5376] font-bold'
+                  : 'hover:text-[#FF5376]'
+              }`}
+            >
+              <span>Halaman Booking</span>
+              <span className="px-1.5 py-0.2 bg-[#FF5376] text-white text-[9px] rounded-full font-bold">
+                Baru
+              </span>
+            </button>
+            <button
+              onClick={() => onNavigateSection('features')}
+              className="hover:text-[#FF5376] transition-colors pb-1 cursor-pointer"
+            >
               Tentang
-            </a>
+            </button>
           </nav>
         </div>
 
@@ -71,10 +111,10 @@ export default function Header({
         {/* Right: Actions (Notification, Favorites, Admin/Profile) */}
         <div className="flex items-center gap-3">
           {/* Favorites Heart Icon */}
-          <a
-            href="#gallery"
-            className="p-2 rounded-full bg-[#FFF0F4] text-[#8C727D] hover:text-[#FF5376] hover:bg-[#FFE4EC] transition-all relative border border-[#FCE2E8]"
-            title="Disukai"
+          <button
+            onClick={() => onNavigateSection('gallery')}
+            className="p-2 rounded-full bg-[#FFF0F4] text-[#8C727D] hover:text-[#FF5376] hover:bg-[#FFE4EC] transition-all relative border border-[#FCE2E8] cursor-pointer"
+            title="Lihat Galeri Favorit"
           >
             <Heart className="w-4 h-4 fill-transparent hover:fill-[#FF5376]" />
             {favoritesCount > 0 && (
@@ -82,14 +122,11 @@ export default function Header({
                 {favoritesCount}
               </span>
             )}
-          </a>
+          </button>
 
           {/* Notification bell */}
           <button
-            onClick={() => {
-              const recEl = document.getElementById('rekomendasi');
-              if (recEl) recEl.scrollIntoView({ behavior: 'smooth' });
-            }}
+            onClick={() => onNavigateSection('rekomendasi')}
             className="p-2 rounded-full bg-[#FFF0F4] text-[#8C727D] hover:text-[#FF5376] hover:bg-[#FFE4EC] transition-all border border-[#FCE2E8] cursor-pointer"
             title="Pemberitahuan Rekomendasi"
           >
@@ -126,13 +163,17 @@ export default function Header({
           )}
 
           {/* Booking Pill CTA */}
-          <a
-            href="#booking"
-            className="py-2 px-4 bg-[#FF5376] hover:bg-[#FF3E66] text-white text-[11px] font-bold rounded-full transition-all shadow-xs shadow-pink-200 hidden sm:flex items-center gap-1.5"
+          <button
+            onClick={onNavigateBooking}
+            className={`py-2 px-4 text-white text-[11px] font-bold rounded-full transition-all shadow-xs hidden sm:flex items-center gap-1.5 cursor-pointer ${
+              currentView === 'booking'
+                ? 'bg-[#E84366] ring-2 ring-[#FF5376]/30 shadow-pink-300'
+                : 'bg-[#FF5376] hover:bg-[#FF3E66] shadow-pink-200'
+            }`}
           >
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Booking</span>
-          </a>
+            <span>Booking Online</span>
+          </button>
         </div>
       </div>
     </header>

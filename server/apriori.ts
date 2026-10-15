@@ -1,18 +1,18 @@
 import { FrequentItemset, AssociationRule } from './db';
 
 /**
- * Serializes an itemset (array or Set) to a unique sorted comma-separated string
+ * Serializes an itemset (array or Set) to a unique sorted delimited string
  */
 export function setKey(items: string[] | Set<string>): string {
   const arr = Array.isArray(items) ? [...items] : Array.from(items);
-  return arr.filter(Boolean).sort().join(',');
+  return arr.filter(Boolean).sort().join('|||');
 }
 
 /**
  * Deserializes a key back into an array of items
  */
 export function keySet(key: string): string[] {
-  return key.split(',').filter(Boolean);
+  return key.split('|||').filter(Boolean);
 }
 
 /**

@@ -164,7 +164,7 @@ export default function BookingSection({
           <span className="text-xs font-bold tracking-wider text-[#FF5376] bg-[#FFF0F4] px-4 py-1.5 rounded-full border border-[#FCD5DF] uppercase">
             PEMESANAN BERHASIL
           </span>
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#2D1F24] mt-3 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-sans font-extrabold text-[#2D1F24] mt-3 tracking-tight">
             Jadwal Anda Terdaftar! ✨
           </h2>
           <p className="text-[#8C727D] text-xs sm:text-sm mt-2 leading-relaxed">
@@ -219,7 +219,7 @@ export default function BookingSection({
           <Sparkles className="w-3 h-3" />
           <span>Kenyamanan Reservasi</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#2D1F24] tracking-tight">
+        <h2 className="text-2xl sm:text-3xl font-sans font-extrabold text-[#2D1F24] tracking-tight">
           Booking Jadwal Cantik Anda
         </h2>
         <p className="text-[#8C727D] mt-1.5 max-w-lg mx-auto text-xs sm:text-sm leading-relaxed">
