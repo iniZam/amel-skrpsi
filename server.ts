@@ -2,8 +2,31 @@ import express from "express";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import bcrypt from "bcryptjs";
+import nodemailer, { Transporter } from "nodemailer";
 import { db } from "./server/db";
 import { runApriori, generateAssociationRules } from "./server/apriori";
+
+// Configure email transporter with fallback for development/testing
+let emailTransporter: Transporter;
+
+if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+  emailTransporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST || "smtp.gmail.com",
+    port: Number(process.env.SMTP_PORT) || 587,
+    secure: Number(process.env.SMTP_PORT) === 465,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS
+    }
+  });
+} else {
+  // Default development fallback stream transporter (logs email output cleanly without failing)
+  emailTransporter = nodemailer.createTransport({
+    streamTransport: true,
+    newline: 'windows',
+    buffer: true
+  });
+}
 
 // Static gallery designs with rich aesthetic properties
 export const GALLERY_DESIGNS = [
@@ -299,18 +322,49 @@ async function startServer() {
   const createBookingHandler = (req: express.Request, res: express.Response) => {
     const { name, email, phone, services, date, time } = req.body;
 
-    if (!name || !email || !phone || !services || !date || !time) {
-      return res.status(400).json({ error: "Semua detail pemesanan harus diisi." });
+    if (!name || !email || !services || !date || !time) {
+      return res.status(400).json({ error: "Semua detail pemesanan (nama, email, layanan, tanggal, jam) harus diisi." });
     }
 
     const newBooking = db.addBooking({
       name,
       email,
-      phone,
+      phone: phone || '-',
       services,
       date,
       time
     });
+
+    // Send notification email to the user
+    const serviceListStr = Array.isArray(services) ? services.map(s => `• ${s.replace(/_/g, ' ')}`).join('\n') : '';
+    const mailOptions = {
+      from: process.env.SMTP_FROM || '"Nailove Studio" <no-reply@nailovestudio.com>',
+      to: newBooking.email,
+      subject: `Konfirmasi Reservasi Nail Art - ${newBooking.id}`,
+      text: `Halo ${newBooking.name},\n\nTerima kasih! Reservasi Anda di Nailove Studio telah berhasil dibuat.\n\nDetail Reservasi:\n- Kode Booking: ${newBooking.id}\n- Tanggal: ${newBooking.date}\n- Jam: ${newBooking.time} WIB\n- Layanan:\n${serviceListStr}\n\nSilakan datang 10 menit sebelum jadwal Anda. Jika ada pertanyaan, hubungi studio kami.\n\nSalam Hangat,\nNailove Studio`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #FCD5DF; border-radius: 16px; background-color: #FFF8FA;">
+          <h2 style="color: #FF5376; text-align: center;">Konfirmasi Reservasi Nailove Studio ✨</h2>
+          <p>Halo <strong>${newBooking.name}</strong>,</p>
+          <p>Terima kasih telah melakukan reservasi di <strong>Nailove Studio</strong>. Jadwal treatment cantik Anda telah kami terima.</p>
+          <div style="background-color: #FFFFFF; padding: 15px; border-radius: 12px; border: 1px solid #FCE2E8; margin: 20px 0;">
+            <p style="margin: 5px 0;"><strong>Kode Reservasi:</strong> <span style="color: #FF5376; font-weight: bold; font-family: monospace;">${newBooking.id}</span></p>
+            <p style="margin: 5px 0;"><strong>Tanggal:</strong> ${newBooking.date}</p>
+            <p style="margin: 5px 0;"><strong>Waktu:</strong> ${newBooking.time} WIB</p>
+            <p style="margin: 5px 0;"><strong>Layanan Dipesan:</strong></p>
+            <ul style="margin: 5px 0; padding-left: 20px;">
+              ${Array.isArray(services) ? services.map(s => `<li>${s.replace(/_/g, ' ')}</li>`).join('') : ''}
+            </ul>
+          </div>
+          <p style="font-size: 13px; color: #8C727D;">Harap hadir 10 menit sebelum waktu reservasi untuk persiapan dan sterilisasi.</p>
+          <p style="text-align: center; margin-top: 25px; font-size: 12px; color: #B59BA6;">© ${new Date().getFullYear()} Nailove Studio. All rights reserved.</p>
+        </div>
+      `
+    };
+
+    emailTransporter.sendMail(mailOptions)
+      .then(info => console.log('Notification email sent successfully:', info.messageId || 'OK'))
+      .catch(err => console.error('Error sending confirmation email:', err));
 
     res.status(201).json({ success: true, booking: newBooking });
   };

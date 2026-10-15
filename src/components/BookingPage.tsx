@@ -61,7 +61,6 @@ export default function BookingPage({
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
     date: '',
     time: '',
     nailShape: 'almond',
@@ -210,7 +209,6 @@ export default function BookingPage({
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          phone: formData.phone,
           date: formData.date,
           time: formData.time,
           services: selectedServices,
@@ -231,7 +229,6 @@ export default function BookingPage({
       setFormData({
         name: '',
         email: '',
-        phone: '',
         date: '',
         time: '',
         nailShape: 'almond',
@@ -314,7 +311,7 @@ export default function BookingPage({
           </h2>
 
           <p className="text-[#8C727D] text-xs sm:text-sm mt-2 max-w-md mx-auto leading-relaxed">
-            Terima kasih telah memilih <strong>Nailove Studio</strong>. Bukti reservasi ini telah tersimpan dalam sistem kami.
+            Terima kasih telah memilih <strong>Nailove Studio</strong>. Bukti reservasi ini telah tersimpan dan konfirmasi telah otomatis dikirimkan ke email <strong>{successBooking.email}</strong>.
           </p>
 
           {/* Virtual Booking Card / E-Ticket */}
@@ -336,8 +333,8 @@ export default function BookingPage({
                 <span className="font-bold text-sm text-[#2D1F24]">{successBooking.name}</span>
               </div>
               <div>
-                <span className="text-[10px] text-[#8C727D] block">Kontak WhatsApp:</span>
-                <span className="font-bold text-sm text-[#2D1F24]">{successBooking.phone}</span>
+                <span className="text-[10px] text-[#8C727D] block">Email Konfirmasi:</span>
+                <span className="font-bold text-sm text-[#2D1F24]">{successBooking.email}</span>
               </div>
               <div>
                 <span className="text-[10px] text-[#8C727D] block">Tanggal Kedatangan:</span>
@@ -568,8 +565,8 @@ export default function BookingPage({
                     <span className="font-bold text-[#2D1F24]">{trackingResult.name}</span>
                   </div>
                   <div>
-                    <span className="text-[#8C727D] block">WhatsApp:</span>
-                    <span className="font-bold text-[#2D1F24]">{trackingResult.phone}</span>
+                    <span className="text-[#8C727D] block">Email:</span>
+                    <span className="font-bold text-[#2D1F24]">{trackingResult.email}</span>
                   </div>
                   <div>
                     <span className="text-[#8C727D] block">Tanggal:</span>
@@ -876,33 +873,21 @@ export default function BookingPage({
 
                 <div className="space-y-1.5">
                   <label className="text-xs font-semibold text-[#2D1F24] flex items-center gap-1.5">
-                    <Phone className="w-3.5 h-3.5 text-[#FF5376]" />
-                    Nomor WhatsApp *
+                    <Mail className="w-3.5 h-3.5 text-[#FF5376]" />
+                    Email Konfirmasi *
                   </label>
                   <input
-                    type="tel"
+                    type="email"
                     required
-                    placeholder="0812-3456-7890"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    placeholder="Contoh: jessica@example.com"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full px-4 py-2.5 bg-[#FFF0F4] border border-[#FCE2E8] rounded-full text-xs text-[#2D1F24] focus:outline-hidden focus:border-[#FF5376] focus:bg-white transition-all shadow-2xs"
                   />
+                  <span className="text-[10px] text-[#8C727D] block pl-1">
+                    Detail reservasi akan otomatis dikirimkan ke email ini.
+                  </span>
                 </div>
-              </div>
-
-              <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-[#2D1F24] flex items-center gap-1.5">
-                  <Mail className="w-3.5 h-3.5 text-[#FF5376]" />
-                  Email Konfirmasi *
-                </label>
-                <input
-                  type="email"
-                  required
-                  placeholder="jessica@example.com"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-2.5 bg-[#FFF0F4] border border-[#FCE2E8] rounded-full text-xs text-[#2D1F24] focus:outline-hidden focus:border-[#FF5376] focus:bg-white transition-all shadow-2xs"
-                />
               </div>
 
               <div className="space-y-1.5">

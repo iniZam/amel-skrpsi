@@ -29,7 +29,6 @@ export default function BookingSection({
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
     date: '',
     time: ''
   });
@@ -131,7 +130,6 @@ export default function BookingSection({
       setFormData({
         name: '',
         email: '',
-        phone: '',
         date: '',
         time: ''
       });
@@ -260,33 +258,18 @@ export default function BookingSection({
 
               <div className="space-y-1.5">
                 <label className="text-xs font-semibold text-[#2D1F24] flex items-center gap-1.5">
-                  <Phone className="w-3.5 h-3.5 text-[#FF5376]" />
-                  Nomor WhatsApp
+                  <Mail className="w-3.5 h-3.5 text-[#FF5376]" />
+                  Email Konfirmasi
                 </label>
                 <input
-                  type="tel"
+                  type="email"
                   required
-                  placeholder="0812-3456-7890"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  placeholder="jessica@example.com"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full px-4 py-2.5 bg-[#FFF0F4] border border-[#FCE2E8] rounded-full text-xs text-[#2D1F24] focus:outline-hidden focus:border-[#FF5376] focus:bg-white transition-all shadow-2xs"
                 />
               </div>
-            </div>
-
-            <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-[#2D1F24] flex items-center gap-1.5">
-                <Mail className="w-3.5 h-3.5 text-[#FF5376]" />
-                Email Konfirmasi
-              </label>
-              <input
-                type="email"
-                required
-                placeholder="jessica@example.com"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-2.5 bg-[#FFF0F4] border border-[#FCE2E8] rounded-full text-xs text-[#2D1F24] focus:outline-hidden focus:border-[#FF5376] focus:bg-white transition-all shadow-2xs"
-              />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
