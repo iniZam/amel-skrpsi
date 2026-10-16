@@ -18,6 +18,9 @@ interface BookingPageProps {
   onBookingSuccess: (booking: Booking) => void;
 }
 
+// sessionStorage key used to keep the booking status page after a reload
+export const LAST_BOOKING_KEY = 'nailove_last_booking';
+
 const TIME_SLOTS = [
   { time: "09:00", session: "Pagi", available: true },
   { time: "10:30", session: "Pagi", available: true },
@@ -75,7 +78,24 @@ export default function BookingPage({
   // Submission State
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [successBooking, setSuccessBooking] = useState<Booking | null>(null);
+  const [successBooking, setSuccessBookingState] = useState<Booking | null>(() => {
+    try {
+      const saved = sessionStorage.getItem(LAST_BOOKING_KEY);
+      return saved ? JSON.parse(saved) : null;
+    } catch {
+      return null;
+    }
+  });
+
+  // Keep the success (booking status) view in sessionStorage so it survives page reloads
+  const setSuccessBooking = (booking: Booking | null) => {
+    if (booking) {
+      sessionStorage.setItem(LAST_BOOKING_KEY, JSON.stringify(booking));
+    } else {
+      sessionStorage.removeItem(LAST_BOOKING_KEY);
+    }
+    setSuccessBookingState(booking);
+  };
 
   // Tracking State
   const [trackBookingId, setTrackBookingId] = useState('');
@@ -415,7 +435,10 @@ export default function BookingPage({
 
           <div className="mt-6 pt-4 border-t border-[#FCE2E8]">
             <button
-              onClick={onNavigateHome}
+              onClick={() => {
+                setSuccessBooking(null);
+                onNavigateHome();
+              }}
               className="text-xs font-bold text-[#8C727D] hover:text-[#FF5376] transition-colors inline-flex items-center gap-1 cursor-pointer"
             >
               <ArrowLeft className="w-3.5 h-3.5" />

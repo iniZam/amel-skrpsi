@@ -6,7 +6,7 @@ import HeroBanner from './components/HeroBanner';
 import CategoryFilter from './components/CategoryFilter';
 import GallerySection from './components/GallerySection';
 import FeatureBar from './components/FeatureBar';
-import BookingPage from './components/BookingPage';
+import BookingPage, { LAST_BOOKING_KEY } from './components/BookingPage';
 import AdminSection from './components/AdminSection';
 import Footer from './components/Footer';
 
@@ -73,6 +73,10 @@ export default function App() {
         setCurrentView('booking');
       } else if (hash === '#hero' || hash === '#home') {
         setCurrentView('home');
+      } else if (sessionStorage.getItem(LAST_BOOKING_KEY)) {
+        // A booking was just completed in this tab: stay on the booking status page after reload
+        setCurrentView('booking');
+        window.history.replaceState(null, '', '#booking');
       }
     };
 

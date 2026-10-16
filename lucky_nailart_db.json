@@ -7,7 +7,138 @@
     }
   ],
   "bookings": [
-
+    {
+      "name": "mud",
+      "email": "zamanjay99@gmail.com",
+      "phone": "-",
+      "services": [
+        "Cat_Eye"
+      ],
+      "date": "2026-10-17",
+      "time": "15:00",
+      "id": "bk-3yeqh7xg9",
+      "status": "pending",
+      "createdAt": "2026-10-16T17:37:30.594Z"
+    },
+    {
+      "name": "zaasd",
+      "email": "zamanjay99@gmail.com",
+      "phone": "-",
+      "services": [
+        "Gold_Foil",
+        "Cat_Eye"
+      ],
+      "date": "2026-10-30",
+      "time": "15:00",
+      "id": "bk-tgjo997o7",
+      "status": "pending",
+      "createdAt": "2026-10-16T17:30:42.682Z"
+    },
+    {
+      "name": "zam",
+      "email": "zamanjay99@gmail.com",
+      "phone": "-",
+      "services": [
+        "Matte_Black"
+      ],
+      "date": "2026-10-24",
+      "time": "12:00",
+      "id": "bk-7hpjskqrb",
+      "status": "pending",
+      "createdAt": "2026-10-16T17:29:07.007Z"
+    },
+    {
+      "name": "zam",
+      "email": "nidzamuddin18@gmail.com",
+      "phone": "-",
+      "services": [
+        "Gold_Foil"
+      ],
+      "date": "2026-10-31",
+      "time": "10:30",
+      "id": "bk-5pq5e2zqg",
+      "status": "pending",
+      "createdAt": "2026-10-16T17:27:41.508Z"
+    },
+    {
+      "name": "amel",
+      "email": "ameliasantikamataheruella@gmail.com",
+      "phone": "-",
+      "services": [
+        "Pastel_Ombre"
+      ],
+      "date": "2026-10-31",
+      "time": "15:00",
+      "id": "bk-satxhcjec",
+      "status": "pending",
+      "createdAt": "2026-10-16T17:09:00.889Z"
+    },
+    {
+      "name": "zam",
+      "email": "zamanjay99@gmail.com",
+      "phone": "-",
+      "services": [
+        "Gold_Foil",
+        "Glitter_Red"
+      ],
+      "date": "2026-10-31",
+      "time": "15:00",
+      "id": "bk-5dz2bc2gn",
+      "status": "pending",
+      "createdAt": "2026-10-16T17:06:24.358Z"
+    },
+    {
+      "name": "zam",
+      "email": "nidzamuddin18@gmail.com",
+      "phone": "-",
+      "services": [
+        "Pastel_Ombre"
+      ],
+      "date": "2026-10-17",
+      "time": "16:30",
+      "id": "bk-6gtouxb69",
+      "status": "pending",
+      "createdAt": "2026-10-16T16:56:29.758Z"
+    },
+    {
+      "name": "zam",
+      "email": "nidzamuddin18@gmail.com",
+      "phone": "-",
+      "services": [
+        "Glitter_Red"
+      ],
+      "date": "2026-10-17",
+      "time": "18:00",
+      "id": "bk-h6g8o34x6",
+      "status": "pending",
+      "createdAt": "2026-10-16T16:27:37.106Z"
+    },
+    {
+      "name": "nizam",
+      "email": "nidzamuddin18@gmail.com",
+      "phone": "-",
+      "services": [
+        "Gold_Foil"
+      ],
+      "date": "2026-10-17",
+      "time": "12:00",
+      "id": "bk-571dc8n67",
+      "status": "pending",
+      "createdAt": "2026-10-16T16:26:14.278Z"
+    },
+    {
+      "name": "amelia",
+      "email": "amel@gmail.com",
+      "phone": "-",
+      "services": [
+        "Glitter_Red"
+      ],
+      "date": "2026-10-17",
+      "time": "10:30",
+      "id": "bk-q0797bbxu",
+      "status": "pending",
+      "createdAt": "2026-10-16T15:32:53.092Z"
+    },
     {
       "name": "amelia",
       "email": "ameliasantikamataheruella@gmail.com",

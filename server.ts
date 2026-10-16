@@ -1,3 +1,4 @@
+import "dotenv/config";
 import express from "express";
 import path from "path";
 import { createServer as createViteServer } from "vite";
@@ -8,8 +9,9 @@ import { runApriori, generateAssociationRules } from "./server/apriori";
 
 // Configure email transporter with fallback for development/testing
 let emailTransporter: Transporter;
+const isSmtpConfigured = Boolean(process.env.SMTP_USER && process.env.SMTP_PASS);
 
-if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+if (isSmtpConfigured) {
   emailTransporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST || "smtp.gmail.com",
     port: Number(process.env.SMTP_PORT) || 587,
@@ -19,7 +21,13 @@ if (process.env.SMTP_USER && process.env.SMTP_PASS) {
       pass: process.env.SMTP_PASS
     }
   });
+
+  // Check SMTP connection/credentials at startup so problems are visible immediately
+  emailTransporter.verify()
+    .then(() => console.log(`[Email] SMTP siap. Email akan dikirim dari ${process.env.SMTP_USER}`))
+    .catch(err => console.error('[Email] Gagal terhubung ke SMTP. Periksa SMTP_USER / SMTP_PASS di file .env:', err.message));
 } else {
+  console.warn('[Email] SMTP_USER / SMTP_PASS belum diisi di file .env. Email konfirmasi TIDAK akan benar-benar dikirim.');
   // Default development fallback stream transporter (logs email output cleanly without failing)
   emailTransporter = nodemailer.createTransport({
     streamTransport: true,
@@ -363,8 +371,14 @@ async function startServer() {
     };
 
     emailTransporter.sendMail(mailOptions)
-      .then(info => console.log('Notification email sent successfully:', info.messageId || 'OK'))
-      .catch(err => console.error('Error sending confirmation email:', err));
+      .then(info => {
+        if (isSmtpConfigured) {
+          console.log(`[Email] Konfirmasi terkirim ke ${newBooking.email}:`, info.messageId || 'OK');
+        } else {
+          console.warn(`[Email] (Mode simulasi) Email ke ${newBooking.email} TIDAK dikirim karena SMTP belum dikonfigurasi.`);
+        }
+      })
+      .catch(err => console.error(`[Email] Gagal mengirim konfirmasi ke ${newBooking.email}:`, err));
 
     res.status(201).json({ success: true, booking: newBooking });
   };
