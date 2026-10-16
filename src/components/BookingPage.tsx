@@ -95,6 +95,31 @@ export default function BookingPage({
       sessionStorage.removeItem(LAST_BOOKING_KEY);
     }
     setSuccessBookingState(booking);
+    setEmailStatus('idle');
+    setEmailMessage(null);
+  };
+
+  // Email confirmation button state
+  const [emailStatus, setEmailStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [emailMessage, setEmailMessage] = useState<string | null>(null);
+
+  const handleSendConfirmationEmail = async () => {
+    if (!successBooking) return;
+    setEmailStatus('sending');
+    setEmailMessage(null);
+    try {
+      const res = await fetch(`/api/public/bookings/${encodeURIComponent(successBooking.id)}/send-confirmation`, {
+        method: 'POST'
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data.error || 'Gagal mengirim email konfirmasi.');
+      }
+      setEmailStatus('sent');
+    } catch (err: any) {
+      setEmailStatus('error');
+      setEmailMessage(err.message || 'Gagal mengirim email konfirmasi.');
+    }
   };
 
   // Tracking State
@@ -300,9 +325,6 @@ export default function BookingPage({
 
   // Success E-Ticket View
   if (successBooking) {
-    const waText = encodeURIComponent(
-      `Halo Nailove Studio! ✨ Saya sudah melakukan reservasi dengan nomor *${successBooking.id}* atas nama *${successBooking.name}* untuk tanggal *${successBooking.date}* jam *${successBooking.time} WIB*. Mohon dikonfirmasi ya, terima kasih!`
-    );
 
     return (
       <div className="py-10 px-4 max-w-3xl mx-auto text-left" id="booking-success-view">
@@ -399,22 +421,32 @@ export default function BookingPage({
             <div className="p-3 bg-[#FFF0F4] rounded-2xl border border-[#FCE2E8] text-[11px] text-[#8C727D] leading-relaxed flex items-start gap-2">
               <Sparkles className="w-4 h-4 text-[#FF5376] shrink-0 mt-0.5" />
               <span>
-                Mohon hadir 10 menit sebelum waktu reservasi. Jika ada keterlambatan atau ingin mengubah jadwal, silakan hubungi customer service kami melalui WhatsApp.
+                Mohon hadir 10 menit sebelum waktu reservasi. Jika ada keterlambatan atau ingin mengubah jadwal, silakan hubungi customer service kami melalui email.
               </span>
             </div>
           </div>
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a
-              href={`https://api.whatsapp.com/send?phone=6281234567890&text=${waText}`}
-              target="_blank"
-              rel="noreferrer"
-              className="w-full sm:w-auto py-3 px-6 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-full transition-all flex items-center justify-center gap-2 shadow-xs cursor-pointer"
+            <button
+              type="button"
+              onClick={handleSendConfirmationEmail}
+              disabled={emailStatus === 'sending'}
+              className="w-full sm:w-auto py-3 px-6 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold text-xs rounded-full transition-all flex items-center justify-center gap-2 shadow-xs cursor-pointer"
             >
-              <Send className="w-4 h-4" />
-              <span>Konfirmasi via WhatsApp</span>
-            </a>
+              {emailStatus === 'sending' ? (
+                <RefreshCw className="w-4 h-4 animate-spin" />
+              ) : (
+                <Mail className="w-4 h-4" />
+              )}
+              <span>
+                {emailStatus === 'sending'
+                  ? 'Mengirim Email...'
+                  : emailStatus === 'sent'
+                    ? 'Kirim Ulang Konfirmasi Email'
+                    : 'Konfirmasi via Email'}
+              </span>
+            </button>
 
             <button
               onClick={() => window.print()}
@@ -432,6 +464,20 @@ export default function BookingPage({
               <span>Buat Reservasi Baru</span>
             </button>
           </div>
+
+          {/* Email confirmation feedback */}
+          {emailStatus === 'sent' && (
+            <p className="mt-4 text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-2xl px-4 py-2.5 inline-flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4" />
+              <span>Email konfirmasi berhasil dikirim ke <strong>{successBooking.email}</strong>. Silakan cek kotak masuk atau folder Spam.</span>
+            </p>
+          )}
+          {emailStatus === 'error' && emailMessage && (
+            <p className="mt-4 text-xs font-semibold text-red-700 bg-red-50 border border-red-200 rounded-2xl px-4 py-2.5 inline-flex items-center gap-1.5">
+              <AlertCircle className="w-4 h-4" />
+              <span>{emailMessage}</span>
+            </p>
+          )}
 
           <div className="mt-6 pt-4 border-t border-[#FCE2E8]">
             <button

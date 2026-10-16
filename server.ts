@@ -326,6 +326,44 @@ async function startServer() {
   app.get("/api/public/recommendations", getRecommendationsHandler);
   app.get("/api/recommendations", getRecommendationsHandler);
 
+  // Build & send the booking confirmation email to the customer
+  const sendBookingConfirmationEmail = async (booking: { id: string; name: string; email: string; date: string; time: string; services: string[] }) => {
+    const services = booking.services;
+    const serviceListStr = Array.isArray(services) ? services.map(s => `• ${s.replace(/_/g, ' ')}`).join('\n') : '';
+    const mailOptions = {
+      from: process.env.SMTP_FROM || '"Nailove Studio" <no-reply@nailovestudio.com>',
+      to: booking.email,
+      subject: `Konfirmasi Reservasi Nail Art - ${booking.id}`,
+      text: `Halo ${booking.name},\n\nTerima kasih! Reservasi Anda di Nailove Studio telah berhasil dibuat.\n\nDetail Reservasi:\n- Kode Booking: ${booking.id}\n- Tanggal: ${booking.date}\n- Jam: ${booking.time} WIB\n- Layanan:\n${serviceListStr}\n\nSilakan datang 10 menit sebelum jadwal Anda. Jika ada pertanyaan, hubungi studio kami.\n\nSalam Hangat,\nNailove Studio`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #FCD5DF; border-radius: 16px; background-color: #FFF8FA;">
+          <h2 style="color: #FF5376; text-align: center;">Konfirmasi Reservasi Nailove Studio ✨</h2>
+          <p>Halo <strong>${booking.name}</strong>,</p>
+          <p>Terima kasih telah melakukan reservasi di <strong>Nailove Studio</strong>. Jadwal treatment cantik Anda telah kami terima.</p>
+          <div style="background-color: #FFFFFF; padding: 15px; border-radius: 12px; border: 1px solid #FCE2E8; margin: 20px 0;">
+            <p style="margin: 5px 0;"><strong>Kode Reservasi:</strong> <span style="color: #FF5376; font-weight: bold; font-family: monospace;">${booking.id}</span></p>
+            <p style="margin: 5px 0;"><strong>Tanggal:</strong> ${booking.date}</p>
+            <p style="margin: 5px 0;"><strong>Waktu:</strong> ${booking.time} WIB</p>
+            <p style="margin: 5px 0;"><strong>Layanan Dipesan:</strong></p>
+            <ul style="margin: 5px 0; padding-left: 20px;">
+              ${Array.isArray(services) ? services.map(s => `<li>${s.replace(/_/g, ' ')}</li>`).join('') : ''}
+            </ul>
+          </div>
+          <p style="font-size: 13px; color: #8C727D;">Harap hadir 10 menit sebelum waktu reservasi untuk persiapan dan sterilisasi.</p>
+          <p style="text-align: center; margin-top: 25px; font-size: 12px; color: #B59BA6;">© ${new Date().getFullYear()} Nailove Studio. All rights reserved.</p>
+        </div>
+      `
+    };
+
+    const info = await emailTransporter.sendMail(mailOptions);
+    if (isSmtpConfigured) {
+      console.log(`[Email] Konfirmasi terkirim ke ${booking.email}:`, info.messageId || 'OK');
+    } else {
+      console.warn(`[Email] (Mode simulasi) Email ke ${booking.email} TIDAK dikirim karena SMTP belum dikonfigurasi.`);
+    }
+    return info;
+  };
+
   // 3. Create Booking (client-side submission)
   const createBookingHandler = (req: express.Request, res: express.Response) => {
     const { name, email, phone, services, date, time } = req.body;
@@ -343,41 +381,8 @@ async function startServer() {
       time
     });
 
-    // Send notification email to the user
-    const serviceListStr = Array.isArray(services) ? services.map(s => `• ${s.replace(/_/g, ' ')}`).join('\n') : '';
-    const mailOptions = {
-      from: process.env.SMTP_FROM || '"Nailove Studio" <no-reply@nailovestudio.com>',
-      to: newBooking.email,
-      subject: `Konfirmasi Reservasi Nail Art - ${newBooking.id}`,
-      text: `Halo ${newBooking.name},\n\nTerima kasih! Reservasi Anda di Nailove Studio telah berhasil dibuat.\n\nDetail Reservasi:\n- Kode Booking: ${newBooking.id}\n- Tanggal: ${newBooking.date}\n- Jam: ${newBooking.time} WIB\n- Layanan:\n${serviceListStr}\n\nSilakan datang 10 menit sebelum jadwal Anda. Jika ada pertanyaan, hubungi studio kami.\n\nSalam Hangat,\nNailove Studio`,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #FCD5DF; border-radius: 16px; background-color: #FFF8FA;">
-          <h2 style="color: #FF5376; text-align: center;">Konfirmasi Reservasi Nailove Studio ✨</h2>
-          <p>Halo <strong>${newBooking.name}</strong>,</p>
-          <p>Terima kasih telah melakukan reservasi di <strong>Nailove Studio</strong>. Jadwal treatment cantik Anda telah kami terima.</p>
-          <div style="background-color: #FFFFFF; padding: 15px; border-radius: 12px; border: 1px solid #FCE2E8; margin: 20px 0;">
-            <p style="margin: 5px 0;"><strong>Kode Reservasi:</strong> <span style="color: #FF5376; font-weight: bold; font-family: monospace;">${newBooking.id}</span></p>
-            <p style="margin: 5px 0;"><strong>Tanggal:</strong> ${newBooking.date}</p>
-            <p style="margin: 5px 0;"><strong>Waktu:</strong> ${newBooking.time} WIB</p>
-            <p style="margin: 5px 0;"><strong>Layanan Dipesan:</strong></p>
-            <ul style="margin: 5px 0; padding-left: 20px;">
-              ${Array.isArray(services) ? services.map(s => `<li>${s.replace(/_/g, ' ')}</li>`).join('') : ''}
-            </ul>
-          </div>
-          <p style="font-size: 13px; color: #8C727D;">Harap hadir 10 menit sebelum waktu reservasi untuk persiapan dan sterilisasi.</p>
-          <p style="text-align: center; margin-top: 25px; font-size: 12px; color: #B59BA6;">© ${new Date().getFullYear()} Nailove Studio. All rights reserved.</p>
-        </div>
-      `
-    };
-
-    emailTransporter.sendMail(mailOptions)
-      .then(info => {
-        if (isSmtpConfigured) {
-          console.log(`[Email] Konfirmasi terkirim ke ${newBooking.email}:`, info.messageId || 'OK');
-        } else {
-          console.warn(`[Email] (Mode simulasi) Email ke ${newBooking.email} TIDAK dikirim karena SMTP belum dikonfigurasi.`);
-        }
-      })
+    // Send notification email to the user (in background, response is not delayed)
+    sendBookingConfirmationEmail(newBooking)
       .catch(err => console.error(`[Email] Gagal mengirim konfirmasi ke ${newBooking.email}:`, err));
 
     res.status(201).json({ success: true, booking: newBooking });
@@ -385,6 +390,28 @@ async function startServer() {
 
   app.post("/api/bookings", createBookingHandler);
   app.post("/api/public/bookings", createBookingHandler);
+
+  // Send (or resend) the confirmation email for an existing booking
+  const sendConfirmationHandler = async (req: express.Request, res: express.Response) => {
+    const { id } = req.params;
+    const data = db.get();
+    const found = data.bookings.find(b => b.id.toLowerCase() === String(id || '').trim().toLowerCase());
+    if (!found) {
+      return res.status(404).json({ error: `Pemesanan dengan nomor "${id}" tidak ditemukan dalam sistem.` });
+    }
+    if (!isSmtpConfigured) {
+      return res.status(503).json({ error: "Layanan email belum dikonfigurasi di server. Silakan hubungi studio." });
+    }
+    try {
+      await sendBookingConfirmationEmail(found);
+      res.json({ success: true, email: found.email });
+    } catch (err: any) {
+      console.error(`[Email] Gagal mengirim konfirmasi ke ${found.email}:`, err);
+      res.status(500).json({ error: "Gagal mengirim email konfirmasi. Silakan coba lagi beberapa saat." });
+    }
+  };
+
+  app.post("/api/public/bookings/:id/send-confirmation", sendConfirmationHandler);
 
   // Lookup booking by ID
   const getBookingByIdHandler = (req: express.Request, res: express.Response) => {
