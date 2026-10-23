@@ -78,11 +78,26 @@ const TAG_OPTIONS = [
 ];
 
 export default function AdminSection({ designs, onLogout, onDesignsUpdated }: AdminSectionProps) {
-  const [activeTab, setActiveTab] = useState<'bookings' | 'gallery' | 'training' | 'itemsets'>('bookings');
+  const [activeTab, setActiveTab] = useState<'bookings' | 'gallery' | 'training' | 'itemsets'>('itemsets');
+  const [itemsetFilter, setItemsetFilter] = useState<'all' | 'bundles' | 'single'>('all');
   const [data, setData] = useState<AdminDashboardData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
+
+  // Format helpers for Apriori metrics (support/confidence stored as 0..1 or 0..100)
+  const formatPct = (val: number) => {
+    const pct = val <= 1 ? val * 100 : val;
+    return (Math.round(pct * 10) / 10).toString();
+  };
+
+  const formatLift = (val: number) => {
+    return (Math.round((val || 1) * 100) / 100).toFixed(2);
+  };
+
+  const formatRuleSide = (side: string[] | string) => {
+    return Array.isArray(side) ? side.join(', ') : String(side);
+  };
 
   // Training parameters state
   const [minSupport, setMinSupport] = useState(0.1);
@@ -638,12 +653,105 @@ export default function AdminSection({ designs, onLogout, onDesignsUpdated }: Ad
             </div>
           </div>
 
-          <div className="bg-white border border-[#FCE2E8] p-5 rounded-2xl shadow-2xs">
-            <span className="text-[#8C727D] text-[10px] block uppercase font-bold tracking-wider">Aturan Asosiasi</span>
-            <span className="text-2xl font-bold text-[#2D1F24] block mt-1">{data.associationRules.length} Pola</span>
-            <div className="text-[10px] text-[#8C727D] mt-1.5">
-              Confidence &gt;= {(minConfidence * 100).toFixed(0)}%
+          <div className="bg-gradient-to-br from-[#FF5376] to-[#E84366] text-white p-5 rounded-2xl shadow-md shadow-pink-200">
+            <span className="text-pink-100 text-[10px] block uppercase font-bold tracking-wider">Aturan Asosiasi Apriori</span>
+            <span className="text-2xl font-extrabold text-white block mt-1">{data.associationRules.length} Pola Aktif</span>
+            <div className="text-[10px] text-pink-100 mt-1.5 font-semibold">
+              Min. Support {(minSupport * 100).toFixed(0)}% &bull; Conf &gt;= {(minConfidence * 100).toFixed(0)}%
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Prominent Apriori Recommendation Spotlight on Admin Dashboard */}
+      {data && data.associationRules.length > 0 && (
+        <div className="mb-6 rounded-3xl bg-gradient-to-r from-[#2D1F24] via-[#3D2530] to-[#4E2838] text-white p-6 shadow-lg border border-[#FF5376]/30 relative overflow-hidden">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 mb-4 border-b border-white/10">
+            <div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#FF5376] text-white text-[10px] font-extrabold uppercase tracking-wider mb-1.5">
+                <Sparkles className="w-3 h-3" />
+                <span>SOROTAN UTAMA REKOMENDASI APRIORI</span>
+              </div>
+              <h3 className="text-lg sm:text-xl font-extrabold text-white tracking-tight">
+                Top Rekomendasi Pasangan Motif Kuku (Market Basket Analysis)
+              </h3>
+              <p className="text-xs text-pink-100/80 mt-0.5">
+                Hasil ekstraksi aturan asosiasi terkuat dari {data.totalTransactions} transaksi untuk rekomendasi otomatis ke pelanggan.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-2 shrink-0">
+              <button
+                type="button"
+                onClick={() => setActiveTab('itemsets')}
+                className="px-4 py-2 rounded-full bg-white text-[#2D1F24] hover:bg-[#FFF0F4] text-xs font-extrabold transition-all cursor-pointer flex items-center gap-1.5 shadow-xs"
+              >
+                <Network className="w-3.5 h-3.5 text-[#FF5376]" />
+                <span>Lihat Semua Aturan ({data.associationRules.length})</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab('training')}
+                className="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5"
+              >
+                <Sliders className="w-3.5 h-3.5 text-[#FF8DA6]" />
+                <span>Atur Parameter</span>
+              </button>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+            {[...data.associationRules]
+              .sort((a, b) => b.confidence - a.confidence || b.lift - a.lift)
+              .slice(0, 3)
+              .map((rule, idx) => {
+                const confPct = formatPct(rule.confidence);
+                const supPct = formatPct(rule.support);
+                const liftStr = formatLift(rule.lift);
+                const antStr = formatRuleSide(rule.antecedent);
+                const consStr = formatRuleSide(rule.consequent);
+
+                return (
+                  <div
+                    key={idx}
+                    className="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-4 flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-2.5">
+                        <span className="px-2.5 py-0.5 rounded-full bg-[#FF5376] text-white text-[10px] font-extrabold">
+                          #Top {idx + 1} Rule
+                        </span>
+                        <span className="px-2 py-0.5 rounded-full bg-emerald-400/20 text-emerald-200 border border-emerald-300/30 text-[10px] font-bold">
+                          Lift {liftStr}x &bull; Support {supPct}%
+                        </span>
+                      </div>
+
+                      <div className="flex flex-wrap items-center gap-1.5 my-2">
+                        <span className="px-2.5 py-1 rounded-xl bg-white/15 text-white font-bold text-xs capitalize">
+                          Jika: {antStr}
+                        </span>
+                        <span className="text-[#FF8DA6] font-extrabold text-sm">&rarr;</span>
+                        <span className="px-2.5 py-1 rounded-xl bg-[#FFF0F4] text-[#FF5376] font-extrabold text-xs capitalize">
+                          Maka: {consStr}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="mt-2 pt-2 border-t border-white/10">
+                      <div className="flex items-center justify-between text-[11px] mb-1">
+                        <span className="text-pink-200/90">Confidence (Tingkat Keyakinan):</span>
+                        <span className="font-extrabold text-white">{confPct}%</span>
+                      </div>
+                      <div className="w-full h-1.5 bg-white/15 rounded-full overflow-hidden">
+                        <div
+                          className="h-full bg-gradient-to-r from-[#FF5376] to-amber-300 rounded-full"
+                          style={{ width: `${Math.min(100, Number(confPct))}%` }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
           </div>
         </div>
       )}
@@ -666,6 +774,30 @@ export default function AdminSection({ designs, onLogout, onDesignsUpdated }: Ad
       {/* Navigation Tabs */}
       <div className="flex flex-wrap gap-2 mb-6 border-b border-[#FCE2E8] pb-3">
         <button
+          onClick={() => setActiveTab('itemsets')}
+          className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
+            activeTab === 'itemsets'
+              ? 'bg-[#FF5376] text-white shadow-sm shadow-pink-200'
+              : 'bg-white border border-[#FCE2E8] text-[#8C727D] hover:bg-[#FFF0F4] hover:text-[#2D1F24]'
+          }`}
+        >
+          <Network className="w-3.5 h-3.5" />
+          <span>Hasil &amp; Rekomendasi Apriori ({data?.associationRules.length || 0})</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('training')}
+          className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
+            activeTab === 'training'
+              ? 'bg-[#FF5376] text-white shadow-xs'
+              : 'bg-white border border-[#FCE2E8] text-[#8C727D] hover:bg-[#FFF0F4] hover:text-[#2D1F24]'
+          }`}
+        >
+          <Sliders className="w-3.5 h-3.5" />
+          <span>Latih Model &amp; Data Transaksi</span>
+        </button>
+
+        <button
           onClick={() => setActiveTab('bookings')}
           className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
             activeTab === 'bookings'
@@ -687,30 +819,6 @@ export default function AdminSection({ designs, onLogout, onDesignsUpdated }: Ad
         >
           <ImageIcon className="w-3.5 h-3.5" />
           <span>Kelola Galeri &amp; Layanan ({localDesigns.length})</span>
-        </button>
-
-        <button
-          onClick={() => setActiveTab('training')}
-          className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
-            activeTab === 'training'
-              ? 'bg-[#FF5376] text-white shadow-xs'
-              : 'bg-white border border-[#FCE2E8] text-[#8C727D] hover:bg-[#FFF0F4] hover:text-[#2D1F24]'
-          }`}
-        >
-          <Sliders className="w-3.5 h-3.5" />
-          <span>Latih Model &amp; Data Transaksi</span>
-        </button>
-
-        <button
-          onClick={() => setActiveTab('itemsets')}
-          className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
-            activeTab === 'itemsets'
-              ? 'bg-[#FF5376] text-white shadow-xs'
-              : 'bg-white border border-[#FCE2E8] text-[#8C727D] hover:bg-[#FFF0F4] hover:text-[#2D1F24]'
-          }`}
-        >
-          <Network className="w-3.5 h-3.5" />
-          <span>Hasil Aturan Apriori ({data?.associationRules.length || 0})</span>
         </button>
       </div>
 
@@ -1143,71 +1251,167 @@ export default function AdminSection({ designs, onLogout, onDesignsUpdated }: Ad
       {/* Tab 3: Frequent Itemsets & Rules Visualization */}
       {activeTab === 'itemsets' && (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {/* Frequent Itemsets */}
-          <div className="lg:col-span-6 bg-white border border-[#FCE2E8] rounded-3xl p-6 shadow-xs">
-            <h3 className="text-base font-bold text-[#2D1F24] mb-4 pb-2 border-b border-[#FCE2E8] flex items-center justify-between">
-              <span>Frequent Itemsets (Dukungan &gt;= {(minSupport * 100).toFixed(0)}%)</span>
-              <span className="text-xs text-[#FF5376] font-bold">{data?.frequentItemsets.length || 0} Sets</span>
-            </h3>
-
-            {!data || data.frequentItemsets.length === 0 ? (
-              <p className="text-xs text-[#8C727D] text-center py-6">Tidak ada itemset yang memenuhi nilai min. support.</p>
-            ) : (
-              <div className="space-y-2 max-h-96 overflow-y-auto pr-1">
-                {data.frequentItemsets.map((itemset, i) => (
-                  <div
-                    key={i}
-                    className="p-3 bg-[#FFF0F4] rounded-2xl border border-[#FCE2E8] flex items-center justify-between text-xs"
-                  >
-                    <div className="flex flex-wrap items-center gap-1">
-                      {itemset.items.map((it, idx) => (
-                        <span key={idx} className="px-2 py-0.5 bg-white text-[#2D1F24] font-bold text-[10px] rounded-full border border-[#FCD5DF]">
-                          {it}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="text-right shrink-0">
-                      <span className="text-[10px] text-[#FF5376] font-bold block">{itemset.support}%</span>
-                      <span className="text-[8px] text-[#8C727D] block">{itemset.count} Transaksi</span>
-                    </div>
-                  </div>
-                ))}
+          {/* Association Rules (Left / First Column for Prominence) */}
+          <div className="lg:col-span-7 bg-white border border-[#FCE2E8] rounded-3xl p-6 shadow-xs">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-3 border-b border-[#FCE2E8]">
+              <div>
+                <h3 className="text-base font-bold text-[#2D1F24] flex items-center gap-2">
+                  <Network className="w-4 h-4 text-[#FF5376]" />
+                  <span>Aturan Asosiasi &amp; Rekomendasi Apriori (Confidence &gt;= {(minConfidence * 100).toFixed(0)}%)</span>
+                </h3>
+                <p className="text-[11px] text-[#8C727D] mt-0.5">
+                  Diurutkan dari tingkat keyakinan (<em>Confidence</em>) dan kekuatan korelasi (<em>Lift Ratio</em>) tertinggi
+                </p>
               </div>
-            )}
-          </div>
-
-          {/* Association Rules */}
-          <div className="lg:col-span-6 bg-white border border-[#FCE2E8] rounded-3xl p-6 shadow-xs">
-            <h3 className="text-base font-bold text-[#2D1F24] mb-4 pb-2 border-b border-[#FCE2E8] flex items-center justify-between">
-              <span>Aturan Asosiasi (Confidence &gt;= {(minConfidence * 100).toFixed(0)}%)</span>
-              <span className="text-xs text-[#FF5376] font-bold">{data?.associationRules.length || 0} Rules</span>
-            </h3>
+              <span className="px-3 py-1 rounded-full bg-[#FFF0F4] text-[#FF5376] border border-[#FCD5DF] text-xs font-extrabold self-start sm:self-auto">
+                {data?.associationRules.length || 0} Rules
+              </span>
+            </div>
 
             {!data || data.associationRules.length === 0 ? (
               <p className="text-xs text-[#8C727D] text-center py-6">Tidak ada aturan yang memenuhi batas min. confidence.</p>
             ) : (
-              <div className="space-y-2.5 max-h-96 overflow-y-auto pr-1">
-                {data.associationRules.map((rule, i) => (
-                  <div
-                    key={i}
-                    className="p-3.5 bg-white rounded-2xl border border-[#FCE2E8] hover:border-[#FF5376] transition-all text-xs"
-                  >
-                    <div className="flex items-center justify-between gap-2 mb-1.5">
-                      <div className="flex items-center gap-1.5 font-bold text-[11px]">
-                        <span className="text-[#2D1F24] px-2 py-0.5 bg-[#FFF0F4] rounded-full">{rule.antecedent}</span>
-                        <span className="text-[#FF5376]">&rarr;</span>
-                        <span className="text-[#2D1F24] px-2 py-0.5 bg-[#FFF0F4] rounded-full">{rule.consequent}</span>
+              <div className="space-y-3 max-h-[32rem] overflow-y-auto pr-1">
+                {[...data.associationRules]
+                  .sort((a, b) => b.confidence - a.confidence || b.lift - a.lift)
+                  .map((rule, i) => {
+                    const confPct = formatPct(rule.confidence);
+                    const supPct = formatPct(rule.support);
+                    const liftStr = formatLift(rule.lift);
+                    const antStr = formatRuleSide(rule.antecedent);
+                    const consStr = formatRuleSide(rule.consequent);
+
+                    return (
+                      <div
+                        key={i}
+                        className="p-4 bg-[#FFF8FA] hover:bg-white rounded-2xl border border-[#FCE2E8] hover:border-[#FF5376] transition-all text-xs shadow-2xs"
+                      >
+                        <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                          <div className="flex flex-wrap items-center gap-1.5 font-bold text-xs">
+                            <span className="px-2 py-0.5 rounded-full bg-[#2D1F24] text-white text-[10px] font-extrabold">
+                              #{i + 1}
+                            </span>
+                            <span className="text-[#2D1F24] px-2.5 py-1 bg-white border border-[#FCD5DF] rounded-full capitalize">
+                              Jika: {antStr}
+                            </span>
+                            <span className="text-[#FF5376] font-extrabold text-sm">&rarr;</span>
+                            <span className="text-white px-2.5 py-1 bg-[#FF5376] rounded-full capitalize shadow-2xs">
+                              Maka: {consStr}
+                            </span>
+                          </div>
+
+                          <div className="flex items-center gap-1.5 shrink-0">
+                            <span className="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-bold">
+                              Lift: {liftStr}x
+                            </span>
+                            <span className="px-2.5 py-0.5 rounded-full bg-white text-[#8C727D] border border-[#FCE2E8] text-[10px] font-bold">
+                              Support: {supPct}%
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Confidence Bar */}
+                        <div className="mb-2">
+                          <div className="flex items-center justify-between text-[10px] mb-1">
+                            <span className="font-semibold text-[#8C727D]">Tingkat Keyakinan (Confidence):</span>
+                            <span className="font-extrabold text-[#FF5376] text-xs">{confPct}%</span>
+                          </div>
+                          <div className="w-full h-2 bg-white rounded-full overflow-hidden border border-[#FCE2E8]">
+                            <div
+                              className="h-full bg-gradient-to-r from-[#FF5376] to-[#FF8DA6] rounded-full"
+                              style={{ width: `${Math.min(100, Number(confPct))}%` }}
+                            />
+                          </div>
+                        </div>
+
+                        <p className="text-[11px] text-[#8C727D]">
+                          Pelanggan yang memesan <strong className="text-[#2D1F24] capitalize">{antStr}</strong> memiliki kecenderungan{' '}
+                          <strong className="text-[#FF5376]">{confPct}%</strong> untuk turut memilih{' '}
+                          <strong className="text-[#2D1F24] capitalize">{consStr}</strong>.
+                        </p>
                       </div>
-                      <div className="text-right shrink-0">
-                        <span className="text-[10px] text-[#FF5376] font-bold block">{rule.confidence}%</span>
-                        <span className="text-[8px] text-[#8C727D] block">Lift: {rule.lift}x</span>
+                    );
+                  })}
+              </div>
+            )}
+          </div>
+
+          {/* Frequent Itemsets (Right Column with L1 / L2+ Filter) */}
+          <div className="lg:col-span-5 bg-white border border-[#FCE2E8] rounded-3xl p-6 shadow-xs">
+            <div className="flex items-center justify-between gap-2 mb-3 pb-2 border-b border-[#FCE2E8]">
+              <h3 className="text-base font-bold text-[#2D1F24]">
+                Frequent Itemsets (Support &gt;= {(minSupport * 100).toFixed(0)}%)
+              </h3>
+              <span className="text-xs text-[#FF5376] font-extrabold">{data?.frequentItemsets.length || 0} Sets</span>
+            </div>
+
+            {/* Filter Pills: Semua vs Kombinasi (k>=2) vs Tunggal (k=1) */}
+            <div className="flex items-center gap-1.5 mb-3">
+              {[
+                { id: 'all', label: 'Semua' },
+                { id: 'bundles', label: 'Kombinasi (k ≥ 2)' },
+                { id: 'single', label: 'Tunggal (k = 1)' }
+              ].map(tab => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setItemsetFilter(tab.id as 'all' | 'bundles' | 'single')}
+                  className={`px-3 py-1 rounded-full text-[10px] font-bold transition-all cursor-pointer ${
+                    itemsetFilter === tab.id
+                      ? 'bg-[#FF5376] text-white shadow-2xs'
+                      : 'bg-[#FFF0F4] text-[#8C727D] hover:text-[#2D1F24] border border-[#FCE2E8]'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
+            {!data || data.frequentItemsets.length === 0 ? (
+              <p className="text-xs text-[#8C727D] text-center py-6">Tidak ada itemset yang memenuhi nilai min. support.</p>
+            ) : (
+              <div className="space-y-2.5 max-h-[30rem] overflow-y-auto pr-1">
+                {[...data.frequentItemsets]
+                  .filter(it =>
+                    itemsetFilter === 'bundles'
+                      ? it.k >= 2 || it.items.length >= 2
+                      : itemsetFilter === 'single'
+                        ? (it.k === 1 || it.items.length === 1)
+                        : true
+                  )
+                  .sort((a, b) => b.support - a.support)
+                  .map((itemset, i) => {
+                    const supPct = formatPct(itemset.support);
+                    return (
+                      <div
+                        key={i}
+                        className="p-3 bg-[#FFF0F4] rounded-2xl border border-[#FCE2E8] text-xs space-y-1.5"
+                      >
+                        <div className="flex items-center justify-between gap-2">
+                          <div className="flex flex-wrap items-center gap-1">
+                            <span className="px-2 py-0.5 bg-[#FF5376] text-white font-extrabold text-[9px] rounded-full">
+                              L{itemset.k || itemset.items.length}
+                            </span>
+                            {itemset.items.map((it, idx) => (
+                              <span key={idx} className="px-2.5 py-0.5 bg-white text-[#2D1F24] font-bold text-[10px] rounded-full border border-[#FCD5DF] capitalize">
+                                {it}
+                              </span>
+                            ))}
+                          </div>
+                          <div className="text-right shrink-0">
+                            <span className="text-[11px] text-[#FF5376] font-extrabold block">{supPct}%</span>
+                            <span className="text-[9px] text-[#8C727D] block">{itemset.count} Transaksi</span>
+                          </div>
+                        </div>
+                        <div className="w-full h-1.5 bg-white rounded-full overflow-hidden border border-[#FCE2E8]">
+                          <div
+                            className="h-full bg-[#FF5376] rounded-full"
+                            style={{ width: `${Math.min(100, Number(supPct))}%` }}
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <p className="text-[10px] text-[#8C727D]">
-                      Pelanggan yang memesan {rule.antecedent} memiliki kecenderungan {rule.confidence}% untuk turut memilih {rule.consequent}.
-                    </p>
-                  </div>
-                ))}
+                    );
+                  })}
               </div>
             )}
           </div>

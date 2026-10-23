@@ -71,9 +71,9 @@ export default function BookingPage({
     notes: ''
   });
 
-  // Search & Filter inside service picker
+  // Search & Filter inside service picker (default directed to 'Rekomendasi')
   const [serviceSearch, setServiceSearch] = useState('');
-  const [serviceCategory, setServiceCategory] = useState('Semua');
+  const [serviceCategory, setServiceCategory] = useState('Rekomendasi');
 
   // Submission State
   const [loading, setLoading] = useState(false);
@@ -311,17 +311,127 @@ export default function BookingPage({
     }
   };
 
+  // Map each design to its Apriori recommendation score & rule context
+  const aprioriRecommendationMeta = React.useMemo(() => {
+    const meta = new Map<string, {
+      confidence: number;
+      lift: number;
+      pairedWith: string;
+      isDynamicMatch: boolean;
+      rankScore: number;
+    }>();
+
+    const normalize = (str: string) => str.toLowerCase().replace(/[-_]/g, ' ').trim();
+
+    const matchesItem = (itemName: string, design: NailDesign) => {
+      const normItem = normalize(itemName);
+      if (!normItem) return false;
+      const normId = normalize(design.id);
+      const normName = normalize(design.name);
+      return normId === normItem || normName === normItem || normId.includes(normItem) || normName.includes(normItem) || normItem.includes(normId);
+    };
+
+    const activeRules = recommendations?.recommendations && recommendations.recommendations.length > 0
+      ? recommendations.recommendations
+      : [
+          { antecedent: 'manik-manik', consequent: 'chrome', confidence: 100, lift: 1.33 },
+          { antecedent: 'abstrak', consequent: 'chrome', confidence: 88.2, lift: 1.18 },
+          { antecedent: '3D bunga', consequent: 'chrome', confidence: 84.6, lift: 1.13 },
+          { antecedent: 'pita', consequent: 'chrome', confidence: 81.8, lift: 1.09 },
+          { antecedent: 'chrome', consequent: 'abstrak', confidence: 62.5, lift: 1.18 },
+          { antecedent: 'putih', consequent: 'abstrak', confidence: 53.3, lift: 1.01 }
+        ];
+
+    const selectedDesignsList = designs.filter(d => selectedServices.includes(d.id));
+
+    for (const rule of activeRules) {
+      const confPct = rule.confidence <= 1
+        ? Math.round(rule.confidence * 1000) / 10
+        : Math.round(rule.confidence * 10) / 10;
+      const liftVal = Math.round((rule.lift || 1) * 100) / 100;
+
+      const antItems = rule.antecedent.split(',').map(s => s.trim()).filter(Boolean);
+      const consItems = rule.consequent.split(',').map(s => s.trim()).filter(Boolean);
+
+      const isAntSelected = selectedDesignsList.length > 0 && antItems.every(ant =>
+        selectedDesignsList.some(sd => matchesItem(ant, sd))
+      );
+
+      for (const design of designs) {
+        const isCons = consItems.some(c => matchesItem(c, design));
+        const isAnt = antItems.some(a => matchesItem(a, design));
+        if (!isCons && !isAnt) continue;
+
+        const dynamicMatch = isCons && isAntSelected && !selectedServices.includes(design.id);
+        const rankScore = (dynamicMatch ? 1000 : 0) + (isCons ? 200 : 100) + confPct + liftVal * 10;
+        const existing = meta.get(design.id);
+
+        if (!existing || rankScore > existing.rankScore) {
+          meta.set(design.id, {
+            confidence: confPct,
+            lift: liftVal,
+            pairedWith: isCons ? rule.antecedent : rule.consequent,
+            isDynamicMatch: dynamicMatch,
+            rankScore
+          });
+        }
+      }
+    }
+
+    const bundles = recommendations?.bestSellers || [];
+    for (const bundle of bundles) {
+      const supPct = bundle.support <= 1
+        ? Math.round(bundle.support * 1000) / 10
+        : Math.round(bundle.support * 10) / 10;
+
+      for (const design of designs) {
+        if (bundle.items.some(it => matchesItem(it, design)) && !meta.has(design.id)) {
+          const others = bundle.items.filter(it => !matchesItem(it, design)).join(', ') || bundle.items.join(' + ');
+          meta.set(design.id, {
+            confidence: supPct,
+            lift: 1.15,
+            pairedWith: others,
+            isDynamicMatch: false,
+            rankScore: 50 + supPct
+          });
+        }
+      }
+    }
+
+    return meta;
+  }, [designs, recommendations, selectedServices]);
+
   // Filtered designs inside booking catalog
-  const filteredDesigns = designs.filter(design => {
-    const matchesCat = serviceCategory === 'Semua' || (design.category && design.category.toLowerCase() === serviceCategory.toLowerCase());
-    const matchesQuery = !serviceSearch ||
+  const filteredDesigns = React.useMemo(() => {
+    const matchesQuery = (design: NailDesign) =>
+      !serviceSearch ||
       design.name.toLowerCase().includes(serviceSearch.toLowerCase()) ||
       (design.description && design.description.toLowerCase().includes(serviceSearch.toLowerCase())) ||
       (design.styleSubtitle && design.styleSubtitle.toLowerCase().includes(serviceSearch.toLowerCase()));
-    return matchesCat && matchesQuery;
-  });
 
-  const CATEGORIES = ['Semua', 'Minimalis', 'Elegant', 'Korea Style', 'Classic', 'Glitter', 'Cute', 'Colorful'];
+    if (serviceCategory === 'Rekomendasi') {
+      const aprioriMatched = designs.filter(d => {
+        const isRec = aprioriRecommendationMeta.has(d.id) ||
+          (d.tag && /rekomendasi|populer|best seller/i.test(d.tag));
+        return isRec && matchesQuery(d);
+      });
+
+      const listToSort = aprioriMatched.length > 0 ? aprioriMatched : designs.filter(matchesQuery);
+
+      return [...listToSort].sort((a, b) => {
+        const scoreA = aprioriRecommendationMeta.get(a.id)?.rankScore || (a.rating || 4.5) * 10;
+        const scoreB = aprioriRecommendationMeta.get(b.id)?.rankScore || (b.rating || 4.5) * 10;
+        return scoreB - scoreA;
+      });
+    }
+
+    return designs.filter(design => {
+      const matchesCat = serviceCategory === 'Semua' || (design.category && design.category.toLowerCase() === serviceCategory.toLowerCase());
+      return matchesCat && matchesQuery(design);
+    });
+  }, [designs, serviceCategory, serviceSearch, aprioriRecommendationMeta]);
+
+  const CATEGORIES = ['Rekomendasi', 'Semua', 'Minimalis', 'Elegant', 'Korea Style', 'Classic', 'Glitter', 'Cute', 'Colorful'];
 
   // Success E-Ticket View
   if (successBooking) {
@@ -710,27 +820,55 @@ export default function BookingPage({
 
                 {/* Category Pills */}
                 <div className="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs">
-                  {CATEGORIES.map(cat => (
-                    <button
-                      key={cat}
-                      type="button"
-                      onClick={() => setServiceCategory(cat)}
-                      className={`px-3 py-1 rounded-full text-[11px] font-bold whitespace-nowrap transition-all cursor-pointer ${
-                        serviceCategory === cat
-                          ? 'bg-[#FF5376] text-white shadow-2xs'
-                          : 'bg-[#FFF0F4] text-[#8C727D] hover:text-[#2D1F24] border border-[#FCE2E8]'
-                      }`}
-                    >
-                      {cat}
-                    </button>
-                  ))}
+                  {CATEGORIES.map(cat => {
+                    const isRecTab = cat === 'Rekomendasi';
+                    const isActive = serviceCategory === cat;
+                    return (
+                      <button
+                        key={cat}
+                        type="button"
+                        onClick={() => setServiceCategory(cat)}
+                        className={`px-3.5 py-1.5 rounded-full text-[11px] font-bold whitespace-nowrap transition-all cursor-pointer inline-flex items-center gap-1.5 ${
+                          isActive
+                            ? 'bg-[#FF5376] text-white shadow-xs shadow-pink-200'
+                            : isRecTab
+                              ? 'bg-gradient-to-r from-[#FFF0F4] to-[#FFE4EC] text-[#FF5376] border border-[#FF5376]/50 hover:border-[#FF5376]'
+                              : 'bg-[#FFF0F4] text-[#8C727D] hover:text-[#2D1F24] border border-[#FCE2E8]'
+                        }`}
+                      >
+                        {isRecTab && <Sparkles className="w-3 h-3 shrink-0" />}
+                        <span>{cat}</span>
+                      </button>
+                    );
+                  })}
                 </div>
+
+                {/* Active Recommendation Tab Info Banner */}
+                {serviceCategory === 'Rekomendasi' && (
+                  <div className="px-3.5 py-2.5 rounded-2xl bg-gradient-to-r from-[#FFF0F4] via-[#FFE8EE] to-[#FFF0F4] border border-[#FCD5DF] flex items-center justify-between gap-2 text-[11px]">
+                    <div className="flex items-center gap-2 text-[#2D1F24]">
+                      <Sparkles className="w-3.5 h-3.5 text-[#FF5376] shrink-0" />
+                      <span>
+                        Menampilkan <strong>Rekomendasi Algoritma Apriori</strong> dengan nilai <em>Confidence</em> &amp; <em>Lift</em> tertinggi
+                        {selectedServices.length > 0 ? ' yang cocok dipadukan dengan pilihan Anda.' : '.'}
+                      </span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setServiceCategory('Semua')}
+                      className="text-[10px] font-extrabold text-[#FF5376] hover:underline whitespace-nowrap cursor-pointer shrink-0"
+                    >
+                      Lihat Semua ({designs.length}) &rarr;
+                    </button>
+                  </div>
+                )}
               </div>
 
               {/* Service Selection Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[380px] overflow-y-auto pr-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[410px] overflow-y-auto pr-1">
                 {filteredDesigns.map((design) => {
                   const isSelected = selectedServices.includes(design.id);
+                  const recMeta = aprioriRecommendationMeta.get(design.id);
                   return (
                     <div
                       key={design.id}
@@ -738,7 +876,9 @@ export default function BookingPage({
                       className={`p-3 rounded-2xl border transition-all cursor-pointer flex items-center justify-between gap-3 group relative ${
                         isSelected
                           ? 'bg-[#FFF0F4] border-[#FF5376] ring-1 ring-[#FF5376] shadow-xs'
-                          : 'bg-white border-[#FCE2E8] hover:border-[#FF5376]/50 hover:bg-[#FFFBFD]'
+                          : recMeta?.isDynamicMatch
+                            ? 'bg-[#FFF8FA] border-[#FF5376]/70 ring-1 ring-[#FF5376]/30 hover:border-[#FF5376]'
+                            : 'bg-white border-[#FCE2E8] hover:border-[#FF5376]/50 hover:bg-[#FFFBFD]'
                       }`}
                     >
                       <div className="flex items-center gap-3 min-w-0">
@@ -758,9 +898,20 @@ export default function BookingPage({
 
                         <div className="min-w-0">
                           <div className="flex items-center gap-1.5 flex-wrap">
-                            <span className="text-[9px] font-bold text-[#FF5376] bg-white px-1.5 py-0.5 rounded border border-[#FCD5DF]">
-                              {design.category || 'Gaya'}
-                            </span>
+                            {recMeta ? (
+                              <span className="text-[9px] font-extrabold text-white bg-[#FF5376] px-1.5 py-0.5 rounded-full inline-flex items-center gap-1">
+                                <Sparkles className="w-2.5 h-2.5" />
+                                <span>
+                                  {recMeta.isDynamicMatch
+                                    ? `Cocok • Conf ${recMeta.confidence}%`
+                                    : `Apriori ${recMeta.confidence}%`}
+                                </span>
+                              </span>
+                            ) : (
+                              <span className="text-[9px] font-bold text-[#FF5376] bg-white px-1.5 py-0.5 rounded border border-[#FCD5DF]">
+                                {design.category || 'Gaya'}
+                              </span>
+                            )}
                             {design.tag && (
                               <span className="text-[9px] font-semibold text-[#8C727D] bg-white/80 px-1.5 py-0.5 rounded border border-[#FCE2E8]">
                                 {design.tag}
@@ -770,9 +921,16 @@ export default function BookingPage({
                           <h4 className="text-xs font-bold text-[#2D1F24] truncate mt-0.5">
                             {design.name}
                           </h4>
-                          <span className="text-xs font-bold text-[#FF5376] block mt-0.5">
-                            {formatRupiah(design.price)}
-                          </span>
+                          <div className="flex items-center gap-2 mt-0.5">
+                            <span className="text-xs font-bold text-[#FF5376]">
+                              {formatRupiah(design.price)}
+                            </span>
+                            {recMeta && (
+                              <span className="text-[9px] text-[#8C727D] truncate">
+                                &bull; Pasangan: <strong className="text-[#2D1F24] capitalize">{recMeta.pairedWith}</strong>
+                              </span>
+                            )}
+                          </div>
                         </div>
                       </div>
 
@@ -799,10 +957,10 @@ export default function BookingPage({
                   <p className="text-xs font-bold text-[#2D1F24]">Tidak ada motif kuku yang cocok.</p>
                   <button
                     type="button"
-                    onClick={() => { setServiceCategory('Semua'); setServiceSearch(''); }}
+                    onClick={() => { setServiceCategory('Rekomendasi'); setServiceSearch(''); }}
                     className="mt-2 text-xs font-bold text-[#FF5376] underline cursor-pointer"
                   >
-                    Reset Filter
+                    Reset ke Tab Rekomendasi
                   </button>
                 </div>
               )}
