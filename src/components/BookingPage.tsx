@@ -47,6 +47,34 @@ const NAIL_STYLISTS = [
   { id: 'clara', name: 'Clara Novita', role: 'Creative Nail Stylist', experience: 'Spesialis Glitter & Cat Eye' }
 ];
 
+const KEYWORD_MAP: Record<string, string[]> = {
+  'Floral_Accent': ['french crop', '3d bunga', 'bunga', 'floral', 'daisy', 'daisy nude'],
+  'Nude_Gel': ['putih', 'milky white', 'nude', 'minimalist', 'white'],
+  'Pastel_Ombre': ['pita', 'pastel', 'ombre', 'sugar berry'],
+  'Marble_Art': ['abstrak', 'putih', 'marble', 'mahogani', 'crop top'],
+  'French_Tips': ['chrome', 'crome', 'french', 'color with crome'],
+  'Glitter_Red': ['manik manik', 'manik-manik', 'glitter', 'merah maron', 'merah', 'crimson'],
+  'Cat_Eye': ['cat eye', 'velvet rose'],
+  'Gold_Foil': ['putih', 'gold foil', 'pink frusia', 'frusia', 'gradasi'],
+  'Chrome_Finish': ['chrome', 'crome', 'mirror', 'rose chrome'],
+  'Matte_Black': ['hitam', 'matte', 'plum', 'velvet plum']
+};
+
+const normalizeKeyword = (str: string) => (str || '').toLowerCase().replace(/[-_]/g, ' ').replace(/\s+/g, ' ').trim();
+
+const checkItemMatch = (term: string, design: NailDesign) => {
+  const norm = normalizeKeyword(term);
+  if (!norm) return false;
+  const dId = normalizeKeyword(design.id);
+  const dName = normalizeKeyword(design.name);
+  if (dId === norm || dName.includes(norm) || norm.includes(dId) || norm.includes(dName)) return true;
+  const kws = KEYWORD_MAP[design.id] || [];
+  return kws.some(k => {
+    const nk = normalizeKeyword(k);
+    return nk === norm || nk.includes(norm) || norm.includes(nk);
+  });
+};
+
 export default function BookingPage({
   designs,
   recommendations,
@@ -152,76 +180,137 @@ export default function BookingPage({
   // Estimated duration in minutes
   const estimatedDuration = Math.max(45, selectedServices.length * 40);
 
-  // Apriori AI Smart Upsell
+  // Dynamic Apriori Recommendations based on selected motifs
+  const dynamicAprioriRecommendations = React.useMemo(() => {
+    if (selectedServices.length === 0) return [];
+
+    const activeRules = recommendations?.recommendations && recommendations.recommendations.length > 0
+      ? recommendations.recommendations
+      : [
+          { antecedent: 'manik-manik', consequent: 'chrome', confidence: 100, lift: 1.33 },
+          { antecedent: 'abstrak', consequent: 'chrome', confidence: 88.2, lift: 1.18 },
+          { antecedent: '3D bunga', consequent: 'chrome', confidence: 84.6, lift: 1.13 },
+          { antecedent: 'pita', consequent: 'chrome', confidence: 81.8, lift: 1.09 },
+          { antecedent: 'putih', consequent: 'chrome', confidence: 73.3, lift: 0.98 },
+          { antecedent: 'cat eye', consequent: 'chrome', confidence: 69.2, lift: 0.92 },
+          { antecedent: 'french crop', consequent: 'chrome', confidence: 69.2, lift: 0.92 },
+          { antecedent: 'chrome', consequent: 'abstrak', confidence: 62.5, lift: 1.18 },
+          { antecedent: 'putih', consequent: 'abstrak', confidence: 53.3, lift: 1.01 }
+        ];
+
+    const selectedDesignsList = designs.filter(d => selectedServices.includes(d.id));
+    const items: Array<{
+      design: NailDesign;
+      confidence: number;
+      lift: number;
+      support?: number;
+      antecedent: string;
+      consequent: string;
+      reason: string;
+      isAlreadySelected: boolean;
+      score: number;
+    }> = [];
+
+    for (const rule of activeRules) {
+      const antTerms = rule.antecedent.split(',').map(s => s.trim()).filter(Boolean);
+      const consTerms = rule.consequent.split(',').map(s => s.trim()).filter(Boolean);
+
+      const matchedAntecedents = selectedDesignsList.filter(sd =>
+        antTerms.some(ant => checkItemMatch(ant, sd))
+      );
+
+      if (matchedAntecedents.length > 0) {
+        const confPct = rule.confidence <= 1
+          ? Math.round(rule.confidence * 1000) / 10
+          : Math.round(rule.confidence * 10) / 10;
+        const liftVal = Math.round((rule.lift || 1) * 100) / 100;
+
+        for (const cons of consTerms) {
+          const matchingDesigns = designs.filter(d => checkItemMatch(cons, d));
+          for (const design of matchingDesigns) {
+            const existingIdx = items.findIndex(it => it.design.id === design.id);
+            const isAlreadySelected = selectedServices.includes(design.id);
+            const score = (isAlreadySelected ? 0 : 500) + confPct + liftVal * 20;
+            const antNames = matchedAntecedents.map(m => m.name).join(', ');
+            const reason = `${confPct}% pelanggan yang memilih ${antNames} juga memadukannya dengan motif ini (Lift ${liftVal}x).`;
+
+            if (existingIdx === -1) {
+              items.push({
+                design,
+                confidence: confPct,
+                lift: liftVal,
+                support: rule.support,
+                antecedent: rule.antecedent,
+                consequent: rule.consequent,
+                reason,
+                isAlreadySelected,
+                score
+              });
+            } else if (score > items[existingIdx].score) {
+              items[existingIdx] = {
+                design,
+                confidence: confPct,
+                lift: liftVal,
+                support: rule.support,
+                antecedent: rule.antecedent,
+                consequent: rule.consequent,
+                reason,
+                isAlreadySelected,
+                score
+              };
+            }
+          }
+        }
+      }
+    }
+
+    // Fallback if no specific rule matched: use frequent itemsets / best sellers
+    if (items.length === 0 && designs.length > 0) {
+      const bundles = recommendations?.bestSellers || [];
+      const unselected = designs.filter(d => !selectedServices.includes(d.id));
+      for (const unsel of unselected.slice(0, 2)) {
+        const matchingBundle = bundles.find(b => b.items.some(it => checkItemMatch(it, unsel)));
+        const supPct = matchingBundle ? matchingBundle.support : 35;
+        items.push({
+          design: unsel,
+          confidence: supPct,
+          lift: 1.15,
+          antecedent: selectedDesignsList.map(d => d.name).join(', ') || 'Pilihan Anda',
+          consequent: unsel.name,
+          reason: 'Kombinasi motif terfavorit pelanggan di dataset Nailove Studio.',
+          isAlreadySelected: false,
+          score: supPct
+        });
+      }
+    }
+
+    return items.sort((a, b) => b.score - a.score);
+  }, [selectedServices, designs, recommendations]);
+
+  // Synchronize Apriori AI Smart Upsell in sidebar
   useEffect(() => {
-    if (selectedServices.length === 0 || !recommendations || !recommendations.recommendations) {
-      // Pick first unselected best seller
+    if (selectedServices.length === 0) {
       const unselected = designs.filter(d => !selectedServices.includes(d.id));
       setUpsellSuggestion(unselected.length > 0 ? unselected[0] : null);
       setMatchedRule(null);
       return;
     }
 
-    const activeRules = recommendations.recommendations;
-    const normalize = (str: string) => str.toLowerCase().replace(/[-_]/g, ' ').trim();
-
-    // Check if an item matches a selected service ID or design
-    const matchesService = (itemName: string, serviceId: string) => {
-      const design = designs.find(d => d.id === serviceId);
-      const normItem = normalize(itemName);
-      const normId = normalize(serviceId);
-      if (normId === normItem || normId.includes(normItem) || normItem.includes(normId)) return true;
-      if (design) {
-        const normName = normalize(design.name);
-        if (normName === normItem || normName.includes(normItem) || normItem.includes(normName)) return true;
-      }
-      return false;
-    };
-
-    // Find the design for a consequent item
-    const findDesignForItem = (itemName: string) => {
-      const normItem = normalize(itemName);
-      return designs.find(d => {
-        const normId = normalize(d.id);
-        const normName = normalize(d.name);
-        return normId === normItem || normName === normItem || normId.includes(normItem) || normName.includes(normItem) || normItem.includes(normId) || normItem.includes(normName);
+    if (dynamicAprioriRecommendations.length > 0) {
+      const firstUnselected = dynamicAprioriRecommendations.find(r => !r.isAlreadySelected) || dynamicAprioriRecommendations[0];
+      setUpsellSuggestion(firstUnselected.design);
+      setMatchedRule({
+        antecedent: firstUnselected.antecedent,
+        consequent: firstUnselected.consequent,
+        confidence: firstUnselected.confidence,
+        lift: firstUnselected.lift
       });
-    };
-
-    let foundRule: any = null;
-    let foundDesign: NailDesign | null = null;
-
-    for (const rule of activeRules) {
-      const antItems = rule.antecedent.split(',').map(i => i.trim());
-      const consItems = rule.consequent.split(',').map(i => i.trim());
-
-      // All antecedent items should be present in selected services
-      const antecedentMatched = antItems.every(ant => selectedServices.some(svcId => matchesService(ant, svcId)));
-      // Consequent should not already be selected
-      const unselectedCons = consItems.filter(cons => !selectedServices.some(svcId => matchesService(cons, svcId)));
-
-      if (antecedentMatched && unselectedCons.length > 0) {
-        for (const cons of unselectedCons) {
-          const design = findDesignForItem(cons);
-          if (design && !selectedServices.includes(design.id)) {
-            foundDesign = design;
-            foundRule = rule;
-            break;
-          }
-        }
-        if (foundDesign) break;
-      }
-    }
-
-    if (foundDesign) {
-      setUpsellSuggestion(foundDesign);
-      setMatchedRule(foundRule);
     } else {
       const unselected = designs.filter(d => !selectedServices.includes(d.id));
       setUpsellSuggestion(unselected.length > 0 ? unselected[0] : null);
       setMatchedRule(null);
     }
-  }, [selectedServices, recommendations, designs]);
+  }, [selectedServices, dynamicAprioriRecommendations, designs]);
 
   const formatRupiah = (value: number) => {
     return new Intl.NumberFormat('id-ID', {
@@ -321,16 +410,6 @@ export default function BookingPage({
       rankScore: number;
     }>();
 
-    const normalize = (str: string) => str.toLowerCase().replace(/[-_]/g, ' ').trim();
-
-    const matchesItem = (itemName: string, design: NailDesign) => {
-      const normItem = normalize(itemName);
-      if (!normItem) return false;
-      const normId = normalize(design.id);
-      const normName = normalize(design.name);
-      return normId === normItem || normName === normItem || normId.includes(normItem) || normName.includes(normItem) || normItem.includes(normId);
-    };
-
     const activeRules = recommendations?.recommendations && recommendations.recommendations.length > 0
       ? recommendations.recommendations
       : [
@@ -338,11 +417,25 @@ export default function BookingPage({
           { antecedent: 'abstrak', consequent: 'chrome', confidence: 88.2, lift: 1.18 },
           { antecedent: '3D bunga', consequent: 'chrome', confidence: 84.6, lift: 1.13 },
           { antecedent: 'pita', consequent: 'chrome', confidence: 81.8, lift: 1.09 },
+          { antecedent: 'putih', consequent: 'chrome', confidence: 73.3, lift: 0.98 },
+          { antecedent: 'cat eye', consequent: 'chrome', confidence: 69.2, lift: 0.92 },
+          { antecedent: 'french crop', consequent: 'chrome', confidence: 69.2, lift: 0.92 },
           { antecedent: 'chrome', consequent: 'abstrak', confidence: 62.5, lift: 1.18 },
           { antecedent: 'putih', consequent: 'abstrak', confidence: 53.3, lift: 1.01 }
         ];
 
     const selectedDesignsList = designs.filter(d => selectedServices.includes(d.id));
+
+    // Map dynamic recommendations first
+    for (const rec of dynamicAprioriRecommendations) {
+      meta.set(rec.design.id, {
+        confidence: rec.confidence,
+        lift: rec.lift,
+        pairedWith: rec.antecedent,
+        isDynamicMatch: true,
+        rankScore: 1000 + (rec.isAlreadySelected ? 0 : 500) + rec.confidence + rec.lift * 10
+      });
+    }
 
     for (const rule of activeRules) {
       const confPct = rule.confidence <= 1
@@ -354,27 +447,24 @@ export default function BookingPage({
       const consItems = rule.consequent.split(',').map(s => s.trim()).filter(Boolean);
 
       const isAntSelected = selectedDesignsList.length > 0 && antItems.every(ant =>
-        selectedDesignsList.some(sd => matchesItem(ant, sd))
+        selectedDesignsList.some(sd => checkItemMatch(ant, sd))
       );
 
       for (const design of designs) {
-        const isCons = consItems.some(c => matchesItem(c, design));
-        const isAnt = antItems.some(a => matchesItem(a, design));
+        if (meta.has(design.id)) continue;
+        const isCons = consItems.some(c => checkItemMatch(c, design));
+        const isAnt = antItems.some(a => checkItemMatch(a, design));
         if (!isCons && !isAnt) continue;
 
         const dynamicMatch = isCons && isAntSelected && !selectedServices.includes(design.id);
         const rankScore = (dynamicMatch ? 1000 : 0) + (isCons ? 200 : 100) + confPct + liftVal * 10;
-        const existing = meta.get(design.id);
-
-        if (!existing || rankScore > existing.rankScore) {
-          meta.set(design.id, {
-            confidence: confPct,
-            lift: liftVal,
-            pairedWith: isCons ? rule.antecedent : rule.consequent,
-            isDynamicMatch: dynamicMatch,
-            rankScore
-          });
-        }
+        meta.set(design.id, {
+          confidence: confPct,
+          lift: liftVal,
+          pairedWith: isCons ? rule.antecedent : rule.consequent,
+          isDynamicMatch: dynamicMatch,
+          rankScore
+        });
       }
     }
 
@@ -385,8 +475,8 @@ export default function BookingPage({
         : Math.round(bundle.support * 10) / 10;
 
       for (const design of designs) {
-        if (bundle.items.some(it => matchesItem(it, design)) && !meta.has(design.id)) {
-          const others = bundle.items.filter(it => !matchesItem(it, design)).join(', ') || bundle.items.join(' + ');
+        if (bundle.items.some(it => checkItemMatch(it, design)) && !meta.has(design.id)) {
+          const others = bundle.items.filter(it => !checkItemMatch(it, design)).join(', ') || bundle.items.join(' + ');
           meta.set(design.id, {
             confidence: supPct,
             lift: 1.15,
@@ -399,7 +489,7 @@ export default function BookingPage({
     }
 
     return meta;
-  }, [designs, recommendations, selectedServices]);
+  }, [designs, recommendations, selectedServices, dynamicAprioriRecommendations]);
 
   // Filtered designs inside booking catalog
   const filteredDesigns = React.useMemo(() => {
@@ -410,15 +500,22 @@ export default function BookingPage({
       (design.styleSubtitle && design.styleSubtitle.toLowerCase().includes(serviceSearch.toLowerCase()));
 
     if (serviceCategory === 'Rekomendasi') {
-      const aprioriMatched = designs.filter(d => {
-        const isRec = aprioriRecommendationMeta.has(d.id) ||
-          (d.tag && /rekomendasi|populer|best seller/i.test(d.tag));
-        return isRec && matchesQuery(d);
-      });
-
-      const listToSort = aprioriMatched.length > 0 ? aprioriMatched : designs.filter(matchesQuery);
+      const listToSort = designs.filter(matchesQuery);
 
       return [...listToSort].sort((a, b) => {
+        // Priority 1: Unselected dynamic Apriori matches for current selection
+        const aDynamic = aprioriRecommendationMeta.get(a.id)?.isDynamicMatch && !selectedServices.includes(a.id);
+        const bDynamic = aprioriRecommendationMeta.get(b.id)?.isDynamicMatch && !selectedServices.includes(b.id);
+        if (aDynamic && !bDynamic) return -1;
+        if (!aDynamic && bDynamic) return 1;
+
+        // Priority 2: Selected services
+        const aSelected = selectedServices.includes(a.id);
+        const bSelected = selectedServices.includes(b.id);
+        if (aSelected && !bSelected) return -1;
+        if (!aSelected && bSelected) return 1;
+
+        // Priority 3: Rank score from Apriori confidence / lift / best seller
         const scoreA = aprioriRecommendationMeta.get(a.id)?.rankScore || (a.rating || 4.5) * 10;
         const scoreB = aprioriRecommendationMeta.get(b.id)?.rankScore || (b.rating || 4.5) * 10;
         return scoreB - scoreA;
@@ -429,7 +526,7 @@ export default function BookingPage({
       const matchesCat = serviceCategory === 'Semua' || (design.category && design.category.toLowerCase() === serviceCategory.toLowerCase());
       return matchesCat && matchesQuery(design);
     });
-  }, [designs, serviceCategory, serviceSearch, aprioriRecommendationMeta]);
+  }, [designs, serviceCategory, serviceSearch, aprioriRecommendationMeta, selectedServices]);
 
   const CATEGORIES = ['Rekomendasi', 'Semua', 'Minimalis', 'Elegant', 'Korea Style', 'Classic', 'Glitter', 'Cute', 'Colorful'];
 
@@ -898,14 +995,20 @@ export default function BookingPage({
 
                         <div className="min-w-0">
                           <div className="flex items-center gap-1.5 flex-wrap">
-                            {recMeta ? (
-                              <span className="text-[9px] font-extrabold text-white bg-[#FF5376] px-1.5 py-0.5 rounded-full inline-flex items-center gap-1">
+                            {isSelected ? (
+                              <span className="text-[9px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 inline-flex items-center gap-1">
+                                <Check className="w-2.5 h-2.5 stroke-[3]" />
+                                <span>Terpilih</span>
+                              </span>
+                            ) : recMeta?.isDynamicMatch ? (
+                              <span className="text-[9px] font-extrabold text-white bg-gradient-to-r from-[#FF5376] to-[#FF3E66] px-2 py-0.5 rounded-full inline-flex items-center gap-1 shadow-2xs">
                                 <Sparkles className="w-2.5 h-2.5" />
-                                <span>
-                                  {recMeta.isDynamicMatch
-                                    ? `Cocok • Conf ${recMeta.confidence}%`
-                                    : `Apriori ${recMeta.confidence}%`}
-                                </span>
+                                <span>Rekomendasi • {recMeta.confidence}% Cocok</span>
+                              </span>
+                            ) : recMeta ? (
+                              <span className="text-[9px] font-bold text-[#FF5376] bg-[#FFF0F4] px-1.5 py-0.5 rounded-full border border-[#FCD5DF] inline-flex items-center gap-1">
+                                <Sparkles className="w-2.5 h-2.5" />
+                                <span>Apriori {recMeta.confidence}%</span>
                               </span>
                             ) : (
                               <span className="text-[9px] font-bold text-[#FF5376] bg-white px-1.5 py-0.5 rounded border border-[#FCD5DF]">
@@ -927,7 +1030,7 @@ export default function BookingPage({
                             </span>
                             {recMeta && (
                               <span className="text-[9px] text-[#8C727D] truncate">
-                                &bull; Pasangan: <strong className="text-[#2D1F24] capitalize">{recMeta.pairedWith}</strong>
+                                &bull; {recMeta.isDynamicMatch ? 'Pasangan ideal: ' : 'Sering bersama: '}<strong className="text-[#2D1F24] capitalize">{recMeta.pairedWith}</strong>
                               </span>
                             )}
                           </div>
@@ -935,15 +1038,28 @@ export default function BookingPage({
                       </div>
 
                       <div className="shrink-0">
-                        <div className={`w-6 h-6 rounded-full flex items-center justify-center transition-all ${
+                        <div className={`px-2.5 py-1 rounded-full text-[10px] font-bold flex items-center gap-1 transition-all ${
                           isSelected
-                            ? 'bg-[#FF5376] text-white'
-                            : 'border border-[#FCD5DF] text-[#B59BA6] group-hover:border-[#FF5376] group-hover:text-[#FF5376]'
+                            ? 'bg-[#FF5376] text-white shadow-2xs'
+                            : recMeta?.isDynamicMatch
+                              ? 'bg-gradient-to-r from-[#FF5376] to-[#FF3E66] text-white shadow-2xs'
+                              : 'border border-[#FCD5DF] text-[#8C727D] group-hover:border-[#FF5376] group-hover:text-[#FF5376] group-hover:bg-[#FFF0F4]'
                         }`}>
                           {isSelected ? (
-                            <Check className="w-3.5 h-3.5 stroke-[3]" />
+                            <>
+                              <Check className="w-3 h-3 stroke-[3]" />
+                              <span>Batal</span>
+                            </>
+                          ) : recMeta?.isDynamicMatch ? (
+                            <>
+                              <Plus className="w-3 h-3 stroke-[3]" />
+                              <span>Pasangkan</span>
+                            </>
                           ) : (
-                            <Plus className="w-3.5 h-3.5" />
+                            <>
+                              <Plus className="w-3 h-3" />
+                              <span>Pilih</span>
+                            </>
                           )}
                         </div>
                       </div>

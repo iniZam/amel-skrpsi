@@ -290,25 +290,23 @@ async function startServer() {
   const getRecommendationsHandler = (req: express.Request, res: express.Response) => {
     const data = db.get();
 
-    // Format best sellers (k >= 2 frequent itemsets)
+    // Format best sellers (all k >= 2 frequent itemsets from trained Apriori model)
     const bestSellers = data.frequent_itemsets
       .filter(itemset => itemset.k >= 2)
       .sort((a, b) => b.support - a.support)
-      .slice(0, 6)
       .map(itemset => ({
         items: itemset.items.map(item => item.replace(/_/g, ' ')),
         support: Math.round(itemset.support * 1000) / 10,
         count: itemset.count
       }));
 
-    // Format association rules with lift > 1.0
-    const recommendations = data.association_rules
-      .filter(rule => rule.lift > 1.0)
-      .sort((a, b) => b.confidence - a.confidence)
-      .slice(0, 6)
+    // Format all trained association rules sorted by confidence & lift
+    const recommendations = [...data.association_rules]
+      .sort((a, b) => b.confidence - a.confidence || b.lift - a.lift)
       .map(rule => ({
         antecedent: rule.antecedent.map(item => item.replace(/_/g, ' ')).join(', '),
         consequent: rule.consequent.map(item => item.replace(/_/g, ' ')).join(', '),
+        support: Math.round((rule.support || 0) * 1000) / 10,
         confidence: Math.round(rule.confidence * 1000) / 10,
         lift: Math.round(rule.lift * 100) / 100
       }));
