@@ -259,7 +259,7 @@ export default function GallerySection({
     }
   ];
 
-  const totalTxAnalyzed = recommendations?.totalTransactions || 34;
+  const totalTxAnalyzed = recommendations?.totalTransactions || 100;
 
   return (
     <section className="pt-4 pb-12 px-4 max-w-7xl mx-auto text-left space-y-10" id="rekomendasi">

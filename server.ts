@@ -171,11 +171,11 @@ async function startServer() {
   if (
     initialData.frequent_itemsets.length === 0 || 
     !initialData.transactions || 
-    initialData.transactions.length === 0 ||
+    initialData.transactions.length < 100 ||
     (initialData.transactions[0] && initialData.transactions[0].includes('French_Tips'))
   ) {
-    console.log("Menyiapkan dataset referensi awal Apriori dari pengguna (31 transaksi riil)...");
-    db.resetTransactionsToUserDataset();
+    const transactions = db.resetTransactionsToUserDataset();
+    console.log(`Menyiapkan dataset referensi awal Apriori dari pengguna (${transactions.length} transaksi riil)...`);
     performRetraining(0.15, 0.5);
   }
 
@@ -632,7 +632,7 @@ async function startServer() {
   });
 
   // POST /api/admin/reset-dataset
-  // Fungsi: Menerapkan kembali dataset referensi awal (31 transaksi riil nail art) dari pengguna dan melatih ulang model Apriori
+  // Fungsi: Menerapkan kembali dataset referensi awal (100 transaksi riil nail art) dari pengguna dan melatih ulang model Apriori
   app.post("/api/admin/reset-dataset", (req, res) => {
     try {
       const transactions = db.resetTransactionsToUserDataset();
@@ -642,7 +642,7 @@ async function startServer() {
 
       res.json({
         success: true,
-        message: "Dataset referensi awal (31 transaksi nail art) berhasil diterapkan dan model Apriori dilatih ulang!",
+        message: `Dataset referensi awal (${transactions.length} transaksi nail art) berhasil diterapkan dan model Apriori dilatih ulang!`,
         transactionsCount: transactions.length,
         transactions_count: transactions.length,
         frequentSetsCount: frequentSets.length,

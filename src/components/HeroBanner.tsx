@@ -144,7 +144,7 @@ export default function HeroBanner({
             </h1>
 
             <p className="text-xs sm:text-sm text-[#8C727D] leading-relaxed max-w-md">
-              Direkomendasikan langsung oleh algoritma Apriori berdasarkan tingkat keyakinan (<em>confidence</em>) tertinggi dari pola 31 transaksi pelanggan.
+              Direkomendasikan langsung oleh algoritma Apriori berdasarkan tingkat keyakinan (<em>confidence</em>) tertinggi dari pola {recommendations?.totalTransactions || 100} transaksi pelanggan.
             </p>
 
             <div className="pt-3">

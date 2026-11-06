@@ -266,43 +266,112 @@ export const DEFAULT_GALLERY_DESIGNS: NailDesign[] = [
 
 const DB_FILE = path.join(process.cwd(), 'lucky_nailart_db.json');
 
-// Dataset referensi Apriori dari pengguna (31 transaksi riil nail art)
-export const INITIAL_USER_DATASET_RAW = `pink,frusia,putih,cat eye,bunga,french crop,pita
-pink,frusia,putih,bunga,french crop
-cokelat gel,pink,chrome,matahari,abstrak,french crop
-merah maron,cat eye
-hitam,putih,chrome,mutiara,love 3D,pita,abstrak
-pink,cat eye,bintang,french crop,abstrak
-pink,cat eye,putih,pita,mutiara,3D bunga,3D kerang,french crop
-pink frusia,cat eye,chrome,kupu-kupu,daun,abstrak
-merah,pink frusia,pink pastel,stiker,chrome,pita,abstrak
-abu-abu,kuning,cat eye,pink,hijau muda,chrome,french crop,3D bunga,bunga
-putih,cat eye,pink,chrome,manik-manik,stamp,painting flower,bunga,painting pemandangan
-putih,cat eye,hijau muda,peach,ungu,chrome,kuning,orange,hitam,mutiara,manik-manik,3D bunga,daun,abstrak
-merah maron,cat eye,french crop,chrome,manik-manik,3D bunga,abstrak
-hijau toska,cat eye hijau,bunga,chrome,bintang,3D bunga,miror
-biru muda,cat eye biru,chrome,pita,sarang laba-laba,miror,abstrak
-gradasi pink,peach,merah maron,chrome,mutiara,3D bunga,french crop,abstrak
-putih,chrome,pink,pink frusia,french crop,3D bunga,kupu-kupu,mutiara,pita
-merah maron,cat eye,french crop,bintang,manik-manik,chrome,3D bunga,abstrak
-biru muda,putih,chrome,bunga,abstrak
-merah maron,mutiara,3D bunga
-cat eye putih,cat eye merah,chrome,kupu-kupu,cery,mutiara,pita,abstrak
-hijau,gradasi merah,cat eye,painting,3D kupu-kupu,3D kerang,3D bunga,chrome,miror,pita,manik-manik
-gradasi peach,3D pita,cat eye mahogani,chrome,bunga,pita
-merah maron,chrome,french crop,putih,love,cat eye
-hijau,chrome,putih,manik-manik,3D bunga,abstrak
-hitam,pita,french crop,bunga,bintang,chrome
-cokelat mahogani,putih,gradasi cokelat,abstrak
-hitam,putih,cat eye,gradasi abu-abu,chrome,bintang,ular,miror,abstrak
-putih,cokelat gel,merah maron,french crop,chrome,mutiara,manik-manik,3D bunga
-pink,putih,gradasi pink,chrome,3D bunga,manik-manik,mutiara,abstrak
-cokelat mahogani,putih,cokelat,chrome,manik-manik,bunga,pita,abstrak`;
+// Dataset referensi Apriori dari pengguna (100 transaksi riil nail art)
+export const INITIAL_USER_DATASET_RAW = `biru muda,cat eye,chrome,mutiara,french crop,bunga,pita,3D bunga
+chrome,bintang,gradasi cokelat,manik-manik,mutiara,pita,miror
+pink,3D pita,bintang,mutiara,bunga
+cat eye merah,putih,cat eye,chrome,bintang,french crop,mutiara,stamp,bunga,painting flower,kupu-kupu,love,pita,3D bunga
+gradasi pink,cat eye,pink pastel,cat eye mahogani,chrome,french crop,bunga,pita,abstrak
+abu-abu,gradasi peach,cat eye,french crop,3D bunga
+gradasi peach,putih,chrome,matahari,pita,love 3D,abstrak
+pink,gradasi pink,chrome,mutiara,3D bunga,abstrak
+cat eye putih,merah maron,hijau muda,chrome,french crop,3D kerang,3D bunga,abstrak
+pink,putih,cat eye,stamp,manik-manik,3D bunga,abstrak
+biru muda,manik-manik
+merah maron,putih,chrome,bintang,love 3D,french crop,3D bunga,abstrak
+merah maron,pink,putih,french crop,bunga,manik-manik,love 3D
+gradasi pink,pink,chrome,cery,bintang,3D bunga
+pink,frusia,chrome,french crop,bunga,pita,3D bunga,abstrak
+merah maron,abu-abu,ungu,chrome,manik-manik,bunga,pita
+cat eye,ungu,chrome,mutiara,french crop,bunga,miror
+gradasi pink,french crop,pita,mutiara,3D bunga
+merah maron,cat eye biru,cat eye hijau,painting,chrome,stiker,3D bunga,abstrak
+cokelat mahogani,ungu,gradasi abu-abu,chrome,mutiara,miror
+pink,abstrak
+hijau,3D pita,cat eye,painting,cat eye mahogani,chrome,stamp,french crop,cery,mutiara,bintang,3D bunga,pita,abstrak
+cat eye merah,cat eye,orange,french crop,mutiara,3D bunga,manik-manik,bunga,abstrak
+pink,putih,mutiara,3D bunga,bunga,pita,manik-manik,miror
+merah maron,biru muda,kupu-kupu,chrome,3D kerang,bintang,bunga,abstrak
+frusia,hijau muda,cokelat,mutiara,3D kerang,pita,painting pemandangan
+hijau,putih,cat eye,hitam,bunga,abstrak
+merah maron,pink,cat eye,3D bunga,bunga,abstrak,daun
+biru muda,hijau,pink frusia,manik-manik,bunga,french crop,3D kerang,abstrak
+merah maron,cat eye merah,cat eye,putih,chrome,french crop
+gradasi peach,pink,cat eye,chrome,bintang,french crop,sarang laba-laba
+cokelat gel,cat eye putih,3D pita,cery,chrome,mutiara,bintang,sarang laba-laba,pita,bunga,french crop,manik-manik,miror,abstrak
+cokelat mahogani,hitam,mutiara,french crop,stamp,3D bunga,pita,abstrak
+putih,pink,painting pemandangan
+hitam,cat eye,chrome,bunga,french crop,abstrak
+pink,putih,cat eye,chrome,3D kupu-kupu,mutiara,kupu-kupu,bunga,manik-manik,french crop,painting flower,pita,3D bunga,abstrak
+cokelat gel,cat eye,chrome,mutiara,pita,bunga,painting pemandangan
+cat eye,chrome,pink pastel,french crop,manik-manik,pita
+putih,chrome,mutiara,french crop,bunga,3D bunga,painting flower
+hijau muda,chrome,manik-manik,mutiara,bintang,pita
+cokelat mahogani,chrome,gradasi cokelat,french crop,abstrak
+merah maron,putih,painting,french crop,3D bunga,abstrak
+merah maron,pink,chrome,kupu-kupu,french crop,abstrak
+cokelat,chrome,bunga,manik-manik,3D bunga,daun,abstrak
+pink,putih,chrome,bintang,french crop,mutiara,manik-manik,miror,3D bunga
+cat eye merah,merah maron,french crop,bintang,daun,abstrak
+abu-abu,merah maron,painting,chrome,mutiara,3D bunga,pita,abstrak
+pink frusia,hitam,cokelat gel,cat eye,french crop,bunga
+cat eye putih,pink,orange,manik-manik,french crop
+merah maron,cat eye,hijau muda,pita,3D bunga,abstrak
+putih,frusia,bintang,french crop,pita,abstrak
+gradasi abu-abu,chrome,bunga,mutiara,3D bunga,french crop
+cat eye biru,cat eye,putih,chrome,french crop,painting flower,pita,kupu-kupu,mutiara,manik-manik,bunga,3D bunga,daun,abstrak
+pink frusia,chrome,stamp,manik-manik,3D bunga,bunga,abstrak
+peach,kuning,chrome,ular
+gradasi peach,cat eye putih,biru muda,cat eye hijau,cat eye,chrome,3D kupu-kupu,mutiara,bunga,bintang,3D bunga,pita,painting pemandangan,abstrak
+cat eye hijau,chrome,gradasi abu-abu,bintang,manik-manik,3D bunga,love
+hijau,hitam,chrome,painting flower,manik-manik,3D bunga
+pink,peach,chrome,french crop,3D kerang,pita,abstrak
+kuning,cat eye,pink pastel,mutiara,miror,abstrak
+cat eye putih,pink,hitam,chrome,sarang laba-laba,mutiara,abstrak
+cokelat gel,frusia,putih,cat eye,hijau muda
+pink frusia,gradasi pink,chrome,bunga,3D bunga,pita
+cat eye putih,kuning,putih,cat eye,chrome,mutiara,manik-manik,3D bunga,pita,abstrak,miror
+putih,cat eye,gradasi abu-abu,chrome,french crop,mutiara,painting flower,abstrak
+pink,love 3D,bintang,bunga,3D bunga,abstrak
+merah maron,pink,chrome,cat eye,mutiara,kupu-kupu,manik-manik,abstrak
+putih,cat eye,love 3D,mutiara,3D bunga,pita,abstrak
+cat eye putih,frusia,putih,cat eye mahogani,3D kupu-kupu,chrome,french crop,pita,abstrak
+pink,cat eye,french crop,3D kerang,bunga,3D bunga,miror,abstrak
+pink frusia,putih,cat eye mahogani,cery,french crop,bintang
+cat eye merah,merah maron,frusia,mutiara,french crop,bunga,stamp,manik-manik
+putih,cokelat,chrome,french crop,manik-manik,mutiara,bunga,3D bunga
+merah maron,cat eye,hijau muda,french crop,mutiara,abstrak
+cat eye putih,merah maron,frusia,cat eye,chrome,kupu-kupu,pita,manik-manik,stamp,bunga,3D bunga,mutiara,daun,abstrak
+cokelat mahogani,chrome,french crop,bunga,abstrak
+pink,cat eye,chrome,bintang,french crop,3D bunga,mutiara,pita,abstrak
+pink frusia,hitam,merah maron,3D pita,kuning,french crop
+putih,pink,pita,manik-manik,miror,bunga
+pink,cat eye,chrome,stiker,3D bunga
+pink,cat eye biru,putih,kuning,cat eye,chrome,sarang laba-laba,french crop,mutiara,manik-manik,ular,bunga,miror,abstrak
+hijau,cokelat gel,pink,putih,chrome
+merah maron,pink,cat eye,cat eye biru,chrome,sarang laba-laba,french crop,3D bunga,mutiara,bunga,daun
+pink frusia,pink,putih,bintang,love 3D,3D kerang,pita,bunga
+pink,gradasi abu-abu,cat eye,chrome,mutiara,kupu-kupu,french crop,bintang,stamp,bunga,manik-manik,pita,abstrak,3D bunga
+biru muda,cokelat gel,bintang,manik-manik,3D bunga
+cokelat gel,pink,french crop,3D kerang,3D bunga,pita
+cokelat gel,putih,3D kupu-kupu,chrome,bintang,french crop,mutiara
+merah maron,pink pastel,cat eye,stiker,mutiara,ular,gradasi cokelat,manik-manik,daun
+cat eye biru,kuning,ungu,cat eye,bintang,mutiara,kupu-kupu,3D bunga,abstrak
+cat eye biru,pink frusia,cokelat,chrome,bunga,pita,abstrak
+biru muda,cokelat mahogani,pink frusia,putih,french crop,manik-manik,bunga
+putih,kuning,painting,chrome,cat eye,3D bunga,abstrak
+pink,chrome,mutiara,bunga,french crop,abstrak
+pink frusia,hitam,merah maron,gradasi cokelat,bintang,french crop,manik-manik,bunga,3D bunga
+cat eye merah,putih,3D kupu-kupu,chrome,french crop,stiker,manik-manik,bunga
+cokelat mahogani,putih,cat eye,chrome,french crop,mutiara,3D bunga
+pink,pink frusia,cat eye,stiker,french crop,cery,kupu-kupu,stamp,pita,daun,abstrak
+gradasi pink,putih,stiker,chrome,kupu-kupu,french crop,pita
+pink,cat eye,3D bunga,manik-manik,mutiara,french crop,abstrak`;
 
 export const SEED_TRANSACTIONS: string[][] = INITIAL_USER_DATASET_RAW
   .trim()
-  .split('\n')
-  .map(line => line.split(',').map(item => item.trim()).filter(Boolean));
+  .split(/\r?\n/)
+  .map(line => line.split(',').map(item => item.trim().toLowerCase()).filter(Boolean));
 
 export class NailartDatabase {
   private data: DBData;
@@ -322,8 +391,10 @@ export class NailartDatabase {
           this.saveData(parsed);
         }
         // Ensure user reference dataset is used if previous data was synthetic
-        if (!parsed.transactions || parsed.transactions.length === 0 || (parsed.transactions[0] && parsed.transactions[0].includes('French_Tips'))) {
+        if (!parsed.transactions || parsed.transactions.length !== SEED_TRANSACTIONS.length || (parsed.transactions[0] && parsed.transactions[0].includes('French_Tips'))) {
           parsed.transactions = SEED_TRANSACTIONS;
+          parsed.frequent_itemsets = [];
+          parsed.association_rules = [];
           if (!parsed.config) {
             parsed.config = { minSupport: 0.15, minConfidence: 0.5, newTransactionsSinceLastTrain: 0 };
           } else {
